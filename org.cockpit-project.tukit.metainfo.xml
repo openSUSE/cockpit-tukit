@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>org.cockpit_project.tukit</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Transactional Update</name>
+  <summary>Cockpit module for Transactional Update</summary>
+  <description>
+    <p>
+      Cockpit module for Transactional Update.
+    </p>
+  </description>
+  <extends>org.cockpit_project.cockpit</extends>
+  <launchable type="cockpit-manifest">tukit</launchable>
+</component>

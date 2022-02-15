@@ -1,0 +1,10 @@
+{
+    "requires": {
+        "cockpit": "251"
+    },
+    "tools": {
+        "index": {
+            "label": "Software Updates"
+        }
+    }
+}
