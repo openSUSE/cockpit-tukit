@@ -6,5 +6,6 @@
         "index": {
             "label": "Software Updates"
         }
-    }
+    },
+    "preload": ["index"]
 }
