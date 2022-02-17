@@ -19,29 +19,128 @@
  */
 
 import cockpit from "cockpit";
-import React, { useEffect, useState } from "react";
-import { Alert, Card, CardTitle, CardBody } from "@patternfly/react-core";
+import { page_status } from "notifications";
+import React, { useState, useEffect } from "react";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardTitle,
+    DataList,
+    Flex,
+    FlexItem,
+    Gallery,
+    Page,
+    PageSection,
+} from "@patternfly/react-core";
+
+import SnapshotItem from "./components/SnapshotItem";
+
+import { createSnapshot, snapshotsProxy } from "./tukit";
 
 const _ = cockpit.gettext;
 
 const Application = () => {
-    const [hostname, setHostname] = useState(_("Unknown"));
+    const [snapshots, setSnapshots] = useState([]);
+    const [status, setStatus] = useState(null);
+
+    const updatePageStatus = (items) => {
+        console.log("Updating page status");
+        if (items.length === 0) {
+            setStatus(null);
+            return;
+        }
+        if (!items[0].active) {
+            setStatus({
+                type: "warning",
+                title: cockpit.format(
+                    _("New snapshot available: $0"),
+                    items[0].description
+                ),
+            });
+        } else {
+            setStatus({
+                title: _("System is up to date"),
+                details: { icon: "check" },
+            });
+        }
+        // TODO:
+        // setStatus({
+        //     type: num_security_updates > 0 ? "warning" : "info",
+        //     title: _("Updates available"),
+        // });
+    };
+
     useEffect(() => {
-        cockpit.file("/etc/hostname").watch((content) => {
-            setHostname(content.trim());
-        });
+        getSnapshots();
     }, []);
 
+    useEffect(() => {
+        updatePageStatus(snapshots);
+    }, [snapshots]);
+
+    useEffect(() => {
+        page_status.set_own(status);
+    }, [status]);
+
+    const getSnapshots = () => {
+        snapshotsProxy()
+            .call("list", ["number,default,active,date,description"])
+            .then((args, options) => {
+                const snaps = args[0].map((snap) => createSnapshot(...snap));
+                // remove "current" snapshot
+                snaps.shift();
+                snaps.sort((a, b) => b.number - a.number);
+                // mark old snapshots
+                let active = null;
+                snaps.forEach((s) => {
+                    if (active) s.old = true;
+                    if (s.active) active = s;
+                });
+                setSnapshots(snaps);
+            })
+            .catch((exception) => {
+                alert("ERROR " + exception);
+            });
+    };
+
     return (
-        <Card>
-            <CardTitle>{_("Software Updates")}</CardTitle>
-            <CardBody>
-                <Alert
-                    variant="info"
-                    title={cockpit.format(_("Running on $0"), hostname)}
-                />
-            </CardBody>
-        </Card>
+        <Page>
+            <PageSection>
+                <Gallery className="ct-cards-grid" hasGutter>
+                    <Card className="ct-card-info">
+                        <CardTitle>{_("Status")}</CardTitle>
+                        <CardBody>TODO:{JSON.stringify(status)}</CardBody>
+                    </Card>
+                    <Card className="ct-card-info">
+                        <CardTitle>{_("Updates")}</CardTitle>
+                        <CardBody>
+                            <Flex>
+                                <FlexItem>Last Checked: TODO</FlexItem>
+                                <FlexItem align={{ default: "alignRight" }}>
+                                    <Button variant="primary">
+                                        {_("Check for Updates")}
+                                    </Button>
+                                </FlexItem>
+                            </Flex>
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardTitle>{_("Snapshots & Updates")}</CardTitle>
+                        <CardBody>
+                            <DataList isCompact>
+                                {snapshots.map((item) => (
+                                    <SnapshotItem
+                                        key={item.number}
+                                        item={item}
+                                    />
+                                ))}
+                            </DataList>
+                        </CardBody>
+                    </Card>
+                </Gallery>
+            </PageSection>
+        </Page>
     );
 };
 
