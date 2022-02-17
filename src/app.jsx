@@ -35,6 +35,7 @@ import {
 } from "@patternfly/react-core";
 
 import SnapshotItem from "./components/SnapshotItem";
+import StatusPanel from "./components/StatusPanel";
 
 import { createSnapshot, snapshotsProxy } from "./tukit";
 
@@ -54,8 +55,9 @@ const Application = () => {
             setStatus({
                 type: "warning",
                 title: cockpit.format(
-                    _("New snapshot available: $0"),
-                    items[0].description
+                    _("New snapshot #$1 available: $0"),
+                    items[0].description,
+                    items[0].number
                 ),
             });
         } else {
@@ -108,10 +110,7 @@ const Application = () => {
         <Page>
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
-                    <Card className="ct-card-info">
-                        <CardTitle>{_("Status")}</CardTitle>
-                        <CardBody>TODO:{JSON.stringify(status)}</CardBody>
-                    </Card>
+                    <StatusPanel status={status} />
                     <Card className="ct-card-info">
                         <CardTitle>{_("Updates")}</CardTitle>
                         <CardBody>
