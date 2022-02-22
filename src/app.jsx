@@ -22,13 +22,10 @@ import cockpit from "cockpit";
 import { page_status } from "notifications";
 import React, { useState, useEffect } from "react";
 import {
-    Button,
     Card,
     CardBody,
     CardTitle,
     DataList,
-    Flex,
-    FlexItem,
     Gallery,
     Page,
     PageSection,
@@ -36,6 +33,7 @@ import {
 
 import SnapshotItem from "./components/SnapshotItem";
 import StatusPanel from "./components/StatusPanel";
+import UpdatesPanel from "./components/UpdatesPanel";
 
 import { createSnapshot, snapshotsProxy } from "./tukit";
 
@@ -43,51 +41,65 @@ const _ = cockpit.gettext;
 
 const Application = () => {
     const [snapshots, setSnapshots] = useState([]);
-    const [status, setStatus] = useState(null);
-
-    const updatePageStatus = (items) => {
-        console.log("Updating page status");
-        if (items.length === 0) {
-            setStatus(null);
-            return;
-        }
-        if (!items[0].active) {
-            setStatus({
-                type: "warning",
-                title: cockpit.format(
-                    _("New snapshot #$1 available: $0"),
-                    items[0].description,
-                    items[0].number
-                ),
-            });
-        } else {
-            setStatus({
-                title: _("System is up to date"),
-                details: { icon: "check" },
-            });
-        }
-        // TODO:
-        // setStatus({
-        //     type: num_security_updates > 0 ? "warning" : "info",
-        //     title: _("Updates available"),
-        // });
-    };
+    const [status, setStatus] = useState([]);
+    const [updates, setUpdates] = useState([]);
 
     useEffect(() => {
         getSnapshots();
     }, []);
 
+    // update page status
     useEffect(() => {
-        updatePageStatus(snapshots);
-    }, [snapshots]);
+        console.log("Updating page status");
+        const s = [];
+        if (snapshots.length > 0 && !snapshots[0].active) {
+            s.push({
+                key: "new-snapshot",
+                type: "warning",
+                title: cockpit.format(
+                    _("New snapshot #$1 available: $0"),
+                    snapshots[0].description,
+                    snapshots[0].number
+                ),
+            });
+        }
+        if (updates.length > 0) {
+            // TODO: security updates?
+            // type: num_security_updates > 0 ? "warning" : "info",
+            s.push({
+                key: "updates",
+                type: "info",
+                title: cockpit.format(
+                    _("Updates available ($0)"),
+                    updates.length
+                ),
+            });
+        }
+        // no status? it's good!
+        if (s.length === 0) {
+            s.push({
+                key: "system-ok",
+                title: _("System is up to date"),
+                details: { icon: "check" },
+            });
+        }
+        setStatus(s);
+    }, [snapshots, updates]);
 
+    // forward status to Cockpit
     useEffect(() => {
-        page_status.set_own(status);
+        if (status.length > 0) {
+            // TODO: transform multi-status into page_status
+            page_status.set_own(status[0]);
+        } else {
+            page_status.set_own(null);
+        }
     }, [status]);
 
     const getSnapshots = () => {
         const proxy = snapshotsProxy();
         proxy.wait(() => {
+            // TODO: check proxy.valid
             proxy
                 .List("number,default,active,date,description")
                 .then((ret) => {
@@ -113,20 +125,8 @@ const Application = () => {
         <Page>
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
-                    <StatusPanel status={status} />
-                    <Card className="ct-card-info">
-                        <CardTitle>{_("Updates")}</CardTitle>
-                        <CardBody>
-                            <Flex>
-                                <FlexItem>Last Checked: TODO</FlexItem>
-                                <FlexItem align={{ default: "alignRight" }}>
-                                    <Button variant="primary">
-                                        {_("Check for Updates")}
-                                    </Button>
-                                </FlexItem>
-                            </Flex>
-                        </CardBody>
-                    </Card>
+                    <StatusPanel status={status} updates={updates} />
+                    <UpdatesPanel setUpdates={setUpdates} />
                     <Card>
                         <CardTitle>{_("Snapshots & Updates")}</CardTitle>
                         <CardBody>

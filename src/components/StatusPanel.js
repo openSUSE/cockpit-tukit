@@ -20,7 +20,13 @@
 
 import cockpit from "cockpit";
 import React from "react";
-import { Card, CardBody, CardTitle } from "@patternfly/react-core";
+import {
+    Card,
+    CardBody,
+    CardTitle,
+    List,
+    ListItem,
+} from "@patternfly/react-core";
 import {
     CheckCircleIcon,
     ExclamationCircleIcon,
@@ -30,10 +36,9 @@ import {
 
 const _ = cockpit.gettext;
 
-const StatusPanel = ({ status }) => {
-    const icon = () => {
-        if (!status) return;
-        const i = (status.details && status.details.icon) || status.type;
+const StatusPanel = ({ status, updates }) => {
+    const icon = (s) => {
+        const i = (s.details && s.details.icon) || s.type;
         if (i === "error") return <ExclamationCircleIcon />;
         else if (i === "warning") return <ExclamationTriangleIcon />;
         else if (i === "check") return <CheckCircleIcon />;
@@ -42,12 +47,15 @@ const StatusPanel = ({ status }) => {
     return (
         <Card className="ct-card-info">
             <CardTitle>{_("Status")}</CardTitle>
-            {status && (
-                <CardBody>
-                    {icon()}
-                    <span style={{ marginLeft: "4px" }}>{status.title}</span>
-                </CardBody>
-            )}
+            <CardBody>
+                <List isPlain iconSize="large">
+                    {status.map((s) => (
+                        <ListItem icon={icon(s)} key={s.key}>
+                            {s.title}
+                        </ListItem>
+                    ))}
+                </List>
+            </CardBody>
         </Card>
     );
 };
