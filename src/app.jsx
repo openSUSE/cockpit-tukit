@@ -86,24 +86,27 @@ const Application = () => {
     }, [status]);
 
     const getSnapshots = () => {
-        snapshotsProxy()
-            .call("list", ["number,default,active,date,description"])
-            .then((args, options) => {
-                const snaps = args[0].map((snap) => createSnapshot(...snap));
-                // remove "current" snapshot
-                snaps.shift();
-                snaps.sort((a, b) => b.number - a.number);
-                // mark old snapshots
-                let active = null;
-                snaps.forEach((s) => {
-                    if (active) s.old = true;
-                    if (s.active) active = s;
+        const proxy = snapshotsProxy();
+        proxy.wait(() => {
+            proxy
+                .List("number,default,active,date,description")
+                .then((ret) => {
+                    const snaps = ret.map((snap) => createSnapshot(...snap));
+                    // remove "current" snapshot
+                    snaps.shift();
+                    snaps.sort((a, b) => b.number - a.number);
+                    // mark old snapshots
+                    let active = null;
+                    snaps.forEach((s) => {
+                        if (active) s.old = true;
+                        if (s.active) active = s;
+                    });
+                    setSnapshots(snaps);
+                })
+                .catch((exception) => {
+                    alert("ERROR " + exception);
                 });
-                setSnapshots(snaps);
-            })
-            .catch((exception) => {
-                alert("ERROR " + exception);
-            });
+        });
     };
 
     return (
