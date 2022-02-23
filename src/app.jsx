@@ -32,6 +32,7 @@ import {
 } from "@patternfly/react-core";
 
 import SnapshotItem from "./components/SnapshotItem";
+import UpdatesItem from "./components/UpdatesItem";
 import StatusPanel from "./components/StatusPanel";
 import UpdatesPanel from "./components/UpdatesPanel";
 
@@ -68,7 +69,7 @@ const Application = () => {
             // type: num_security_updates > 0 ? "warning" : "info",
             s.push({
                 key: "updates",
-                type: "info",
+                type: "warning",
                 title: cockpit.format(
                     _("Updates available ($0)"),
                     updates.length
@@ -131,6 +132,9 @@ const Application = () => {
                         <CardTitle>{_("Snapshots & Updates")}</CardTitle>
                         <CardBody>
                             <DataList isCompact>
+                                {updates.length > 0 && (
+                                    <UpdatesItem updates={updates} />
+                                )}
                                 {snapshots.map((item) => (
                                     <SnapshotItem
                                         key={item.number}

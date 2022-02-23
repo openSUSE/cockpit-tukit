@@ -63,6 +63,7 @@ const UpdatesPanel = ({ setUpdates }) => {
             const updates = xml
                 .getElementsByTagName("update")
                 .map((e) => flattenXMLData(e));
+            // TODO: add `zypper -q --xmlout list-patches` for security updates
             console.log(updates);
             setUpdates(updates);
             setLastCheck(new Date());
