@@ -47,7 +47,7 @@ const SnapshotItem = ({ item }) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <DataListItem key={item.number} isExpanded={expanded}>
+        <DataListItem isExpanded={expanded}>
             <DataListItemRow>
                 <DataListToggle
                     onClick={() => {
@@ -58,7 +58,7 @@ const SnapshotItem = ({ item }) => {
                 <DataListItemCells
                     dataListCells={[
                         <DataListCell isIcon key="number">
-                            <Badge>#{item.number}</Badge>
+                            <Badge isRead={item.old}>#{item.number}</Badge>
                         </DataListCell>,
                         <DataListCell key="description">
                             <b>{item.description}</b>
