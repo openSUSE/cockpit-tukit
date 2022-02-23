@@ -1,4 +1,5 @@
 {
+    "name": "updates",
     "requires": {
         "cockpit": "251"
     },
