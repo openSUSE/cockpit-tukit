@@ -3,3 +3,7 @@
 p {
     font-weight: bold;
 }
+
+.tooltip-pre .pf-c-tooltip__content {
+    white-space: pre-line;
+}

@@ -34,7 +34,9 @@ import {
     DropdownItem,
     DropdownPosition,
     KebabToggle,
+    Label,
     Popover,
+    Tooltip,
 } from "@patternfly/react-core";
 import {
     BugIcon,
@@ -42,6 +44,7 @@ import {
     InfoCircleIcon,
     PackageIcon,
 } from "@patternfly/react-icons";
+import { categoryProps, severityProps } from "../update";
 
 const _ = cockpit.gettext;
 
@@ -51,19 +54,55 @@ const UpdateItem = ({ u }) => {
         else if (u.kind === "patch") return <BugIcon />;
         else return <InfoCircleIcon />;
     };
+    const updateCells = (u) => {
+        // package
+        if (u.kind === "package")
+            return [
+                <DataListCell key="name">
+                    <Tooltip content={u.description}>
+                        <span>{u.name}</span>
+                    </Tooltip>
+                </DataListCell>,
+                <DataListCell key="version">
+                    <Tooltip content={_("New Version")}>
+                        <span>{u.edition}</span>
+                    </Tooltip>
+                </DataListCell>,
+                <DataListCell key="oldversion">
+                    <Tooltip content={_("Old Version")}>
+                        <span>{u["edition-old"]}</span>
+                    </Tooltip>
+                </DataListCell>,
+            ];
+        // patch
+        return [
+            <DataListCell key="name" width={3}>
+                <Tooltip className="tooltip-pre" content={u.description}>
+                    <span>{u.name}</span>
+                </Tooltip>
+            </DataListCell>,
+            <DataListCell key="summary" width={2}>
+                {u.summary}
+            </DataListCell>,
+            <DataListCell key="details" width={2}>
+                <Label isCompact {...categoryProps(u)}>
+                    {u.category}
+                </Label>
+                <Label isCompact {...severityProps(u)}>
+                    {u.severity}
+                </Label>
+            </DataListCell>,
+        ];
+    };
     return (
         <DataListItem>
             <DataListItemRow>
                 <DataListItemCells
                     dataListCells={[
                         <DataListCell isIcon key="icon">
-                            {icon()}
+                            <Tooltip content={_(u.kind)}>{icon()}</Tooltip>
                         </DataListCell>,
-                        <DataListCell key="name">{u.name}</DataListCell>,
-                        <DataListCell key="version">{u.edition}</DataListCell>,
-                        <DataListCell key="oldversion">
-                            {u["edition-old"]}
-                        </DataListCell>,
+                        ...updateCells(u),
                     ]}
                 />
                 <DataListAction>

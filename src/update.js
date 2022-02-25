@@ -18,16 +18,30 @@
  * find current contact information at www.suse.com.
  */
 
-export const stringToBool = (s) => {
-    return ["yes", "true", "1"].includes(s.toLowerCase());
+import React from "react";
+import {
+    ExclamationCircleIcon,
+    ExclamationTriangleIcon,
+    InfoCircleIcon,
+} from "@patternfly/react-icons";
+
+export const kindPrio = { patch: 0, package: 1 };
+export const categoryPrio = { security: 0, recommended: 2 };
+export const severityPrio = { important: 0, moderate: 1 };
+const prioLabelColor = { 0: "red", 1: "blue", 2: "auto" };
+const prioIcon = {
+    0: <ExclamationCircleIcon />,
+    1: <ExclamationTriangleIcon />,
+    2: <InfoCircleIcon />,
 };
 
-// decode selected named html entities found in zypper's xml output and generic
-// numeric ones.
-// see: https://github.com/openSUSE/libzypp/blob/master/zypp-core/parser/xml/XmlEscape.cc
-export const decodeHTMLEntities = (s) => {
-    const entities = { lt: "<", gt: ">", amp: "&", apos: "'", quot: '"' };
-    return s
-        .replaceAll(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
-        .replaceAll(/&([a-z]+);/g, (m, e) => entities[e] || m);
+// remove _disabled to enable props
+const prioProps = (p) => {
+    return {
+        color: prioLabelColor[p],
+        icon_disabled: prioIcon[p],
+        variant: "outline",
+    };
 };
+export const categoryProps = (u) => prioProps(categoryPrio[u.category]);
+export const severityProps = (u) => prioProps(severityPrio[u.severity]);

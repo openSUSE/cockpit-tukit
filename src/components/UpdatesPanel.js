@@ -30,6 +30,8 @@ import {
     FlexItem,
     Text,
 } from "@patternfly/react-core";
+import { kindPrio, categoryPrio, severityPrio } from "../update";
+import { decodeHTMLEntities } from "../utils";
 
 const _ = cockpit.gettext;
 
@@ -52,18 +54,50 @@ const UpdatesPanel = ({ setUpdates }) => {
     const [running, setRunning] = useState(false);
     const [lastCheck, setLastCheck] = useState();
 
+    const getUpdates = async (arg) => {
+        const cmd = ["zypper", "-q", "--xmlout", arg];
+        let out = await cockpit.spawn(cmd);
+        // convert line breaks in descriptions to not loose them during
+        // xml parsing
+        out = out.replaceAll(/<description>[^<]+<\/description>/g, (d) =>
+            d.replaceAll("\n", "&#10;")
+        );
+        const xml = new XMLParser().parseFromString(out);
+        return xml
+            .getElementsByTagName("update")
+            .map((e) => flattenXMLData(e))
+            .map((u) => {
+                return {
+                    ...u,
+                    description: decodeHTMLEntities(u.description),
+                };
+            });
+    };
+    const updateKey = (u) => {
+        return [
+            kindPrio[u.kind],
+            categoryPrio[u.category],
+            severityPrio[u.severity],
+            u.name,
+        ];
+    };
+    const updateCmp = (a, b) => {
+        const ak = updateKey(a);
+        const bk = updateKey(b);
+        if (ak > bk) return 1;
+        if (ak < bk) return -1;
+        return 0;
+    };
     const checkUpdates = async () => {
         setRunning(true);
         try {
             const refcmd = ["zypper", "ref"];
             await cockpit.spawn(refcmd, { superuser: true });
-            const lucmd = ["zypper", "-q", "--xmlout", "list-updates"];
-            const luout = await cockpit.spawn(lucmd);
-            const xml = new XMLParser().parseFromString(luout);
-            const updates = xml
-                .getElementsByTagName("update")
-                .map((e) => flattenXMLData(e));
-            // TODO: add `zypper -q --xmlout list-patches` for security updates
+            const updates = [].concat(
+                await getUpdates("list-updates"),
+                await getUpdates("list-patches")
+            );
+            updates.sort(updateCmp);
             setUpdates(updates);
             setLastCheck(new Date());
         } catch (e) {
