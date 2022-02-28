@@ -59,7 +59,7 @@ const UpdateItem = ({ u }) => {
         if (u.kind === "package")
             return [
                 <DataListCell key="name">
-                    <Tooltip content={u.description}>
+                    <Tooltip className="tooltip-pre" content={u.description}>
                         <span>{u.name}</span>
                     </Tooltip>
                 </DataListCell>,
