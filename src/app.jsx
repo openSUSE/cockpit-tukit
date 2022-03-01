@@ -49,44 +49,6 @@ const Application = () => {
         getSnapshots();
     }, []);
 
-    // update page status
-    useEffect(() => {
-        console.log("Updating page status");
-        const s = [];
-        if (snapshots.length > 0 && !snapshots[0].active) {
-            s.push({
-                key: "new-snapshot",
-                type: "warning",
-                title: cockpit.format(
-                    _("New snapshot #$1 available: $0"),
-                    snapshots[0].description,
-                    snapshots[0].number
-                ),
-            });
-        }
-        if (updates.length > 0) {
-            // TODO: security updates?
-            // type: num_security_updates > 0 ? "warning" : "info",
-            s.push({
-                key: "updates",
-                type: "info",
-                title: cockpit.format(
-                    _("Updates available ($0)"),
-                    updates.length
-                ),
-            });
-        }
-        // no status? it's good!
-        if (s.length === 0) {
-            s.push({
-                key: "system-ok",
-                title: _("System is up to date"),
-                details: { icon: "check" },
-            });
-        }
-        setStatus(s);
-    }, [snapshots, updates]);
-
     // forward status to Cockpit
     useEffect(() => {
         if (status.length > 0) {
@@ -126,7 +88,12 @@ const Application = () => {
         <Page>
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
-                    <StatusPanel status={status} updates={updates} />
+                    <StatusPanel
+                        status={status}
+                        setStatus={setStatus}
+                        updates={updates}
+                        snapshots={snapshots}
+                    />
                     <UpdatesPanel setUpdates={setUpdates} />
                     <Card>
                         <CardTitle>{_("Snapshots & Updates")}</CardTitle>

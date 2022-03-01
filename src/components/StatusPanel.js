@@ -19,7 +19,7 @@
  */
 
 import cockpit from "cockpit";
-import React from "react";
+import React, { useEffect } from "react";
 import {
     Card,
     CardBody,
@@ -38,7 +38,45 @@ import "./StatusPanel.scss";
 
 const _ = cockpit.gettext;
 
-const StatusPanel = ({ status, updates }) => {
+const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
+    // update page status
+    useEffect(() => {
+        console.log("Updating page status");
+        const s = [];
+        if (snapshots.length > 0 && !snapshots[0].active) {
+            s.push({
+                key: "new-snapshot",
+                type: "warning",
+                title: cockpit.format(
+                    _("New snapshot #$1 available: $0"),
+                    snapshots[0].description,
+                    snapshots[0].number
+                ),
+            });
+        }
+        if (updates.length > 0) {
+            // TODO: security updates?
+            // type: num_security_updates > 0 ? "warning" : "info",
+            s.push({
+                key: "updates",
+                type: "info",
+                title: cockpit.format(
+                    _("Updates available ($0)"),
+                    updates.length
+                ),
+            });
+        }
+        // no status? it's good!
+        if (s.length === 0) {
+            s.push({
+                key: "system-ok",
+                title: _("System is up to date"),
+                details: { icon: "check" },
+            });
+        }
+        setStatus(s);
+    }, [snapshots, updates, setStatus]);
+
     const icon = (s) => {
         const i = (s.details && s.details.icon) || s.type;
         const c = `tukit-status-${i}`;
