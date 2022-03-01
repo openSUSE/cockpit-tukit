@@ -37,6 +37,7 @@ import StatusPanel from "./components/StatusPanel";
 import UpdatesPanel from "./components/UpdatesPanel";
 
 import { createSnapshot, snapshotsProxy } from "./tukit";
+import { mostSevereStatus } from "./status";
 
 const _ = cockpit.gettext;
 
@@ -51,9 +52,11 @@ const Application = () => {
 
     // forward status to Cockpit
     useEffect(() => {
+        console.log("Forwarding page status");
         if (status.length > 0) {
-            // TODO: transform multi-status into page_status
-            page_status.set_own(status[0]);
+            // page_status can show only one status
+            // use most important one
+            page_status.set_own(mostSevereStatus(status));
         } else {
             page_status.set_own(null);
         }

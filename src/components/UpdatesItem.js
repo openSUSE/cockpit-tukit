@@ -149,7 +149,12 @@ const UpdatesItem = ({ updates }) => {
                             />
                         </DataListCell>,
                         <DataListCell key="description">
-                            <b>Updates available ({updates.length})</b>
+                            <b>
+                                {cockpit.format(
+                                    _("Available updates ($0)"),
+                                    updates.length
+                                )}
+                            </b>
                         </DataListCell>,
                         <DataListCell key="date?" />,
                         <DataListCell key="labels?" />,

@@ -46,7 +46,7 @@ const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
         if (snapshots.length > 0 && !snapshots[0].active) {
             s.push({
                 key: "new-snapshot",
-                type: "warning",
+                type: "info",
                 title: cockpit.format(
                     _("New snapshot #$1 available: $0"),
                     snapshots[0].description,
@@ -55,15 +55,17 @@ const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
             });
         }
         if (updates.length > 0) {
-            // TODO: security updates?
-            // type: num_security_updates > 0 ? "warning" : "info",
+            const security_updates = updates.filter(
+                (u) => u.category === "security"
+            );
+            const [t, msg] =
+                security_updates.length > 0
+                    ? ["warning", _("Security updates available")]
+                    : ["info", _("Updates available")];
             s.push({
                 key: "updates",
-                type: "info",
-                title: cockpit.format(
-                    _("Updates available ($0)"),
-                    updates.length
-                ),
+                type: t,
+                title: msg,
             });
         }
         // no status? it's good!
