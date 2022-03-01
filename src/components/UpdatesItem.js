@@ -59,7 +59,12 @@ const UpdateItem = ({ u }) => {
         if (u.kind === "package")
             return [
                 <DataListCell key="name">
-                    <Tooltip className="tooltip-pre" content={u.description}>
+                    <Tooltip
+                        className="tooltip-pre"
+                        isContentLeftAligned
+                        maxWidth="30rem"
+                        content={u.description}
+                    >
                         <span>{u.name}</span>
                     </Tooltip>
                 </DataListCell>,
@@ -77,7 +82,12 @@ const UpdateItem = ({ u }) => {
         // patch
         return [
             <DataListCell key="name" width={3}>
-                <Tooltip className="tooltip-pre" content={u.description}>
+                <Tooltip
+                    className="tooltip-pre"
+                    isContentLeftAligned
+                    maxWidth="30rem"
+                    content={u.description}
+                >
                     <span>{u.name}</span>
                 </Tooltip>
             </DataListCell>,

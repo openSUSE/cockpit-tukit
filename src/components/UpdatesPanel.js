@@ -60,7 +60,8 @@ const UpdatesPanel = ({ setUpdates }) => {
         // convert line breaks in descriptions to not loose them during
         // xml parsing
         out = out.replaceAll(/<description>[^<]+<\/description>/g, (d) =>
-            d.replaceAll("\n", "&#10;")
+            // only keep newlines followed by space (indent) or bullet char
+            d.replaceAll(/\n([-* ])/g, (_, fc) => `&#10;${fc}`)
         );
         const xml = new XMLParser().parseFromString(out);
         return xml
