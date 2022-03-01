@@ -34,18 +34,22 @@ import {
     InfoCircleIcon,
 } from "@patternfly/react-icons";
 
+import "./StatusPanel.scss";
+
 const _ = cockpit.gettext;
 
 const StatusPanel = ({ status, updates }) => {
     const icon = (s) => {
         const i = (s.details && s.details.icon) || s.type;
-        if (i === "error") return <ExclamationCircleIcon />;
-        else if (i === "warning") return <ExclamationTriangleIcon />;
-        else if (i === "check") return <CheckCircleIcon />;
-        else return <InfoCircleIcon />;
+        const c = `tukit-status-${i}`;
+        if (i === "error") return <ExclamationCircleIcon className={c} />;
+        else if (i === "warning")
+            return <ExclamationTriangleIcon className={c} />;
+        else if (i === "check") return <CheckCircleIcon className={c} />;
+        else return <InfoCircleIcon className={c} />;
     };
     return (
-        <Card className="ct-card-info">
+        <Card className="ct-card-info tukit-status-panel">
             <CardTitle>{_("Status")}</CardTitle>
             <CardBody>
                 <List isPlain iconSize="large">

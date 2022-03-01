@@ -46,6 +46,8 @@ import {
 } from "@patternfly/react-icons";
 import { categoryProps, severityProps } from "../update";
 
+import "./UpdatesItem.scss";
+
 const _ = cockpit.gettext;
 
 const UpdateItem = ({ u }) => {
@@ -60,7 +62,7 @@ const UpdateItem = ({ u }) => {
             return [
                 <DataListCell key="name">
                     <Tooltip
-                        className="tooltip-pre"
+                        className="tukit-tooltip-pre"
                         isContentLeftAligned
                         maxWidth="30rem"
                         content={u.description}
@@ -83,7 +85,7 @@ const UpdateItem = ({ u }) => {
         return [
             <DataListCell key="name" width={3}>
                 <Tooltip
-                    className="tooltip-pre"
+                    className="tukit-tooltip-pre"
                     isContentLeftAligned
                     maxWidth="30rem"
                     content={u.description}

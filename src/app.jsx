@@ -69,7 +69,7 @@ const Application = () => {
             // type: num_security_updates > 0 ? "warning" : "info",
             s.push({
                 key: "updates",
-                type: "warning",
+                type: "info",
                 title: cockpit.format(
                     _("Updates available ($0)"),
                     updates.length
