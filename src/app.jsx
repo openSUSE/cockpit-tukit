@@ -26,9 +26,13 @@ import {
     CardBody,
     CardTitle,
     DataList,
+    EmptyState,
+    EmptyStateIcon,
     Gallery,
     Page,
     PageSection,
+    Spinner,
+    Title,
 } from "@patternfly/react-core";
 
 import SnapshotItem from "./components/SnapshotItem";
@@ -45,6 +49,9 @@ const Application = () => {
     const [snapshots, setSnapshots] = useState([]);
     const [status, setStatus] = useState([]);
     const [updates, setUpdates] = useState([]);
+
+    const [snapshotsWaiting, setSnapshotsWaiting] = useState(false);
+    const [updatesWaiting, setUpdatesWaiting] = useState(false);
 
     useEffect(() => {
         getSnapshots();
@@ -63,27 +70,28 @@ const Application = () => {
     }, [status]);
 
     const getSnapshots = () => {
+        setSnapshotsWaiting(true);
         const proxy = snapshotsProxy();
-        proxy.wait(() => {
+        proxy.wait(async () => {
             // TODO: check proxy.valid
-            proxy
-                .List("number,default,active,date,description")
-                .then((ret) => {
-                    const snaps = ret.map((snap) => createSnapshot(...snap));
-                    // remove "current" snapshot
-                    snaps.shift();
-                    snaps.sort((a, b) => b.number - a.number);
-                    // mark old snapshots
-                    let active = null;
-                    snaps.forEach((s) => {
-                        if (active) s.old = true;
-                        if (s.active) active = s;
-                    });
-                    setSnapshots(snaps);
-                })
-                .catch((exception) => {
-                    alert("ERROR " + exception);
+            try {
+                const snaps = (
+                    await proxy.List("number,default,active,date,description")
+                ).map((snap) => createSnapshot(...snap));
+                // remove "current" snapshot
+                snaps.shift();
+                snaps.sort((a, b) => b.number - a.number);
+                // mark old snapshots
+                let active = null;
+                snaps.forEach((s) => {
+                    if (active) s.old = true;
+                    if (s.active) active = s;
                 });
+                setSnapshots(snaps);
+            } catch (e) {
+                alert("ERROR " + e);
+            }
+            setSnapshotsWaiting(false);
         });
     };
 
@@ -92,26 +100,43 @@ const Application = () => {
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
                     <StatusPanel
+                        waiting={snapshotsWaiting || updatesWaiting}
                         status={status}
                         setStatus={setStatus}
                         updates={updates}
                         snapshots={snapshots}
                     />
-                    <UpdatesPanel setUpdates={setUpdates} />
+                    <UpdatesPanel
+                        setUpdates={setUpdates}
+                        waiting={updatesWaiting}
+                        setWaiting={setUpdatesWaiting}
+                    />
                     <Card>
                         <CardTitle>{_("Snapshots & Updates")}</CardTitle>
                         <CardBody>
-                            <DataList isCompact>
-                                {updates.length > 0 && (
-                                    <UpdatesItem updates={updates} />
-                                )}
-                                {snapshots.map((item) => (
-                                    <SnapshotItem
-                                        key={item.number}
-                                        item={item}
+                            {(snapshotsWaiting && (
+                                <EmptyState>
+                                    <EmptyStateIcon
+                                        variant="icon"
+                                        icon={Spinner}
                                     />
-                                ))}
-                            </DataList>
+                                    <Title headingLevel="h2">
+                                        {_("Loading...")}
+                                    </Title>
+                                </EmptyState>
+                            )) || (
+                                <DataList isCompact>
+                                    {updates.length > 0 && (
+                                        <UpdatesItem updates={updates} />
+                                    )}
+                                    {snapshots.map((item) => (
+                                        <SnapshotItem
+                                            key={item.number}
+                                            item={item}
+                                        />
+                                    ))}
+                                </DataList>
+                            )}
                         </CardBody>
                     </Card>
                 </Gallery>

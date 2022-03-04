@@ -32,18 +32,29 @@ import {
     ExclamationCircleIcon,
     ExclamationTriangleIcon,
     InfoCircleIcon,
+    PendingIcon,
 } from "@patternfly/react-icons";
 
 import "./StatusPanel.scss";
 
 const _ = cockpit.gettext;
 
-const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
+const StatusPanel = ({ waiting, status, setStatus, updates, snapshots }) => {
     // update page status
     useEffect(() => {
         console.log("Updating page status");
+        if (waiting || snapshots.length === 0) {
+            setStatus([
+                {
+                    key: "wait",
+                    title: _("Waiting for status..."),
+                    details: { icon: "pending" },
+                },
+            ]);
+            return;
+        }
         const s = [];
-        if (snapshots.length > 0 && !snapshots[0].active) {
+        if (!snapshots[0].active) {
             s.push({
                 key: "new-snapshot",
                 type: "info",
@@ -77,7 +88,7 @@ const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
             });
         }
         setStatus(s);
-    }, [snapshots, updates, setStatus]);
+    }, [waiting, snapshots, updates, setStatus]);
 
     const icon = (s) => {
         const i = (s.details && s.details.icon) || s.type;
@@ -86,6 +97,7 @@ const StatusPanel = ({ status, setStatus, updates, snapshots }) => {
         else if (i === "warning")
             return <ExclamationTriangleIcon className={c} />;
         else if (i === "check") return <CheckCircleIcon className={c} />;
+        else if (i === "pending") return <PendingIcon className={c} />;
         else return <InfoCircleIcon className={c} />;
     };
     return (

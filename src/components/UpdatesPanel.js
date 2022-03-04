@@ -50,8 +50,7 @@ const flattenXMLData = (data, prefix = "") => {
     return values;
 };
 
-const UpdatesPanel = ({ setUpdates }) => {
-    const [running, setRunning] = useState(false);
+const UpdatesPanel = ({ setUpdates, waiting, setWaiting }) => {
     const [lastCheck, setLastCheck] = useState();
 
     const getUpdates = async (arg) => {
@@ -90,7 +89,7 @@ const UpdatesPanel = ({ setUpdates }) => {
         return 0;
     };
     const checkUpdates = async () => {
-        setRunning(true);
+        setWaiting(true);
         try {
             const refcmd = ["zypper", "ref"];
             await cockpit.spawn(refcmd, { superuser: true });
@@ -105,7 +104,7 @@ const UpdatesPanel = ({ setUpdates }) => {
             // TODO: better error handling (grab stdout/stderr from commands)
             alert(`error checking for updates: ${e}`);
         }
-        setRunning(false);
+        setWaiting(false);
     };
 
     useEffect(() => {
@@ -129,12 +128,14 @@ const UpdatesPanel = ({ setUpdates }) => {
                     <FlexItem align={{ default: "alignRight" }}>
                         <Button
                             variant="primary"
-                            isLoading={running}
+                            isLoading={waiting}
+                            isDisabled={waiting}
                             onClick={() => {
                                 checkUpdates();
                             }}
                         >
-                            {_("Check for Updates")}
+                            {(waiting && _("Checking...")) ||
+                                _("Check for Updates")}
                         </Button>
                     </FlexItem>
                 </Flex>
