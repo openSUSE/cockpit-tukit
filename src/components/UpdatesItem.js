@@ -35,7 +35,8 @@ import {
     DropdownPosition,
     KebabToggle,
     Label,
-    Popover,
+    Modal,
+    ModalVariant,
     Tooltip,
 } from "@patternfly/react-core";
 import {
@@ -45,10 +46,68 @@ import {
     PackageIcon,
 } from "@patternfly/react-icons";
 import { categoryProps, severityProps } from "../update";
+import { linkify } from "../utils";
 
 import "./UpdatesItem.scss";
 
 const _ = cockpit.gettext;
+
+const UpdateDetails = ({ u }) => {
+    const [dialogVisible, setDialogVisible] = useState(false);
+    return (
+        <>
+            <Button
+                className="tukit-update-details-button"
+                variant="plain"
+                onClick={() => {
+                    setDialogVisible(true);
+                }}
+            >
+                <InfoCircleIcon />
+            </Button>
+            {dialogVisible && (
+                <Modal
+                    isOpen
+                    variant={ModalVariant.medium}
+                    title={_("Update Details")}
+                    onClose={() => setDialogVisible(false)}
+                    actions={[
+                        <Button
+                            key="close"
+                            variant="primary"
+                            onClick={() => {
+                                setDialogVisible(false);
+                            }}
+                        >
+                            {_("Close")}
+                        </Button>,
+                    ]}
+                >
+                    <DataList isCompact>
+                        {Object.entries(u).map(([k, v]) => (
+                            <DataListItem key={k}>
+                                <DataListItemRow>
+                                    <DataListItemCells
+                                        dataListCells={[
+                                            <DataListCell key="name" width={1}>
+                                                <strong>{k}</strong>
+                                            </DataListCell>,
+                                            <DataListCell key="value" width={4}>
+                                                <span className="tukit-update-details-text">
+                                                    {linkify(v)}
+                                                </span>
+                                            </DataListCell>,
+                                        ]}
+                                    />
+                                </DataListItemRow>
+                            </DataListItem>
+                        ))}
+                    </DataList>
+                </Modal>
+            )}
+        </>
+    );
+};
 
 const UpdateItem = ({ u }) => {
     const icon = () => {
@@ -117,10 +176,8 @@ const UpdateItem = ({ u }) => {
                         ...updateCells(u),
                     ]}
                 />
-                <DataListAction>
-                    <Popover bodyContent={JSON.stringify(u)}>
-                        <Button variant="link" icon={<InfoCircleIcon />} />
-                    </Popover>
+                <DataListAction isPlainButtonAction>
+                    <UpdateDetails u={u} />
                 </DataListAction>
             </DataListItemRow>
         </DataListItem>
