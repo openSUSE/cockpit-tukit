@@ -5,7 +5,13 @@
     },
     "tools": {
         "index": {
-            "label": "Software Updates"
+            "label": "Software Updates",
+            "docs": [
+                {
+                    "label": "Transactional Update",
+                    "url": "https://github.com/openSUSE/transactional-update"
+                }
+            ]
         }
     },
     "preload": ["index"]
