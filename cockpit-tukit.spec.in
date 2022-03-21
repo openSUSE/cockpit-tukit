@@ -24,9 +24,10 @@ License: LGPLv2+
 URL: https://github.com/openSUSE/cockpit-tukit
 Source: %{name}-%{version}.tar
 BuildArch: noarch
-BuildRequires: nodejs
+BuildRequires: nodejs-devel
+BuildRequires: npm
 BuildRequires: make
-BuildRequires: libappstream-glib
+BuildRequires: appstream-glib
 
 Requires: cockpit-system
 Requires: tukitd
