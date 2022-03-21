@@ -38,7 +38,7 @@ Requires: tukitd
 Cockpit module for Transactional Update
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 
 %build
 # ignore pre-built webpack in release tarball and rebuild it
