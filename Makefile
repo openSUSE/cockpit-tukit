@@ -54,7 +54,7 @@ update-po: po/$(PACKAGE_NAME).pot
 #
 
 %.spec: %.spec.in
-	sed -e 's/%{VERSION}/$(VERSION)/g' $< > $@
+	sed -e 's/__VERSION__/$(VERSION)/g' $< > $@
 
 $(WEBPACK_TEST): $(NODE_MODULES_TEST) $(LIB_TEST) $(shell find src/ -type f) package.json webpack.config.js
 	NODE_ENV=$(NODE_ENV) node_modules/.bin/webpack
