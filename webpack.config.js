@@ -8,7 +8,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const CockpitPoPlugin = require("./src/lib/cockpit-po-plugin");
-const CockpitRsyncPlugin = require("./src/lib/cockpit-rsync-plugin");
+/* const CockpitRsyncPlugin = require("./src/lib/cockpit-rsync-plugin"); */
 
 /* A standard nodejs and webpack pattern */
 const production = process.env.NODE_ENV === 'production';
@@ -30,7 +30,7 @@ const plugins = [
         failOnWarning: true,
     }),
     new CockpitPoPlugin(),
-    new CockpitRsyncPlugin({dest: packageJson.name}),
+/*    new CockpitRsyncPlugin({dest: packageJson.name}), */
 ];
 
 /* Only minimize when in production mode */
