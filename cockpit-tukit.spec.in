@@ -19,7 +19,7 @@ Name: cockpit-tukit
 Version: __VERSION__
 Release: 1%{?dist}
 Summary: Cockpit module for Transactional Update
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 URL: https://github.com/openSUSE/cockpit-tukit
 Source: %{name}-%{version}.tar
@@ -61,7 +61,7 @@ find %{buildroot}%{_datadir}/cockpit/ -name '*.map' | xargs --no-run-if-empty rm
 %files
 %doc README.md
 %license LICENSE dist/index.js.LICENSE.txt.gz
-%{_datadir}/cockpit/*
+%{_datadir}/cockpit
 %{_datadir}/metainfo/*
 
 %changelog
