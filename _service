@@ -1,4 +1,5 @@
 <services>
+  <!-- The copy of this file in the OBS package needs to be manually updated from the one in git repo. -->
   <service name="obs_scm" mode="manual">
     <param name="scm">git</param>
     <param name="url">https://github.com/openSUSE/cockpit-tukit.git</param>
