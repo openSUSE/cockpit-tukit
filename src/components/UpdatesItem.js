@@ -184,7 +184,7 @@ const UpdateItem = ({ u }) => {
     );
 };
 
-const UpdatesItem = ({ updates }) => {
+const UpdatesItem = ({ updates, waiting }) => {
     const [expanded, setExpanded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -216,7 +216,11 @@ const UpdatesItem = ({ updates }) => {
                         <DataListCell key="date?" />,
                         <DataListCell key="labels?" />,
                         <DataListCell key="buttons">
-                            <Button variant="primary" isSmall>
+                            <Button
+                                variant="primary"
+                                isDisabled={waiting}
+                                isSmall
+                            >
                                 {_("Update and Reboot")}
                             </Button>
                         </DataListCell>,

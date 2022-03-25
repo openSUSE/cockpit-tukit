@@ -131,12 +131,16 @@ const Application = () => {
                             )) || (
                                 <DataList isCompact>
                                     {updates.length > 0 && (
-                                        <UpdatesItem updates={updates} />
+                                        <UpdatesItem
+                                            updates={updates}
+                                            waiting={updatesWaiting}
+                                        />
                                     )}
                                     {snapshots.map((item) => (
                                         <SnapshotItem
                                             key={item.number}
                                             item={item}
+                                            waiting={updatesWaiting}
                                         />
                                     ))}
                                 </DataList>

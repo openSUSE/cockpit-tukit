@@ -42,7 +42,7 @@ import { CheckCircleIcon } from "@patternfly/react-icons";
 
 const _ = cockpit.gettext;
 
-const SnapshotItem = ({ item }) => {
+const SnapshotItem = ({ item, waiting }) => {
     const [expanded, setExpanded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -87,12 +87,20 @@ const SnapshotItem = ({ item }) => {
                         </DataListCell>,
                         <DataListCell key="buttons">
                             {!item.active && !item.old && (
-                                <Button variant="primary" isSmall>
+                                <Button
+                                    variant="primary"
+                                    isDisabled={waiting}
+                                    isSmall
+                                >
                                     {_("Activate and Reboot")}
                                 </Button>
                             )}
                             {item.old && (
-                                <Button variant="secondary" isSmall>
+                                <Button
+                                    variant="secondary"
+                                    isDisabled={waiting}
+                                    isSmall
+                                >
                                     {_("Rollback and Reboot")}
                                 </Button>
                             )}
