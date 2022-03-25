@@ -39,7 +39,14 @@ import "./StatusPanel.scss";
 
 const _ = cockpit.gettext;
 
-const StatusPanel = ({ waiting, status, setStatus, updates, snapshots }) => {
+const StatusPanel = ({
+    waiting,
+    status,
+    setStatus,
+    updates,
+    updatesError,
+    snapshots,
+}) => {
     // update page status
     useEffect(() => {
         console.log("Updating page status");
@@ -54,6 +61,13 @@ const StatusPanel = ({ waiting, status, setStatus, updates, snapshots }) => {
             return;
         }
         const s = [];
+        if (updatesError) {
+            s.push({
+                key: "updates-error",
+                type: "error",
+                title: updatesError,
+            });
+        }
         if (!snapshots[0].active) {
             s.push({
                 key: "new-snapshot",
@@ -88,7 +102,7 @@ const StatusPanel = ({ waiting, status, setStatus, updates, snapshots }) => {
             });
         }
         setStatus(s);
-    }, [waiting, snapshots, updates, setStatus]);
+    }, [waiting, snapshots, updates, updatesError, setStatus]);
 
     const icon = (s) => {
         const i = (s.details && s.details.icon) || s.type;

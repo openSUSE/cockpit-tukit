@@ -50,7 +50,7 @@ const flattenXMLData = (data, prefix = "") => {
     return values;
 };
 
-const UpdatesPanel = ({ setUpdates, waiting, setWaiting }) => {
+const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
     const [lastCheck, setLastCheck] = useState();
 
     const getUpdates = async (arg) => {
@@ -89,6 +89,7 @@ const UpdatesPanel = ({ setUpdates, waiting, setWaiting }) => {
         return 0;
     };
     const checkUpdates = async () => {
+        setError(null);
         setWaiting(true);
         try {
             const refcmd = ["zypper", "ref"];
@@ -102,7 +103,7 @@ const UpdatesPanel = ({ setUpdates, waiting, setWaiting }) => {
             setLastCheck(new Date());
         } catch (e) {
             // TODO: better error handling (grab stdout/stderr from commands)
-            alert(`error checking for updates: ${e}`);
+            setError(`Error checking for updates: ${e}`);
         }
         setWaiting(false);
     };

@@ -46,12 +46,14 @@ import { mostSevereStatus } from "./status";
 const _ = cockpit.gettext;
 
 const Application = () => {
-    const [snapshots, setSnapshots] = useState([]);
     const [status, setStatus] = useState([]);
-    const [updates, setUpdates] = useState([]);
 
+    const [snapshots, setSnapshots] = useState([]);
     const [snapshotsWaiting, setSnapshotsWaiting] = useState(false);
+
+    const [updates, setUpdates] = useState([]);
     const [updatesWaiting, setUpdatesWaiting] = useState(false);
+    const [updatesError, setUpdatesError] = useState();
 
     useEffect(() => {
         getSnapshots();
@@ -104,10 +106,12 @@ const Application = () => {
                         status={status}
                         setStatus={setStatus}
                         updates={updates}
+                        updatesError={updatesError}
                         snapshots={snapshots}
                     />
                     <UpdatesPanel
                         setUpdates={setUpdates}
+                        setError={setUpdatesError}
                         waiting={updatesWaiting}
                         setWaiting={setUpdatesWaiting}
                     />
