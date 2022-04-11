@@ -26,6 +26,7 @@ import {
     CardTitle,
     List,
     ListItem,
+    Tooltip,
 } from "@patternfly/react-core";
 import {
     CheckCircleIcon,
@@ -50,11 +51,11 @@ const StatusPanel = ({
     // update page status
     useEffect(() => {
         console.log("Updating page status");
-        if (waiting || snapshots.length === 0) {
+        if (waiting) {
             setStatus([
                 {
                     key: "wait",
-                    title: _("Waiting for status..."),
+                    title: waiting,
                     details: { icon: "pending" },
                 },
             ]);
@@ -68,7 +69,7 @@ const StatusPanel = ({
                 title: updatesError,
             });
         }
-        if (!snapshots[0].active) {
+        if (snapshots.length > 0 && !snapshots[0].active) {
             s.push({
                 key: "new-snapshot",
                 type: "info",
@@ -121,7 +122,17 @@ const StatusPanel = ({
                 <List isPlain iconSize="large">
                     {status.map((s) => (
                         <ListItem icon={icon(s)} key={s.key}>
-                            {s.title}
+                            <Tooltip
+                                className="tukit-tooltip-pre"
+                                isContentLeftAligned
+                                maxWidth="30rem"
+                                position="auto"
+                                content={s.title}
+                            >
+                                <span className="tukit-status-text">
+                                    {s.title}
+                                </span>
+                            </Tooltip>
                         </ListItem>
                     ))}
                 </List>

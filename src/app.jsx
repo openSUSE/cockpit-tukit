@@ -49,15 +49,24 @@ const Application = () => {
     const [status, setStatus] = useState([]);
 
     const [snapshots, setSnapshots] = useState([]);
-    const [snapshotsWaiting, setSnapshotsWaiting] = useState(false);
+    const [snapshotsWaiting, setSnapshotsWaiting] = useState(null);
+    const [snapshotsDirty, setSnapshotsDirty] = useState(true);
 
     const [updates, setUpdates] = useState([]);
-    const [updatesWaiting, setUpdatesWaiting] = useState(false);
+    const [updatesWaiting, setUpdatesWaiting] = useState(null);
     const [updatesError, setUpdatesError] = useState();
+    const [updatesDirty, setUpdatesDirty] = useState(true);
+
+    const setDirty = (v) => {
+        setSnapshotsDirty(v);
+        setUpdatesDirty(v);
+    };
 
     useEffect(() => {
         getSnapshots();
-    }, []);
+        // TODO: FIX!
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [snapshotsDirty]);
 
     // forward status to Cockpit
     useEffect(() => {
@@ -72,10 +81,14 @@ const Application = () => {
     }, [status]);
 
     const getSnapshots = () => {
-        setSnapshotsWaiting(true);
+        if (!snapshotsDirty) {
+            return;
+        }
+        setSnapshotsDirty(false);
+
+        setSnapshotsWaiting(_("Fetching snapshots..."));
         const proxy = snapshotsProxy();
         proxy.wait(async () => {
-            // TODO: check proxy.valid
             try {
                 const snaps = (
                     await proxy.List("number,default,active,date,description")
@@ -93,7 +106,7 @@ const Application = () => {
             } catch (e) {
                 alert("ERROR " + e);
             }
-            setSnapshotsWaiting(false);
+            setSnapshotsWaiting(null);
         });
     };
 
@@ -112,7 +125,9 @@ const Application = () => {
                     <UpdatesPanel
                         setUpdates={setUpdates}
                         setError={setUpdatesError}
-                        waiting={updatesWaiting}
+                        dirty={updatesDirty}
+                        setDirty={setUpdatesDirty}
+                        waiting={updatesWaiting || snapshotsWaiting}
                         setWaiting={setUpdatesWaiting}
                     />
                     <Card>
@@ -133,14 +148,25 @@ const Application = () => {
                                     {updates.length > 0 && (
                                         <UpdatesItem
                                             updates={updates}
-                                            waiting={updatesWaiting}
+                                            setError={setUpdatesError}
+                                            setDirty={setDirty}
+                                            setWaiting={setUpdatesWaiting}
+                                            waiting={
+                                                snapshotsWaiting ||
+                                                updatesWaiting
+                                            }
                                         />
                                     )}
                                     {snapshots.map((item) => (
                                         <SnapshotItem
                                             key={item.number}
                                             item={item}
-                                            waiting={updatesWaiting}
+                                            setDirty={setSnapshotsDirty}
+                                            setWaiting={setSnapshotsWaiting}
+                                            waiting={
+                                                snapshotsWaiting ||
+                                                updatesWaiting
+                                            }
                                         />
                                     ))}
                                 </DataList>

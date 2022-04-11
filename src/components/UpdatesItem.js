@@ -45,6 +45,7 @@ import {
     InfoCircleIcon,
     PackageIcon,
 } from "@patternfly/react-icons";
+import { transactionsProxy } from "../tukit";
 import { categoryProps, severityProps } from "../update";
 import { linkify } from "../utils";
 
@@ -184,9 +185,57 @@ const UpdateItem = ({ u }) => {
     );
 };
 
-const UpdatesItem = ({ updates, waiting }) => {
+const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
     const [expanded, setExpanded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const updateAndReboot = async () => {
+        setWaiting(_("Installing updates..."));
+        const proxy = transactionsProxy();
+
+        function finishedHandler(ev, snapID, exitcode, output) {
+            console.log("command finished");
+            console.log(`exit ${exitcode}`);
+            console.log(`output: ${output}`);
+            setWaiting(null);
+            setDirty(true);
+            // run once (no {once: true} support in cockpit's event_mixin)
+            proxy.removeEventListener("CommandExecuted", finishedHandler);
+        }
+
+        function errorHandler(ev, snapID, exitcode, output) {
+            console.log(`exit ${exitcode}`);
+            console.log(`output: ${output}`);
+            setError(
+                cockpit.format(
+                    _("Error installing updates: command exited with code $0"),
+                    exitcode
+                )
+            );
+            setWaiting(null);
+            // don't reload to not loose the error status
+            // setDirty(true);
+            // run once (no {once: true} support in cockpit's event_mixin)
+            proxy.removeEventListener("Error", errorHandler);
+        }
+
+        proxy.wait(async () => {
+            try {
+                proxy.addEventListener("CommandExecuted", finishedHandler);
+                proxy.addEventListener("Error", errorHandler);
+                // default, active or number of base snapshot
+                const snapID = await proxy.Execute(
+                    "default",
+                    "bash -c 'zypper --non-interactive up && reboot'"
+                );
+                console.log(`new snapshot: ${snapID}`);
+            } catch (e) {
+                setWaiting(null);
+                // this is "early" error returned directly from method
+                setError(e.toString());
+            }
+        });
+    };
 
     return (
         <DataListItem key="updates" isExpanded={expanded}>
@@ -218,6 +267,9 @@ const UpdatesItem = ({ updates, waiting }) => {
                         <DataListCell key="buttons">
                             <Button
                                 variant="primary"
+                                onClick={() => {
+                                    updateAndReboot();
+                                }}
                                 isDisabled={waiting}
                                 isSmall
                             >

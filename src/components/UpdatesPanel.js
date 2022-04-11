@@ -50,12 +50,22 @@ const flattenXMLData = (data, prefix = "") => {
     return values;
 };
 
-const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
+const UpdatesPanel = ({
+    setUpdates,
+    setError,
+    dirty,
+    setDirty,
+    waiting,
+    setWaiting,
+}) => {
     const [lastCheck, setLastCheck] = useState();
 
     const getUpdates = async (arg) => {
         const cmd = ["zypper", "-q", "--xmlout", arg];
-        let out = await cockpit.spawn(cmd);
+        let out = await cockpit.spawn(cmd, {
+            superuser: "require",
+            err: "message", // TODO: check if it works as expected
+        });
         // convert line breaks in descriptions to not loose them during
         // xml parsing
         out = out.replaceAll(/<description>[^<]+<\/description>/g, (d) =>
@@ -89,11 +99,16 @@ const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
         return 0;
     };
     const checkUpdates = async () => {
+        if (!dirty) {
+            return;
+        }
+        setDirty(false);
+
         setError(null);
-        setWaiting(true);
+        setWaiting(_("Checking for updates..."));
         try {
             const refcmd = ["zypper", "ref"];
-            await cockpit.spawn(refcmd, { superuser: true });
+            await cockpit.spawn(refcmd, { superuser: true, err: "message" });
             const updates = [].concat(
                 await getUpdates("list-updates"),
                 await getUpdates("list-patches")
@@ -102,10 +117,14 @@ const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
             setUpdates(updates);
             setLastCheck(new Date());
         } catch (e) {
-            // TODO: better error handling (grab stdout/stderr from commands)
-            setError(`Error checking for updates: ${e}`);
+            setError(
+                cockpit.format(
+                    _("Error checking for updates: $0"),
+                    e.toString()
+                )
+            );
         }
-        setWaiting(false);
+        setWaiting(null);
     };
 
     useEffect(() => {
@@ -113,7 +132,7 @@ const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
         checkUpdates();
         // TODO: FIX!
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [dirty]);
     return (
         <Card className="ct-card-info">
             <CardTitle>{_("Updates")}</CardTitle>
@@ -132,11 +151,10 @@ const UpdatesPanel = ({ setUpdates, setError, waiting, setWaiting }) => {
                             isLoading={waiting}
                             isDisabled={waiting}
                             onClick={() => {
-                                checkUpdates();
+                                setDirty(true);
                             }}
                         >
-                            {(waiting && _("Checking...")) ||
-                                _("Check for Updates")}
+                            {waiting || _("Check for Updates")}
                         </Button>
                     </FlexItem>
                 </Flex>

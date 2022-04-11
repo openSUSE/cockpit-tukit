@@ -42,9 +42,36 @@ import { CheckCircleIcon } from "@patternfly/react-icons";
 
 const _ = cockpit.gettext;
 
-const SnapshotItem = ({ item, waiting }) => {
+const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
     const [expanded, setExpanded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const rollback = async (snap, msg, reboot) => {
+        setWaiting(msg);
+        try {
+            let script = `transactional-update rollback ${snap.number}`;
+            if (reboot) {
+                script = script + " && reboot";
+            }
+            const out = await cockpit.script(script, {
+                superuser: "require",
+                err: "message",
+            });
+            console.log("rollback output: " + out);
+            setDirty(true);
+        } catch (e) {
+            console.log("rollback error: " + e);
+            // TODO: better error handling
+            alert(e);
+        }
+        setWaiting(null);
+    };
+    const rollbackAndReboot = (snap) => {
+        rollback(snap, _("Rolling back..."), true);
+    };
+    const activateAndReboot = (snap) => {
+        rollback(snap, _("Activating..."), true);
+    };
 
     return (
         <DataListItem isExpanded={expanded}>
@@ -90,6 +117,9 @@ const SnapshotItem = ({ item, waiting }) => {
                                 <Button
                                     variant="primary"
                                     isDisabled={waiting}
+                                    onClick={() => {
+                                        activateAndReboot(item);
+                                    }}
                                     isSmall
                                 >
                                     {_("Activate and Reboot")}
@@ -99,6 +129,9 @@ const SnapshotItem = ({ item, waiting }) => {
                                 <Button
                                     variant="secondary"
                                     isDisabled={waiting}
+                                    onClick={() => {
+                                        rollbackAndReboot(item);
+                                    }}
                                     isSmall
                                 >
                                     {_("Rollback and Reboot")}

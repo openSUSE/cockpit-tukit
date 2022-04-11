@@ -11,4 +11,10 @@
     .tukit-status-info {
         color: var(--pf-global--info-color--100);
     }
+    .tukit-status-text {
+        max-width: 30rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }

@@ -53,4 +53,15 @@ const createSnapshot = (number, dflt, active, date, description) => {
     };
 };
 
-export { dbusClient, snapshotsProxy, createSnapshot };
+let _transactionsProxy;
+const transactionsProxy = () => {
+    if (!_transactionsProxy) {
+        _transactionsProxy = dbusClient().proxy(
+            "org.opensuse.tukit.Transaction",
+            "/org/opensuse/tukit/Transaction"
+        );
+    }
+    return _transactionsProxy;
+};
+
+export { dbusClient, snapshotsProxy, createSnapshot, transactionsProxy };
