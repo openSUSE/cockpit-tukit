@@ -189,7 +189,7 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
     const [expanded, setExpanded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const updateAndReboot = async () => {
+    const update = async (reboot) => {
         setWaiting(_("Installing updates..."));
         const proxy = transactionsProxy();
 
@@ -223,10 +223,14 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
             try {
                 proxy.addEventListener("CommandExecuted", finishedHandler);
                 proxy.addEventListener("Error", errorHandler);
+                let cmd = "zypper --non-interactive up";
+                if (reboot) {
+                    cmd = cmd + " && reboot";
+                }
                 // default, active or number of base snapshot
                 const snapID = await proxy.Execute(
                     "default",
-                    "bash -c 'zypper --non-interactive up && reboot'"
+                    `bash -c '${cmd}'`
                 );
                 console.log(`new snapshot: ${snapID}`);
             } catch (e) {
@@ -235,6 +239,13 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                 setError(e.toString());
             }
         });
+    };
+
+    const updateAndReboot = () => {
+        update(true);
+    };
+    const updateOnly = () => {
+        update(false);
     };
 
     return (
@@ -291,8 +302,14 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                             />
                         }
                         dropdownItems={[
-                            <DropdownItem key="a1">Some Action</DropdownItem>,
-                            <DropdownItem key="a2">Other Action</DropdownItem>,
+                            <DropdownItem
+                                key="update"
+                                onClick={() => {
+                                    updateOnly();
+                                }}
+                            >
+                                {_("Update without Reboot")}
+                            </DropdownItem>,
                         ]}
                     />
                 </DataListAction>

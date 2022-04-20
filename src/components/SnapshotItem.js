@@ -69,10 +69,42 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
     const rollbackAndReboot = (snap) => {
         rollback(snap, _("Rolling back..."), true);
     };
+    const rollbackOnly = (snap) => {
+        rollback(snap, _("Rolling back..."), false);
+    };
     const activateAndReboot = (snap) => {
         rollback(snap, _("Activating..."), true);
     };
-
+    const activateOnly = (snap) => {
+        rollback(snap, _("Activating..."), false);
+    };
+    const actions = (item) => {
+        if (item.old) {
+            return [
+                <DropdownItem
+                    key="rollback"
+                    onClick={() => {
+                        rollbackOnly(item);
+                    }}
+                >
+                    {_("Rollback without Reboot")}
+                </DropdownItem>,
+            ];
+        }
+        if (!item.active && !item.old) {
+            return [
+                <DropdownItem
+                    key="activate"
+                    onClick={() => {
+                        activateOnly(item);
+                    }}
+                >
+                    {_("Activate without Reboot")}
+                </DropdownItem>,
+            ];
+        }
+        return null;
+    };
     return (
         <DataListItem isExpanded={expanded}>
             <DataListItemRow>
@@ -141,22 +173,21 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
                     ]}
                 />
                 <DataListAction>
-                    <Dropdown
-                        isPlain
-                        isOpen={menuOpen}
-                        position={DropdownPosition.right}
-                        toggle={
-                            <KebabToggle
-                                onToggle={() => {
-                                    setMenuOpen(!menuOpen);
-                                }}
-                            />
-                        }
-                        dropdownItems={[
-                            <DropdownItem key="a1">Some Action</DropdownItem>,
-                            <DropdownItem key="a2">Other Action</DropdownItem>,
-                        ]}
-                    />
+                    {actions(item) && (
+                        <Dropdown
+                            isPlain
+                            isOpen={menuOpen}
+                            position={DropdownPosition.right}
+                            toggle={
+                                <KebabToggle
+                                    onToggle={() => {
+                                        setMenuOpen(!menuOpen);
+                                    }}
+                                />
+                            }
+                            dropdownItems={actions(item)}
+                        />
+                    )}
                 </DataListAction>
             </DataListItemRow>
             <DataListContent isHidden={!expanded}>
