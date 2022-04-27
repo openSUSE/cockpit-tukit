@@ -223,14 +223,14 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
             try {
                 proxy.addEventListener("CommandExecuted", finishedHandler);
                 proxy.addEventListener("Error", errorHandler);
-                let cmd = "zypper --non-interactive up";
-                if (reboot) {
-                    cmd = cmd + " && reboot";
-                }
-                // default, active or number of base snapshot
-                const snapID = await proxy.Execute(
+                const cmd = "zypper --non-interactive up";
+                const rebootMethod = reboot ? "systemd" : "none";
+                // base: default, active or number of base snapshot
+                // reboot: auto, rebootmgr, systemd, kured, kexec, none
+                const snapID = await proxy.ExecuteAndReboot(
                     "default",
-                    `bash -c '${cmd}'`
+                    cmd,
+                    rebootMethod
                 );
                 console.log(`new snapshot: ${snapID}`);
             } catch (e) {
@@ -278,10 +278,10 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                         <DataListCell key="buttons">
                             <Button
                                 variant="primary"
+                                isDisabled={waiting}
                                 onClick={() => {
                                     updateAndReboot();
                                 }}
-                                isDisabled={waiting}
                                 isSmall
                             >
                                 {_("Update and Reboot")}
@@ -304,6 +304,7 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                         dropdownItems={[
                             <DropdownItem
                                 key="update"
+                                isDisabled={waiting}
                                 onClick={() => {
                                     updateOnly();
                                 }}

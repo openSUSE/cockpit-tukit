@@ -83,6 +83,7 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
             return [
                 <DropdownItem
                     key="rollback"
+                    isDisabled={waiting}
                     onClick={() => {
                         rollbackOnly(item);
                     }}
@@ -95,6 +96,7 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
             return [
                 <DropdownItem
                     key="activate"
+                    isDisabled={waiting}
                     onClick={() => {
                         activateOnly(item);
                     }}
