@@ -22,7 +22,7 @@ Summary: Cockpit module for Transactional Update
 License: LGPL-2.1-or-later
 
 URL: https://github.com/openSUSE/cockpit-tukit
-Source: %{name}-%{version}.tar
+Source: %{name}-%{version}.tar.xz
 Source10:       package-lock.json
 Source11:       node_modules.spec.inc
 %include %_sourcedir/node_modules.spec.inc
