@@ -9,7 +9,7 @@
             "docs": [
                 {
                     "label": "Transactional Update",
-                    "url": "https://github.com/openSUSE/transactional-update"
+                    "url": "https://documentation.suse.com/sle-micro/html/SLE-Micro-all/article-administration-slemicro.html#sec-transactional-udate"
                 }
             ]
         }
