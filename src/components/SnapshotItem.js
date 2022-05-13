@@ -111,6 +111,8 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
         <DataListItem isExpanded={expanded}>
             <DataListItemRow>
                 <DataListToggle
+                    // hide extension part until we find some good use for it
+                    style={{ display: "none" }}
                     onClick={() => {
                         setExpanded(!expanded);
                     }}
