@@ -265,7 +265,7 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                                 color="var(--pf-global--warning-color--100)"
                             />
                         </DataListCell>,
-                        <DataListCell key="description">
+                        <DataListCell key="description" width={3}>
                             <b>
                                 {cockpit.format(
                                     _("Available updates ($0)"),
@@ -273,8 +273,6 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                                 )}
                             </b>
                         </DataListCell>,
-                        <DataListCell key="date?" />,
-                        <DataListCell key="labels?" />,
                         <DataListCell key="buttons">
                             <Button
                                 variant="primary"

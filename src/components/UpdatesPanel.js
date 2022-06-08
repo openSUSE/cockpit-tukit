@@ -141,7 +141,10 @@ const UpdatesPanel = ({
                     <FlexItem>
                         {lastCheck && (
                             <Text component="small">
-                                Last Checked: {timeformat.dateTime(lastCheck)}
+                                {cockpit.format(
+                                    _("Last Checked: $0"),
+                                    timeformat.dateTime(lastCheck)
+                                )}
                             </Text>
                         )}
                     </FlexItem>
