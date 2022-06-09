@@ -1,0 +1,163 @@
+# #-#-#-#-#  tukit.js.pot (Tukit 0.1)  #-#-#-#-#
+# tukit czech translation.
+# This file is distributed under the same license as the tukit package.
+# Zdenek Kubala <zkubala@suse.com>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  tukit.html.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
+"Project-Id-Version: tukit 0.1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Cockpit html2po\n"
+"#-#-#-#-#  tukit.js.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
+"Project-Id-Version: tukit 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-09 09:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Zdenek Kubala <zkubala@suse.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  tukit.manifest.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
+"Project-Id-Version: tukit 0.1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Cockpit manifest2po\n"
+
+#: src/components/SnapshotItem.js:161
+msgid "Activate and Reboot"
+msgstr "Aktivuj s restartem"
+
+#: src/components/SnapshotItem.js:104
+msgid "Activate without Reboot"
+msgstr "Aktivuj bez restartu"
+
+#: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
+msgid "Activating..."
+msgstr "Aktivuji..."
+
+#: src/components/SnapshotItem.js:144
+msgid "Active"
+msgstr "Aktivní"
+
+#: src/components/UpdatesItem.js:271
+msgid "Available updates ($0)"
+msgstr "Dostupné aktualizace ($0)"
+
+#: src/components/UpdatesPanel.js:160
+msgid "Check for Updates"
+msgstr "Zkontroluj dostupné aktualizace"
+
+#: src/components/UpdatesPanel.js:108
+msgid "Checking for updates..."
+msgstr "Kontroluji dostupné aktualizace..."
+
+#: src/components/UpdatesItem.js:83
+msgid "Close"
+msgstr "Zavřít"
+
+#: src/components/SnapshotItem.js:148
+msgid "Default"
+msgstr "Přednastavená hodnota"
+
+#: src/components/UpdatesPanel.js:122
+msgid "Error checking for updates: $0"
+msgstr "Chyba při hledání dostupných aktualizací: $0"
+
+#: src/components/UpdatesItem.js:211
+msgid "Error installing updates: command exited with code $0"
+msgstr "Chyba při instalování aktualizací: příkaz skončil s návratovým kódem $0"
+
+#: src/app.jsx:89
+msgid "Fetching snapshots..."
+msgstr "Načítám snapshoty..."
+
+#: src/components/UpdatesItem.js:193
+msgid "Installing updates..."
+msgstr "Instaluji aktualizace..."
+
+#: src/components/UpdatesPanel.js:145
+msgid "Last Checked: $0"
+msgstr "Naposledy zkontrolováno: $0"
+
+#: src/app.jsx:143
+msgid "Loading..."
+msgstr "Načítání..."
+
+#: src/components/UpdatesItem.js:134
+msgid "New Version"
+msgstr "Nová verze"
+
+#: src/components/StatusPanel.js:77
+msgid "New snapshot #$1 available: $0"
+msgstr "Nový snapshot #$1 dostupný: $0"
+
+#: src/components/UpdatesItem.js:139
+msgid "Old Version"
+msgstr "Stará verze"
+
+#: src/components/SnapshotItem.js:173
+msgid "Rollback and Reboot"
+msgstr "Návrat k předchozímu a restart"
+
+#: src/components/SnapshotItem.js:91
+msgid "Rollback without Reboot"
+msgstr "Návrat k předchozímu bez restartu"
+
+#: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
+msgid "Rolling back..."
+msgstr "Vracím se k předchozímu"
+
+#: src/components/StatusPanel.js:89
+msgid "Security updates available"
+msgstr "Jsou dostupné bezpečnostní aktualizace"
+
+#: src/app.jsx:134
+msgid "Snapshots & Updates"
+msgstr "Snapshoty a aktualizace"
+
+#: src/index.html:20 src/manifest.json:0
+msgid "Software Updates"
+msgstr "Softwarové aktualizace"
+
+#: src/components/StatusPanel.js:120
+msgid "Status"
+msgstr "Status"
+
+#: src/components/StatusPanel.js:101
+msgid "System is up to date"
+msgstr "Systém je aktualizovaný"
+
+#: src/manifest.json:0
+msgid "Transactional Update"
+msgstr "Transakční aktualizace"
+
+#: src/components/UpdatesItem.js:73
+msgid "Update Details"
+msgstr "Aktualizuj detaily"
+
+#: src/components/UpdatesItem.js:285
+msgid "Update and Reboot"
+msgstr "Aktualizuj a restartuj"
+
+#: src/components/UpdatesItem.js:310
+msgid "Update without Reboot"
+msgstr "Aktualizuj bez restartu"
+
+#: src/components/UpdatesPanel.js:138
+msgid "Updates"
+msgstr "Aktualizace"
+
+#: src/components/StatusPanel.js:90
+msgid "Updates available"
+msgstr "Dostupne aktualizace"
+
+#: src/components/SnapshotItem.js:136
+msgid "ago"
+msgstr "před"
