@@ -1,0 +1,153 @@
+# tukit german translations
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tukit 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"PO-Revision-Date: 2022-06-09 13:00+0200\n"
+"Last-Translator: Robert Simai <rsimai@suse.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+
+#: src/components/SnapshotItem.js:161
+msgid "Activate and Reboot"
+msgstr "Aktivieren und Neustart"
+
+#: src/components/SnapshotItem.js:104
+msgid "Activate without Reboot"
+msgstr "Aktivieren ohne Neustart"
+
+#: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
+msgid "Activating..."
+msgstr "Aktiviere ..."
+
+#: src/components/SnapshotItem.js:144
+msgid "Active"
+msgstr "Aktiv"
+
+#: src/components/UpdatesItem.js:271
+msgid "Available updates ($0)"
+msgstr "Verfügbare Aktualisierungen ($0)"
+
+#: src/components/UpdatesPanel.js:160
+msgid "Check for Updates"
+msgstr "Prüfe Aktualisierungen"
+
+#: src/components/UpdatesPanel.js:108
+msgid "Checking for updates..."
+msgstr "Prüfe Aktualisierungen ..."
+
+#: src/components/UpdatesItem.js:83
+msgid "Close"
+msgstr "Schließen"
+
+#: src/components/SnapshotItem.js:148
+msgid "Default"
+msgstr "Voreinstellung"
+
+#: src/components/UpdatesPanel.js:122
+msgid "Error checking for updates: $0"
+msgstr "Fehler bei der Überprüfung von Aktualisierungen: $0"
+
+#: src/components/UpdatesItem.js:211
+msgid "Error installing updates: command exited with code $0"
+msgstr "Installation der Aktualisierungen abgebrochen: Fehlercode $0"
+
+#: src/app.jsx:89
+msgid "Fetching snapshots..."
+msgstr "Snapshots abrufen..."
+
+#: src/components/UpdatesItem.js:193
+msgid "Installing updates..."
+msgstr "Installiere Aktualisierungen..."
+
+#: src/components/UpdatesPanel.js:145
+msgid "Last Checked: $0"
+msgstr "Letzte Überprüfung: $0"
+
+#: src/app.jsx:143
+msgid "Loading..."
+msgstr "Lade..."
+
+#: src/components/UpdatesItem.js:134
+msgid "New Version"
+msgstr "Neue Version"
+
+#: src/components/StatusPanel.js:77
+msgid "New snapshot #$1 available: $0"
+msgstr "Neuer Snapshot #$1 verfügbar: $0"
+
+#: src/components/UpdatesItem.js:139
+msgid "Old Version"
+msgstr "Alte Version"
+
+#: src/components/SnapshotItem.js:173
+msgid "Rollback and Reboot"
+msgstr "Rollback und Neustart"
+
+#: src/components/SnapshotItem.js:91
+msgid "Rollback without Reboot"
+msgstr "Rollback ohne Neustart"
+
+#: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
+msgid "Rolling back..."
+msgstr "Rollback läuft..."
+
+#: src/components/StatusPanel.js:89
+msgid "Security updates available"
+msgstr "Sicherheitsaktualisierungen verfügbar"
+
+#: src/app.jsx:134
+msgid "Snapshots & Updates"
+msgstr "Snapshots & Aktualisierungen"
+
+#: src/index.html:20 src/manifest.json:0
+msgid "Software Updates"
+msgstr "Softwareaktualisierungen"
+
+#: src/components/StatusPanel.js:120
+msgid "Status"
+msgstr "Status"
+
+#: src/components/StatusPanel.js:101
+msgid "System is up to date"
+msgstr "System ist aktuell"
+
+#: src/manifest.json:0
+msgid "Transactional Update"
+msgstr "Transactional Update"
+
+#: src/components/UpdatesItem.js:73
+msgid "Update Details"
+msgstr "Aktualisierungsdetails"
+
+#: src/components/UpdatesItem.js:285
+msgid "Update and Reboot"
+msgstr "Aktualisieren und Neustart"
+
+#: src/components/UpdatesItem.js:310
+msgid "Update without Reboot"
+msgstr "Aktualisieren ohne Neustart"
+
+#: src/components/UpdatesPanel.js:138
+msgid "Updates"
+msgstr "Aktualisierungen"
+
+#: src/components/StatusPanel.js:90
+msgid "Updates available"
+msgstr "Aktualisierungen vorhanden"
+
+#: src/components/SnapshotItem.js:136
+msgid "ago"
+msgstr "vorher"
+
+#~ msgid "Unknown"
+#~ msgstr "Unbekannt"
+
+#~ msgid "Running on $0"
+#~ msgstr "Laufe auf $0"
