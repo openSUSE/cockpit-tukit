@@ -6,13 +6,6 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  tukit.html.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: tukit 0.1\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Cockpit html2po\n"
-"#-#-#-#-#  tukit.js.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
 "Project-Id-Version: tukit 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-09 09:00+0200\n"
@@ -23,20 +16,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  tukit.manifest.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: tukit 0.1\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Cockpit manifest2po\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
-msgstr "Aktivuj s restartem"
+msgstr "Aktivovat s restartem"
 
 #: src/components/SnapshotItem.js:104
 msgid "Activate without Reboot"
-msgstr "Aktivuj bez restartu"
+msgstr "Aktivovat bez restartu"
 
 #: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
 msgid "Activating..."
@@ -52,11 +40,11 @@ msgstr "Dostupné aktualizace ($0)"
 
 #: src/components/UpdatesPanel.js:160
 msgid "Check for Updates"
-msgstr "Zkontroluj dostupné aktualizace"
+msgstr "Zkontrolovat dostupné aktualizace"
 
 #: src/components/UpdatesPanel.js:108
 msgid "Checking for updates..."
-msgstr "Kontroluji dostupné aktualizace..."
+msgstr "Kontroluji se dostupné aktualizace..."
 
 #: src/components/UpdatesItem.js:83
 msgid "Close"
@@ -80,7 +68,7 @@ msgstr "Načítám snapshoty..."
 
 #: src/components/UpdatesItem.js:193
 msgid "Installing updates..."
-msgstr "Instaluji aktualizace..."
+msgstr "Instalují se aktualizace..."
 
 #: src/components/UpdatesPanel.js:145
 msgid "Last Checked: $0"
@@ -96,7 +84,7 @@ msgstr "Nová verze"
 
 #: src/components/StatusPanel.js:77
 msgid "New snapshot #$1 available: $0"
-msgstr "Nový snapshot #$1 dostupný: $0"
+msgstr "Nový snapshot #$1 je dostupný: $0"
 
 #: src/components/UpdatesItem.js:139
 msgid "Old Version"
@@ -112,7 +100,7 @@ msgstr "Návrat k předchozímu bez restartu"
 
 #: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
 msgid "Rolling back..."
-msgstr "Vracím se k předchozímu"
+msgstr "Vracím se k předchozímu..."
 
 #: src/components/StatusPanel.js:89
 msgid "Security updates available"
@@ -140,15 +128,15 @@ msgstr "Transakční aktualizace"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
-msgstr "Aktualizuj detaily"
+msgstr "Aktualizovat podrobnosti"
 
 #: src/components/UpdatesItem.js:285
 msgid "Update and Reboot"
-msgstr "Aktualizuj a restartuj"
+msgstr "Aktualizovat a restartovat"
 
 #: src/components/UpdatesItem.js:310
 msgid "Update without Reboot"
-msgstr "Aktualizuj bez restartu"
+msgstr "Aktualizovat bez restartu"
 
 #: src/components/UpdatesPanel.js:138
 msgid "Updates"
@@ -156,7 +144,7 @@ msgstr "Aktualizace"
 
 #: src/components/StatusPanel.js:90
 msgid "Updates available"
-msgstr "Dostupne aktualizace"
+msgstr "Dostupné aktualizace"
 
 #: src/components/SnapshotItem.js:136
 msgid "ago"
