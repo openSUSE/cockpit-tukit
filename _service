@@ -3,7 +3,7 @@
   <service name="tar_scm" mode="manual">
     <param name="scm">git</param>
     <param name="url">https://github.com/openSUSE/cockpit-tukit.git</param>
-    <param name="revision">master</param>
+    <param name="revision">stable-5.2</param>
     <param name="versionformat">@PARENT_TAG@~git@TAG_OFFSET@.%h</param>
     <param name="changesgenerate">enable</param>
     <param name="package-meta">yes</param>
