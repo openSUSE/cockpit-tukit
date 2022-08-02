@@ -69,8 +69,11 @@ const UpdatesPanel = ({
         // convert line breaks in descriptions to not loose them during
         // xml parsing
         out = out.replaceAll(/<description>[^<]+<\/description>/g, (d) =>
-            // only keep newlines followed by space (indent) or bullet char
-            d.replaceAll(/\n([-* ])/g, (_, fc) => `&#10;${fc}`)
+            d
+                // only keep newlines followed by space (indent) or bullet char
+                .replaceAll(/\n([-* ])/g, (_, fc) => `&#10;${fc}`)
+                // escape percentage sign to avoid URI decoding problems in XMLParser
+                .replaceAll(/%/g, "%25")
         );
         const xml = new XMLParser().parseFromString(out);
         return xml
