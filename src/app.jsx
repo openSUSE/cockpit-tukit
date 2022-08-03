@@ -92,7 +92,7 @@ const Application = () => {
             try {
                 const snaps = (
                     await proxy.List("number,default,active,date,description")
-                ).map((snap) => createSnapshot(...snap));
+                ).map((snap) => createSnapshot(snap));
                 // remove "current" snapshot
                 snaps.shift();
                 snaps.sort((a, b) => b.number - a.number);

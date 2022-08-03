@@ -43,14 +43,25 @@ const snapshotsProxy = () => {
     return _snapshotProxy;
 };
 
-const createSnapshot = (number, dflt, active, date, description) => {
-    return {
-        number: parseInt(number),
-        default: stringToBool(dflt),
-        active: stringToBool(active),
-        date: new Date(date + "Z"), // dates are UTC but have no marking
-        description,
-    };
+const createSnapshot = (snap) => {
+    if (Array.isArray(snap)) {
+        const [number, dflt, active, date, description] = snap;
+        return {
+            number: parseInt(number),
+            default: stringToBool(dflt),
+            active: stringToBool(active),
+            date: new Date(date + "Z"), // dates are UTC but have no marking
+            description,
+        };
+    } else {
+        return {
+            number: parseInt(snap.number),
+            default: stringToBool(snap.default),
+            active: stringToBool(snap.active),
+            date: new Date(snap.date + "Z"), // dates are UTC but have no marking
+            description: snap.description,
+        };
+    }
 };
 
 let _transactionsProxy;
