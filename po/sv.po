@@ -1,0 +1,160 @@
+# #-#-#-#-#  tukit.js.pot (0.1)  #-#-#-#-#
+# tukit swedish translation.
+# Copyright (C) 2022
+# This file is distributed under the same license as the tukit package.
+# LUNA JERNBERG <bittin@opensuse.org>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tukit 0.1\n"
+"Project-Id-Version: 0.1\n"
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
+"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"PO-Revision-Date: 2022-08-03 16:24+0200\n"
+"Last-Translator: Luna Jernberg <bittin@opensuse.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"MIME-Version: 1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.1\n"
+"X-Generator: Cockpit manifest2po\n"
+
+#: src/components/SnapshotItem.js:161
+msgid "Activate and Reboot"
+msgstr "Aktivera och starta om"
+
+#: src/components/SnapshotItem.js:104
+msgid "Activate without Reboot"
+msgstr "Aktivera utan att starta om"
+
+#: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
+msgid "Activating..."
+msgstr "Aktiverar..."
+
+#: src/components/SnapshotItem.js:144
+msgid "Active"
+msgstr "Aktiv"
+
+#: src/components/UpdatesItem.js:271
+msgid "Available updates ($0)"
+msgstr "Tillgängliga uppdateringar ($0)"
+
+#: src/components/UpdatesPanel.js:160
+msgid "Check for Updates"
+msgstr "Sök efter uppdateringar"
+
+#: src/components/UpdatesPanel.js:108
+msgid "Checking for updates..."
+msgstr "Söker efter uppdateringar..."
+
+#: src/components/UpdatesItem.js:83
+msgid "Close"
+msgstr "Stäng"
+
+#: src/components/SnapshotItem.js:148
+msgid "Default"
+msgstr "Standard"
+
+#: src/components/UpdatesPanel.js:122
+msgid "Error checking for updates: $0"
+msgstr "Fel vid sökning efter uppdateringar: $0"
+
+#: src/components/UpdatesItem.js:211
+msgid "Error installing updates: command exited with code $0"
+msgstr "Fel vid installation av uppdateringar: kommandot avslutades med felkod $0"
+
+#: src/app.jsx:89
+msgid "Fetching snapshots..."
+msgstr "Hämtar ögonblicksbilder..."
+
+#: src/components/UpdatesItem.js:193
+msgid "Installing updates..."
+msgstr "Installerar uppdateringar..."
+
+#: src/components/UpdatesPanel.js:145
+msgid "Last Checked: $0"
+msgstr "Senast kontrollerad: $0"
+
+#: src/app.jsx:143
+msgid "Loading..."
+msgstr "Laddar..."
+
+#: src/components/UpdatesItem.js:134
+msgid "New Version"
+msgstr "Ny Version"
+
+#: src/components/StatusPanel.js:77
+msgid "New snapshot #$1 available: $0"
+msgstr "Ny ögonblicksbild #$1 tillgänglig: $0"
+
+#: src/components/UpdatesItem.js:139
+msgid "Old Version"
+msgstr "Gammal Version"
+
+#: src/components/SnapshotItem.js:173
+msgid "Rollback and Reboot"
+msgstr "Rulla tillbaka och starta om"
+
+#: src/components/SnapshotItem.js:91
+msgid "Rollback without Reboot"
+msgstr "Rulla tillbaka utan att starta om"
+
+#: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
+msgid "Rolling back..."
+msgstr "Rullar tillbaka..."
+
+#: src/components/StatusPanel.js:89
+msgid "Security updates available"
+msgstr "Säkerhetsuppdateringar tillgängliga"
+
+#: src/app.jsx:134
+msgid "Snapshots & Updates"
+msgstr "Ögonblicksbilder och uppdateringar"
+
+#: src/index.html:20 src/manifest.json:0
+msgid "Software Updates"
+msgstr "Programvaruuppdateringar"
+
+#: src/components/StatusPanel.js:120
+msgid "Status"
+msgstr "Status"
+
+#: src/components/StatusPanel.js:101
+msgid "System is up to date"
+msgstr "Systemet är uppdaterat"
+
+#: src/manifest.json:0
+msgid "Transactional Update"
+msgstr "Transaktionsuppdatering"
+
+#: src/components/UpdatesItem.js:73
+msgid "Update Details"
+msgstr "Uppdateringsdetaljer"
+
+#: src/components/UpdatesItem.js:285
+msgid "Update and Reboot"
+msgstr "Uppdatera och starta om"
+
+#: src/components/UpdatesItem.js:310
+msgid "Update without Reboot"
+msgstr "Uppdatera utan att starta om"
+
+#: src/components/UpdatesPanel.js:138
+msgid "Updates"
+msgstr "Uppdateringar"
+
+#: src/components/StatusPanel.js:90
+msgid "Updates available"
+msgstr "Uppdateringar tillgängliga"
+
+#: src/components/SnapshotItem.js:136
+msgid "ago"
+msgstr "sen"
