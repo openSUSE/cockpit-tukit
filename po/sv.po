@@ -6,26 +6,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tukit 0.1\n"
-"Project-Id-Version: 0.1\n"
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-06-08 16:41+0200\n"
-"PO-Revision-Date: 2022-08-03 16:24+0200\n"
-"Last-Translator: Luna Jernberg <bittin@opensuse.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-04 13:56+0000\n"
+"Last-Translator: Jacek Tomasiak <jtomasiak@suse.com>\n"
+"Language-Team: Swedish <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
-"MIME-Version: 1.0\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.1\n"
-"X-Generator: Cockpit manifest2po\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
@@ -69,7 +62,8 @@ msgstr "Fel vid sökning efter uppdateringar: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
-msgstr "Fel vid installation av uppdateringar: kommandot avslutades med felkod $0"
+msgstr ""
+"Fel vid installation av uppdateringar: kommandot avslutades med felkod $0"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
