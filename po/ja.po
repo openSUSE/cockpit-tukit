@@ -9,144 +9,145 @@ msgstr ""
 "Project-Id-Version: PACKAGE_VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-08 16:41+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-08-06 01:32+0000\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"master/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Cockpit manifest2po\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
-msgstr ""
+msgstr "有効化して再起動"
 
 #: src/components/SnapshotItem.js:104
 msgid "Activate without Reboot"
-msgstr ""
+msgstr "再起動せずに有効化"
 
 #: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
 msgid "Activating..."
-msgstr ""
+msgstr "有効化しています..."
 
 #: src/components/SnapshotItem.js:144
 msgid "Active"
-msgstr ""
+msgstr "有効"
 
 #: src/components/UpdatesItem.js:271
 msgid "Available updates ($0)"
-msgstr ""
+msgstr "利用可能な更新 ($0 個)"
 
 #: src/components/UpdatesPanel.js:160
 msgid "Check for Updates"
-msgstr ""
+msgstr "更新を確認"
 
 #: src/components/UpdatesPanel.js:108
 msgid "Checking for updates..."
-msgstr ""
+msgstr "更新を確認しています..."
 
 #: src/components/UpdatesItem.js:83
 msgid "Close"
-msgstr ""
+msgstr "閉じる"
 
 #: src/components/SnapshotItem.js:148
 msgid "Default"
-msgstr ""
+msgstr "既定値"
 
 #: src/components/UpdatesPanel.js:122
 msgid "Error checking for updates: $0"
-msgstr ""
+msgstr "更新の確認時にエラーが発生しました: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
-msgstr ""
+msgstr "更新のインストール時にエラーが発生しました: コマンドはコード $0 で終了しました"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
-msgstr ""
+msgstr "スナップショットを検索しています..."
 
 #: src/components/UpdatesItem.js:193
 msgid "Installing updates..."
-msgstr ""
+msgstr "更新をインストールしています..."
 
 #: src/components/UpdatesPanel.js:145
 msgid "Last Checked: $0"
-msgstr ""
+msgstr "最終確認: $0"
 
 #: src/app.jsx:143
 msgid "Loading..."
-msgstr ""
+msgstr "読み込んでいます..."
 
 #: src/components/UpdatesItem.js:134
 msgid "New Version"
-msgstr ""
+msgstr "新しいバージョン"
 
 #: src/components/StatusPanel.js:77
 msgid "New snapshot #$1 available: $0"
-msgstr ""
+msgstr "新しいスナップショット #$1 が利用できます: $0"
 
 #: src/components/UpdatesItem.js:139
 msgid "Old Version"
-msgstr ""
+msgstr "古いバージョン"
 
 #: src/components/SnapshotItem.js:173
 msgid "Rollback and Reboot"
-msgstr ""
+msgstr "巻き戻して再起動"
 
 #: src/components/SnapshotItem.js:91
 msgid "Rollback without Reboot"
-msgstr ""
+msgstr "再起動せずに巻き戻し"
 
 #: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
 msgid "Rolling back..."
-msgstr ""
+msgstr "巻き戻しています..."
 
 #: src/components/StatusPanel.js:89
 msgid "Security updates available"
-msgstr ""
+msgstr "セキュリティ更新が利用できます"
 
 #: src/app.jsx:134
 msgid "Snapshots & Updates"
-msgstr ""
+msgstr "スナップショットと更新"
 
 #: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
-msgstr ""
+msgstr "ソフトウエア更新"
 
 #: src/components/StatusPanel.js:120
 msgid "Status"
-msgstr ""
+msgstr "状態"
 
 #: src/components/StatusPanel.js:101
 msgid "System is up to date"
-msgstr ""
+msgstr "システムは最新の状態です"
 
 #: src/manifest.json:0
 msgid "Transactional Update"
-msgstr ""
+msgstr "トランザクション型更新"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
-msgstr ""
+msgstr "更新の詳細"
 
 #: src/components/UpdatesItem.js:285
 msgid "Update and Reboot"
-msgstr ""
+msgstr "更新して再起動"
 
 #: src/components/UpdatesItem.js:310
 msgid "Update without Reboot"
-msgstr ""
+msgstr "再起動せずに更新"
 
 #: src/components/UpdatesPanel.js:138
 msgid "Updates"
-msgstr ""
+msgstr "更新"
 
 #: src/components/StatusPanel.js:90
 msgid "Updates available"
-msgstr ""
+msgstr "更新が利用できます"
 
 #: src/components/SnapshotItem.js:136
 msgid "ago"
-msgstr ""
+msgstr "前"
