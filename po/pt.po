@@ -9,143 +9,147 @@ msgstr ""
 "Project-Id-Version: PACKAGE_VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-08 16:41+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-08-05 09:16+0000\n"
+"Last-Translator: Christian Almeida de Oliveira <calmeidadeoliveira@suse.com>"
+"\n"
+"Language-Team: Portuguese <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"master/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Cockpit manifest2po\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
-msgstr ""
+msgstr "Ativar e Reiniciar"
 
 #: src/components/SnapshotItem.js:104
 msgid "Activate without Reboot"
-msgstr ""
+msgstr "Ativar sem Reinicializar"
 
 #: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
 msgid "Activating..."
-msgstr ""
+msgstr "Ativando..."
 
 #: src/components/SnapshotItem.js:144
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #: src/components/UpdatesItem.js:271
 msgid "Available updates ($0)"
-msgstr ""
+msgstr "Atualizações disponíveis ($0)"
 
 #: src/components/UpdatesPanel.js:160
 msgid "Check for Updates"
-msgstr ""
+msgstr "Verificar atualizações"
 
 #: src/components/UpdatesPanel.js:108
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Verificando atualizações..."
 
 #: src/components/UpdatesItem.js:83
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: src/components/SnapshotItem.js:148
 msgid "Default"
-msgstr ""
+msgstr "Predefinição"
 
 #: src/components/UpdatesPanel.js:122
 msgid "Error checking for updates: $0"
-msgstr ""
+msgstr "Erro ao verificar por atualizações: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
 msgstr ""
+"Erro durante instalação das atualizações: comando terminado com código $0"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
-msgstr ""
+msgstr "Buscando imagens..."
 
 #: src/components/UpdatesItem.js:193
 msgid "Installing updates..."
-msgstr ""
+msgstr "Instalando atualizações..."
 
 #: src/components/UpdatesPanel.js:145
 msgid "Last Checked: $0"
-msgstr ""
+msgstr "Última verificação: $0"
 
 #: src/app.jsx:143
 msgid "Loading..."
-msgstr ""
+msgstr "Carregando..."
 
 #: src/components/UpdatesItem.js:134
 msgid "New Version"
-msgstr ""
+msgstr "Nova versão"
 
 #: src/components/StatusPanel.js:77
 msgid "New snapshot #$1 available: $0"
-msgstr ""
+msgstr "Nova imagem #$1 disponível: $0"
 
 #: src/components/UpdatesItem.js:139
 msgid "Old Version"
-msgstr ""
+msgstr "Versão antiga"
 
 #: src/components/SnapshotItem.js:173
 msgid "Rollback and Reboot"
-msgstr ""
+msgstr "Reverter e Reiniciar"
 
 #: src/components/SnapshotItem.js:91
 msgid "Rollback without Reboot"
-msgstr ""
+msgstr "Reverter sem Reiniciar"
 
 #: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
 msgid "Rolling back..."
-msgstr ""
+msgstr "Revertendo em progresso..."
 
 #: src/components/StatusPanel.js:89
 msgid "Security updates available"
-msgstr ""
+msgstr "Atualizações de segurança disponíveis"
 
 #: src/app.jsx:134
 msgid "Snapshots & Updates"
-msgstr ""
+msgstr "Imagens & Atualizações"
 
 #: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
-msgstr ""
+msgstr "Atualizações de Software"
 
 #: src/components/StatusPanel.js:120
 msgid "Status"
-msgstr ""
+msgstr "Condição"
 
 #: src/components/StatusPanel.js:101
 msgid "System is up to date"
-msgstr ""
+msgstr "Sistema está atualizado"
 
 #: src/manifest.json:0
 msgid "Transactional Update"
-msgstr ""
+msgstr "Atualização Transacional"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
-msgstr ""
+msgstr "Detalhes da atualização"
 
 #: src/components/UpdatesItem.js:285
 msgid "Update and Reboot"
-msgstr ""
+msgstr "Atualizar e Reiniciar"
 
 #: src/components/UpdatesItem.js:310
 msgid "Update without Reboot"
-msgstr ""
+msgstr "Atualizar sem reiniciar"
 
 #: src/components/UpdatesPanel.js:138
 msgid "Updates"
-msgstr ""
+msgstr "Atualizações"
 
 #: src/components/StatusPanel.js:90
 msgid "Updates available"
-msgstr ""
+msgstr "Atualizações disponíveis"
 
 #: src/components/SnapshotItem.js:136
 msgid "ago"
-msgstr ""
+msgstr "atrás"
