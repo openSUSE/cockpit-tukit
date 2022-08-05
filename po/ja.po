@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE_VERSION\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: 2022-08-06 01:32+0000\n"
+"PO-Revision-Date: 2025-04-30 13:01+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/cockpit-tukit/"
 "master/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.11.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
@@ -61,7 +61,8 @@ msgstr "更新の確認時にエラーが発生しました: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
-msgstr "更新のインストール時にエラーが発生しました: コマンドはコード $0 で終了しました"
+msgstr "更新のインストール時にエラーが発生しました: コマンドはコード $0 "
+"で終了しました"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
