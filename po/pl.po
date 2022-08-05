@@ -1,18 +1,19 @@
 # tukit polish translations
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: tukit 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-08 16:41+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-08-05 11:53+0000\n"
 "Last-Translator: Jacek Tomasiak <jtomasiak@suse.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Polish <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
@@ -120,7 +121,7 @@ msgstr "System jest aktualny"
 
 #: src/manifest.json:0
 msgid "Transactional Update"
-msgstr "Transactional Update"
+msgstr "Aktualizacje transakcyjne"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
