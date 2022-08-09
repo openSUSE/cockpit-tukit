@@ -1,14 +1,13 @@
-# #-#-#-#-#  tukit.js.pot (PACKAGE VERSION)  #-#-#-#-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# tukit japanese translation.
+# Copyright (C) 2022
+# This file is distributed under the same license as the tukit package.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE_VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
+"POT-Creation-Date: 2022-08-09 14:38+0200\n"
 "PO-Revision-Date: 2022-08-06 01:32+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/cockpit-tukit/"
@@ -40,11 +39,11 @@ msgstr "有効"
 msgid "Available updates ($0)"
 msgstr "利用可能な更新 ($0 個)"
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr "更新を確認"
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr "更新を確認しています..."
 
@@ -56,7 +55,7 @@ msgstr "閉じる"
 msgid "Default"
 msgstr "既定値"
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr "更新の確認時にエラーが発生しました: $0"
 
@@ -72,7 +71,7 @@ msgstr "スナップショットを検索しています..."
 msgid "Installing updates..."
 msgstr "更新をインストールしています..."
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr "最終確認: $0"
 
@@ -112,7 +111,7 @@ msgstr "セキュリティ更新が利用できます"
 msgid "Snapshots & Updates"
 msgstr "スナップショットと更新"
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr "ソフトウエア更新"
 
@@ -140,7 +139,7 @@ msgstr "更新して再起動"
 msgid "Update without Reboot"
 msgstr "再起動せずに更新"
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr "更新"
 

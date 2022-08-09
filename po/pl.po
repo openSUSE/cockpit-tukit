@@ -1,9 +1,12 @@
-# tukit polish translations
+# tukit polish translation.
+# Copyright (C) 2022
+# This file is distributed under the same license as the tukit package.
+# Jacek Tomasiak <jtomasiak@suse.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: tukit 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"Project-Id-Version: tukit\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
+"POT-Creation-Date: 2022-08-09 14:38+0200\n"
 "PO-Revision-Date: 2022-08-05 11:47+0000\n"
 "Last-Translator: Jacek Tomasiak <jtomasiak@suse.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/cockpit-tukit/"
@@ -35,11 +38,11 @@ msgstr "Aktywna"
 msgid "Available updates ($0)"
 msgstr "Dostępne aktualizacje ($0)"
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr "Wyszukaj aktualizacje"
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr "Wyszukiwanie aktualizacji..."
 
@@ -51,7 +54,7 @@ msgstr "Zamknij"
 msgid "Default"
 msgstr "Domyślna"
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr "Błąd podczas wyszukiwania aktualizacji: $0"
 
@@ -67,7 +70,7 @@ msgstr "Pobieranie migawek..."
 msgid "Installing updates..."
 msgstr "Instalowanie aktualizacji..."
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr "Ostatnio sprawdzone: $0"
 
@@ -107,7 +110,7 @@ msgstr "Dostępne aktualizacje bezpieczeństwa"
 msgid "Snapshots & Updates"
 msgstr "Migawki i aktualizacje"
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr "Aktualizacje oprogramowania"
 
@@ -135,7 +138,7 @@ msgstr "Zaktualizuj i uruchom ponownie"
 msgid "Update without Reboot"
 msgstr "Zaktualizuj bez ponownego uruchomienia"
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr "Aktualizacje"
 
