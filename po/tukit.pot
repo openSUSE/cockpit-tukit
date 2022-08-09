@@ -1,22 +1,14 @@
-# #-#-#-#-#  tukit.js.pot (PACKAGE VERSION)  #-#-#-#-#
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the tukit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  tukit.html.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE_VERSION\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Cockpit html2po\n"
-"#-#-#-#-#  tukit.js.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"Project-Id-Version: tukit\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
+"POT-Creation-Date: 2022-08-09 14:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,12 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  tukit.manifest.pot (PACKAGE_VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE_VERSION\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Cockpit manifest2po\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
@@ -51,11 +37,11 @@ msgstr ""
 msgid "Available updates ($0)"
 msgstr ""
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr ""
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr ""
 
@@ -67,7 +53,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr ""
 
@@ -83,7 +69,7 @@ msgstr ""
 msgid "Installing updates..."
 msgstr ""
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr ""
 
@@ -123,7 +109,7 @@ msgstr ""
 msgid "Snapshots & Updates"
 msgstr ""
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr ""
 
@@ -151,7 +137,7 @@ msgstr ""
 msgid "Update without Reboot"
 msgstr ""
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr ""
 

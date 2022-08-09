@@ -1,4 +1,3 @@
-# #-#-#-#-#  tukit.js.pot (0.1)  #-#-#-#-#
 # tukit swedish translation.
 # Copyright (C) 2022
 # This file is distributed under the same license as the tukit package.
@@ -8,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
-"POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"POT-Creation-Date: 2022-08-09 14:15+0200\n"
 "PO-Revision-Date: 2022-08-04 13:56+0000\n"
 "Last-Translator: Luna Jernberg <bittin@opensuse.org>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/cockpit-tukit/"
@@ -40,11 +39,11 @@ msgstr "Aktiv"
 msgid "Available updates ($0)"
 msgstr "Tillgängliga uppdateringar ($0)"
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr "Sök efter uppdateringar"
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr "Söker efter uppdateringar..."
 
@@ -56,7 +55,7 @@ msgstr "Stäng"
 msgid "Default"
 msgstr "Standard"
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr "Fel vid sökning efter uppdateringar: $0"
 
@@ -73,7 +72,7 @@ msgstr "Hämtar ögonblicksbilder..."
 msgid "Installing updates..."
 msgstr "Installerar uppdateringar..."
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr "Senast kontrollerad: $0"
 
@@ -113,7 +112,7 @@ msgstr "Säkerhetsuppdateringar tillgängliga"
 msgid "Snapshots & Updates"
 msgstr "Ögonblicksbilder och uppdateringar"
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr "Programvaruuppdateringar"
 
@@ -141,7 +140,7 @@ msgstr "Uppdatera och starta om"
 msgid "Update without Reboot"
 msgstr "Uppdatera utan att starta om"
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr "Uppdateringar"
 

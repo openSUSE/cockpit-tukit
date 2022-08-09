@@ -1,14 +1,14 @@
-# #-#-#-#-#  tukit.js.pot (PACKAGE VERSION)  #-#-#-#-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# tukit chinese translation.
+# Copyright (C) 2022
+# This file is distributed under the same license as the tukit package.
+# Grace Yu <grace.yu@excel-gits.com>, 2022.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE_VERSION\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-08 16:41+0200\n"
+"Project-Id-Version: tukit\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "PO-Revision-Date: 2022-08-16 04:13+0000\n"
 "Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/"
@@ -40,11 +40,11 @@ msgstr "活动"
 msgid "Available updates ($0)"
 msgstr "可用更新 ($0)"
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr "检查更新"
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr "正在检查更新..."
 
@@ -56,7 +56,7 @@ msgstr "关闭"
 msgid "Default"
 msgstr "默认"
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr "检查更新时出错：$0"
 
@@ -72,7 +72,7 @@ msgstr "正在提取快照..."
 msgid "Installing updates..."
 msgstr "正在安装更新..."
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr "上次检查时间：$0"
 
@@ -112,7 +112,7 @@ msgstr "有可用的安全性更新"
 msgid "Snapshots & Updates"
 msgstr "快照和更新"
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr "软件更新"
 
@@ -140,7 +140,7 @@ msgstr "更新并重引导"
 msgid "Update without Reboot"
 msgstr "更新但不重引导"
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr "更新"
 

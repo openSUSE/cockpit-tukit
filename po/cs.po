@@ -1,5 +1,5 @@
-# #-#-#-#-#  tukit.js.pot (Tukit 0.1)  #-#-#-#-#
 # tukit czech translation.
+# Copyright (C) 2022
 # This file is distributed under the same license as the tukit package.
 # Zdenek Kubala <zkubala@suse.com>, 2022.
 #
@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tukit 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-09 09:00+0200\n"
+"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
+"POT-Creation-Date: 2022-08-09 14:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Zdenek Kubala <zkubala@suse.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,11 @@ msgstr "Aktivní"
 msgid "Available updates ($0)"
 msgstr "Dostupné aktualizace ($0)"
 
-#: src/components/UpdatesPanel.js:160
+#: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
 msgstr "Zkontrolovat dostupné aktualizace"
 
-#: src/components/UpdatesPanel.js:108
+#: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
 msgstr "Kontroluji se dostupné aktualizace..."
 
@@ -54,7 +54,7 @@ msgstr "Zavřít"
 msgid "Default"
 msgstr "Přednastavená hodnota"
 
-#: src/components/UpdatesPanel.js:122
+#: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
 msgstr "Chyba při hledání dostupných aktualizací: $0"
 
@@ -70,7 +70,7 @@ msgstr "Načítám snapshoty..."
 msgid "Installing updates..."
 msgstr "Instalují se aktualizace..."
 
-#: src/components/UpdatesPanel.js:145
+#: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
 msgstr "Naposledy zkontrolováno: $0"
 
@@ -110,7 +110,7 @@ msgstr "Jsou dostupné bezpečnostní aktualizace"
 msgid "Snapshots & Updates"
 msgstr "Snapshoty a aktualizace"
 
-#: src/index.html:20 src/manifest.json:0
+#: src/index.html:20
 msgid "Software Updates"
 msgstr "Softwarové aktualizace"
 
@@ -138,7 +138,7 @@ msgstr "Aktualizovat a restartovat"
 msgid "Update without Reboot"
 msgstr "Aktualizovat bez restartu"
 
-#: src/components/UpdatesPanel.js:138
+#: src/components/UpdatesPanel.js:141
 msgid "Updates"
 msgstr "Aktualizace"
 
