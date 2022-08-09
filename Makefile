@@ -41,7 +41,7 @@ po/$(PACKAGE_NAME).manifest.pot: $(NODE_MODULES_TEST)
 	po/manifest2po src/manifest.json -o $@
 
 po/$(PACKAGE_NAME).pot: po/$(PACKAGE_NAME).html.pot po/$(PACKAGE_NAME).js.pot po/$(PACKAGE_NAME).manifest.pot
-	msgcat --sort-output --output-file=$@ $^
+	msgcat --use-first --sort-output --output-file=$@ $^
 
 # Update translations against current PO template
 update-po: po/$(PACKAGE_NAME).pot
