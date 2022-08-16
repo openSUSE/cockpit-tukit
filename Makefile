@@ -32,6 +32,7 @@ po/$(PACKAGE_NAME).js.pot:
 		--keyword=gettext:1,1t --keyword=gettext:1c,2,2t \
 		--keyword=ngettext:1,2,3t --keyword=ngettext:1c,2,3,4t \
 		--keyword=gettextCatalog.getString:1,3c --keyword=gettextCatalog.getPlural:2,3,4c \
+		--package-name=$(PACKAGE_NAME) --msgid-bugs-address=translation@lists.opensuse.org \
 		--from-code=UTF-8 $$(find src/ -name '*.js' -o -name '*.jsx' | grep -v src/lib)
 
 po/$(PACKAGE_NAME).html.pot: $(NODE_MODULES_TEST)
@@ -40,8 +41,8 @@ po/$(PACKAGE_NAME).html.pot: $(NODE_MODULES_TEST)
 po/$(PACKAGE_NAME).manifest.pot: $(NODE_MODULES_TEST)
 	po/manifest2po src/manifest.json -o $@
 
-po/$(PACKAGE_NAME).pot: po/$(PACKAGE_NAME).html.pot po/$(PACKAGE_NAME).js.pot po/$(PACKAGE_NAME).manifest.pot
-	msgcat --sort-output --output-file=$@ $^
+po/$(PACKAGE_NAME).pot: po/$(PACKAGE_NAME).js.pot po/$(PACKAGE_NAME).html.pot po/$(PACKAGE_NAME).manifest.pot 
+	msgcat --use-first --sort-output --output-file=$@ $^
 
 # Update translations against current PO template
 update-po: po/$(PACKAGE_NAME).pot
