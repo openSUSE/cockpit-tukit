@@ -1,153 +1,155 @@
-# tukit chinese translation.
+# tukit portuguese translation.
 # Copyright (C) 2022
 # This file is distributed under the same license as the tukit package.
-# Grace Yu <grace.yu@excel-gits.com>, 2022.
+# Christian Almeida de Oliveira <calmeidadeoliveira@suse.com>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2022-06-08 16:41+0200\n"
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
-"PO-Revision-Date: 2022-08-16 04:13+0000\n"
-"Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
-"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/"
-"cockpit-tukit/stable-5-2/zh_CN/>\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2022-08-09 14:15+0200\n"
+"PO-Revision-Date: 2022-08-05 09:16+0000\n"
+"Last-Translator: Christian Almeida de Oliveira <calmeidadeoliveira@suse.com>"
+"\n"
+"Language-Team: Portuguese <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"stable-5-2/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
-msgstr "激活并重引导"
+msgstr "Ativar e Reiniciar"
 
 #: src/components/SnapshotItem.js:104
 msgid "Activate without Reboot"
-msgstr "激活但不重引导"
+msgstr "Ativar sem Reinicializar"
 
 #: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
 msgid "Activating..."
-msgstr "正在激活..."
+msgstr "Ativando..."
 
 #: src/components/SnapshotItem.js:144
 msgid "Active"
-msgstr "活动"
+msgstr "Ativo"
 
 #: src/components/UpdatesItem.js:271
 msgid "Available updates ($0)"
-msgstr "可用更新 ($0)"
+msgstr "Atualizações disponíveis ($0)"
 
 #: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
-msgstr "检查更新"
+msgstr "Verificar atualizações"
 
 #: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
-msgstr "正在检查更新..."
+msgstr "Verificando atualizações..."
 
 #: src/components/UpdatesItem.js:83
 msgid "Close"
-msgstr "关闭"
+msgstr "Fechar"
 
 #: src/components/SnapshotItem.js:148
 msgid "Default"
-msgstr "默认"
+msgstr "Predefinição"
 
 #: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
-msgstr "检查更新时出错：$0"
+msgstr "Erro ao verificar por atualizações: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
-msgstr "安装更新时出错：命令已退出，代码为 $0"
+msgstr ""
+"Erro durante instalação das atualizações: comando terminado com código $0"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
-msgstr "正在提取快照..."
+msgstr "Buscando imagens..."
 
 #: src/components/UpdatesItem.js:193
 msgid "Installing updates..."
-msgstr "正在安装更新..."
+msgstr "Instalando atualizações..."
 
 #: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
-msgstr "上次检查时间：$0"
+msgstr "Última verificação: $0"
 
 #: src/app.jsx:143
 msgid "Loading..."
-msgstr "正在装载..."
+msgstr "Carregando..."
 
 #: src/components/UpdatesItem.js:134
 msgid "New Version"
-msgstr "新版本"
+msgstr "Nova versão"
 
 #: src/components/StatusPanel.js:77
 msgid "New snapshot #$1 available: $0"
-msgstr "有新的快照 #$1 可用：$0"
+msgstr "Nova imagem #$1 disponível: $0"
 
 #: src/components/UpdatesItem.js:139
 msgid "Old Version"
-msgstr "旧版本"
+msgstr "Versão antiga"
 
 #: src/components/SnapshotItem.js:173
 msgid "Rollback and Reboot"
-msgstr "回滚并重引导"
+msgstr "Reverter e Reiniciar"
 
 #: src/components/SnapshotItem.js:91
 msgid "Rollback without Reboot"
-msgstr "回滚但不重引导"
+msgstr "Reverter sem Reiniciar"
 
 #: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
 msgid "Rolling back..."
-msgstr "正在回滚..."
+msgstr "Revertendo em progresso..."
 
 #: src/components/StatusPanel.js:89
 msgid "Security updates available"
-msgstr "有可用的安全性更新"
+msgstr "Atualizações de segurança disponíveis"
 
 #: src/app.jsx:134
 msgid "Snapshots & Updates"
-msgstr "快照和更新"
+msgstr "Imagens & Atualizações"
 
 #: src/index.html:20
 msgid "Software Updates"
-msgstr "软件更新"
+msgstr "Atualizações de Software"
 
 #: src/components/StatusPanel.js:120
 msgid "Status"
-msgstr "状态"
+msgstr "Condição"
 
 #: src/components/StatusPanel.js:101
 msgid "System is up to date"
-msgstr "系统已是最新的"
+msgstr "Sistema está atualizado"
 
 #: src/manifest.json:0
 msgid "Transactional Update"
-msgstr "事务性更新"
+msgstr "Atualização Transacional"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
-msgstr "更新细节"
+msgstr "Detalhes da atualização"
 
 #: src/components/UpdatesItem.js:285
 msgid "Update and Reboot"
-msgstr "更新并重引导"
+msgstr "Atualizar e Reiniciar"
 
 #: src/components/UpdatesItem.js:310
 msgid "Update without Reboot"
-msgstr "更新但不重引导"
+msgstr "Atualizar sem reiniciar"
 
 #: src/components/UpdatesPanel.js:141
 msgid "Updates"
-msgstr "更新"
+msgstr "Atualizações"
 
 #: src/components/StatusPanel.js:90
 msgid "Updates available"
-msgstr "有可用的更新"
+msgstr "Atualizações disponíveis"
 
 #: src/components/SnapshotItem.js:136
 msgid "ago"
-msgstr "以前"
+msgstr "atrás"
