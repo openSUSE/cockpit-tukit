@@ -19,6 +19,7 @@
  */
 
 import cockpit from "cockpit";
+import { proxy as serviceProxy } from "service";
 import { stringToBool } from "./utils";
 
 let _dbusClient;
@@ -26,7 +27,7 @@ const dbusClient = () => {
     if (!_dbusClient) {
         _dbusClient = cockpit.dbus("org.opensuse.tukit", {
             bus: "system",
-            superuser: "require",
+            superuser: "try",
         });
     }
     return _dbusClient;
@@ -75,4 +76,12 @@ const transactionsProxy = () => {
     return _transactionsProxy;
 };
 
-export { dbusClient, snapshotsProxy, createSnapshot, transactionsProxy };
+let _tukitdProxy;
+const tukitdProxy = () => {
+    if (!_tukitdProxy) {
+        _tukitdProxy = serviceProxy("tukitd");
+    }
+    return _tukitdProxy;
+};
+
+export { dbusClient, snapshotsProxy, createSnapshot, transactionsProxy, tukitdProxy };

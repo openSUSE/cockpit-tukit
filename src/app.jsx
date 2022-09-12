@@ -22,11 +22,13 @@ import cockpit from "cockpit";
 import { page_status } from "notifications";
 import React, { useState, useEffect } from "react";
 import {
+    Button,
     Card,
     CardBody,
     CardTitle,
     DataList,
     EmptyState,
+    EmptyStateBody,
     EmptyStateIcon,
     Gallery,
     Page,
@@ -34,13 +36,14 @@ import {
     Spinner,
     Title,
 } from "@patternfly/react-core";
+import { ExclamationCircleIcon, RedoIcon } from "@patternfly/react-icons";
 
 import SnapshotItem from "./components/SnapshotItem";
 import UpdatesItem from "./components/UpdatesItem";
 import StatusPanel from "./components/StatusPanel";
 import UpdatesPanel from "./components/UpdatesPanel";
 
-import { createSnapshot, snapshotsProxy } from "./tukit";
+import { createSnapshot, snapshotsProxy, tukitdProxy } from "./tukit";
 import { mostSevereStatus } from "./status";
 
 const _ = cockpit.gettext;
@@ -56,6 +59,8 @@ const Application = () => {
     const [updatesWaiting, setUpdatesWaiting] = useState(null);
     const [updatesError, setUpdatesError] = useState();
     const [updatesDirty, setUpdatesDirty] = useState(true);
+
+    const [serviceReady, setServiceReady] = useState(false);
 
     const setDirty = (v) => {
         setSnapshotsDirty(v);
@@ -79,6 +84,68 @@ const Application = () => {
             page_status.set_own(null);
         }
     }, [status]);
+
+    const showServiceDetails = () => {
+        cockpit.jump("/system/services#/tukitd.service", cockpit.transport.host);
+    };
+
+    const loading = () => {
+        return (
+            <EmptyState>
+                <EmptyStateIcon variant="icon" icon={Spinner} />
+                <Title headingLevel="h2">{_("Loading...")}</Title>
+            </EmptyState>
+        );
+    };
+
+    const serviceProblem = () => {
+        // service proxy not ready yet?
+        if (!serviceReady) {
+            tukitdProxy().wait(() => { setServiceReady(true) });
+            return loading();
+        }
+        if (!tukitdProxy().exists) {
+            return (
+                <EmptyState>
+                    <EmptyStateIcon
+                        className="serviceError"
+                        variant="icon"
+                        icon={ExclamationCircleIcon}
+                    />
+                    <Title headingLevel="h2" size="md">
+                        {_("Transactional update service not installed")}
+                    </Title>
+                    <EmptyStateBody>
+                        {_("Please ensure package tukitd is installed.")}
+                    </EmptyStateBody>
+                </EmptyState>
+            );
+        }
+        if (tukitdProxy().state !== "running") {
+            return (
+                <EmptyState>
+                    <EmptyStateIcon
+                        className="serviceError"
+                        variant="icon"
+                        icon={ExclamationCircleIcon}
+                    />
+                    <Title headingLevel="h2" size="md">
+                        {_("Transactional update service not running")}
+                    </Title>
+                    <EmptyStateBody>
+                        <Button
+                            variant="link"
+                            isInline
+                            onClick={showServiceDetails}
+                        >
+                            {_("more details")}
+                        </Button>
+                    </EmptyStateBody>
+                </EmptyState>
+            );
+        }
+        return false;
+    };
 
     const getSnapshots = () => {
         if (!snapshotsDirty) {
@@ -104,7 +171,10 @@ const Application = () => {
                 });
                 setSnapshots(snaps);
             } catch (e) {
-                alert("ERROR " + e);
+                // service problems are reported in serviceProblem()
+                if (serviceReady && tukitdProxy().state === "running") {
+                    alert("ERROR " + e);
+                }
             }
             setSnapshotsWaiting(null);
         });
@@ -131,19 +201,19 @@ const Application = () => {
                         setWaiting={setUpdatesWaiting}
                     />
                     <Card>
-                        <CardTitle>{_("Snapshots & Updates")}</CardTitle>
+                        <CardTitle>
+                            {_("Snapshots & Updates")}
+                            <Button
+                                isDisabled={snapshotsWaiting || updatesWaiting}
+                                isSmall
+                                variant="plain"
+                                onClick={() => { setDirty(true) }}
+                            >
+                                <RedoIcon />
+                            </Button>
+                        </CardTitle>
                         <CardBody>
-                            {(snapshotsWaiting && (
-                                <EmptyState>
-                                    <EmptyStateIcon
-                                        variant="icon"
-                                        icon={Spinner}
-                                    />
-                                    <Title headingLevel="h2">
-                                        {_("Loading...")}
-                                    </Title>
-                                </EmptyState>
-                            )) || (
+                            {serviceProblem() || (snapshotsWaiting && loading()) || (
                                 <DataList isCompact>
                                     {updates.length > 0 && (
                                         <UpdatesItem

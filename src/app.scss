@@ -1,2 +1,6 @@
 @use "page";
 @use "ct-card";
+
+.serviceError {
+    color: var(--pf-global--danger-color--100);
+}
