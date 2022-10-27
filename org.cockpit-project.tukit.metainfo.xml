@@ -10,5 +10,5 @@
     </p>
   </description>
   <extends>org.cockpit_project.cockpit</extends>
-  <launchable type="cockpit-manifest">tukit</launchable>
+  <launchable type="cockpit-manifest">updates</launchable>
 </component>
