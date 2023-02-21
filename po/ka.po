@@ -8,142 +8,145 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-02-21 09:14+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.opensuse.org/projects/cockpit-tukit/"
+"master/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/components/SnapshotItem.js:161
 msgid "Activate and Reboot"
-msgstr ""
+msgstr "აქტვიაცია და გადატვირთვა"
 
 #: src/components/SnapshotItem.js:104
 msgid "Activate without Reboot"
-msgstr ""
+msgstr "აქტივაცია გადატვირთვის გარეშე"
 
 #: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
 msgid "Activating..."
-msgstr ""
+msgstr "გააქტიურება..."
 
 #: src/components/SnapshotItem.js:144
 msgid "Active"
-msgstr ""
+msgstr "აქტიური"
 
 #: src/components/UpdatesItem.js:271
 msgid "Available updates ($0)"
-msgstr ""
+msgstr "ხელმისაწვდომი განახლებები ($0)"
 
 #: src/components/UpdatesPanel.js:163
 msgid "Check for Updates"
-msgstr ""
+msgstr "განახლებების &შემოწმება"
 
 #: src/components/UpdatesPanel.js:111
 msgid "Checking for updates..."
-msgstr ""
+msgstr "განახლებების შემოწმება..."
 
 #: src/components/UpdatesItem.js:83
 msgid "Close"
-msgstr ""
+msgstr "დახურვა"
 
 #: src/components/SnapshotItem.js:148
 msgid "Default"
-msgstr ""
+msgstr "ნაგულისხმები"
 
 #: src/components/UpdatesPanel.js:125
 msgid "Error checking for updates: $0"
-msgstr ""
+msgstr "განახლებების შემოწმების შეცდომა: $0"
 
 #: src/components/UpdatesItem.js:211
 msgid "Error installing updates: command exited with code $0"
-msgstr ""
+msgstr "განახლებების დაყენების შეცდომა: ბრძანება დასრულდა კოდით $0"
 
 #: src/app.jsx:89
 msgid "Fetching snapshots..."
-msgstr ""
+msgstr "სწრაფი ასლების გამოთხოვა..."
 
 #: src/components/UpdatesItem.js:193
 msgid "Installing updates..."
-msgstr ""
+msgstr "განახლებების დაყენება..."
 
 #: src/components/UpdatesPanel.js:148
 msgid "Last Checked: $0"
-msgstr ""
+msgstr "ბოლოს შემოწმდა: $0"
 
 #: src/app.jsx:143
 msgid "Loading..."
-msgstr ""
+msgstr "იტვირთება..."
 
 #: src/components/UpdatesItem.js:134
 msgid "New Version"
-msgstr ""
+msgstr "ახალი ვერსია"
 
 #: src/components/StatusPanel.js:77
 msgid "New snapshot #$1 available: $0"
-msgstr ""
+msgstr "ახალი სწრაფი ასლი #$1 ხელმისაწვდომია: $0"
 
 #: src/components/UpdatesItem.js:139
 msgid "Old Version"
-msgstr ""
+msgstr "ძველი ვერსია"
 
 #: src/components/SnapshotItem.js:173
 msgid "Rollback and Reboot"
-msgstr ""
+msgstr "დაბრუნება და გადატვირთვა"
 
 #: src/components/SnapshotItem.js:91
 msgid "Rollback without Reboot"
-msgstr ""
+msgstr "დაბრუნება გადატვირთვის გარეშე"
 
 #: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
 msgid "Rolling back..."
-msgstr ""
+msgstr "დაბრუნება..."
 
 #: src/components/StatusPanel.js:89
 msgid "Security updates available"
-msgstr ""
+msgstr "ხელმისაწვდომია უსაფრთოხების განახლებები"
 
 #: src/app.jsx:134
 msgid "Snapshots & Updates"
-msgstr ""
+msgstr "სწრაფი ასლები და განახლებები"
 
 #: src/index.html:20
 msgid "Software Updates"
-msgstr ""
+msgstr "პროგრამული განახლებები"
 
 #: src/components/StatusPanel.js:120
 msgid "Status"
-msgstr ""
+msgstr "სტატუსი"
 
 #: src/components/StatusPanel.js:101
 msgid "System is up to date"
-msgstr ""
+msgstr "სისტემა განახლებულია"
 
 #: src/manifest.json:0
 msgid "Transactional Update"
-msgstr ""
+msgstr "ტრანზაქციული განახლებები"
 
 #: src/components/UpdatesItem.js:73
 msgid "Update Details"
-msgstr ""
+msgstr "კონტაქტის დეტალები"
 
 #: src/components/UpdatesItem.js:285
 msgid "Update and Reboot"
-msgstr ""
+msgstr "განახლება და გადატვირთვა"
 
 #: src/components/UpdatesItem.js:310
 msgid "Update without Reboot"
-msgstr ""
+msgstr "განახლება გადატვირთვის გარეშე"
 
 #: src/components/UpdatesPanel.js:141
 msgid "Updates"
-msgstr ""
+msgstr "განახლებები"
 
 #: src/components/StatusPanel.js:90
 msgid "Updates available"
-msgstr ""
+msgstr "ხელმისაწვდომია განახლება"
 
 #: src/components/SnapshotItem.js:136
 msgid "ago"
-msgstr ""
+msgstr "წინ"
