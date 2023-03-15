@@ -26,8 +26,8 @@ import {
 } from "@patternfly/react-icons";
 
 export const kindPrio = { patch: 0, package: 1 };
-export const categoryPrio = { security: 0, recommended: 2 };
-export const severityPrio = { important: 0, moderate: 1 };
+export const categoryPrio = { security: 0, recommended: 1, feature: 2 };
+export const severityPrio = { critical: 0, important: 1, moderate: 2 };
 const prioLabelColor = { 0: "red", 1: "blue", 2: "auto" };
 const prioIcon = {
     0: <ExclamationCircleIcon />,
