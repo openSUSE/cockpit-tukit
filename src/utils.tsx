@@ -17,41 +17,44 @@
  * To contact SUSE LLC about this file by physical or electronic mail, you may
  * find current contact information at www.suse.com.
  */
-import React from "react";
+import React, { Key } from "react";
 
-export const stringToBool = (s) => {
-    return ["yes", "true", "1"].includes(s.toLowerCase());
+export const stringToBool = (s: string) => {
+	return ["yes", "true", "1"].includes(s.toLowerCase());
 };
 
 // decode selected named html entities found in zypper's xml output and generic
 // numeric ones.
 // see: https://github.com/openSUSE/libzypp/blob/master/zypp-core/parser/xml/XmlEscape.cc
-export const decodeHTMLEntities = (s) => {
-    const entities = { lt: "<", gt: ">", amp: "&", apos: "'", quot: '"' };
-    return s
-        .replaceAll(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
-        .replaceAll(/&([a-z]+);/g, (m, e) => entities[e] || m);
+export const decodeHTMLEntities = (s: string) => {
+	const entities = { lt: "<", gt: ">", amp: "&", apos: "'", quot: '"' };
+	return s
+		.replaceAll(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
+		.replaceAll(
+			/&([a-z]+);/g,
+			(m, e: keyof typeof entities) => entities[e] || m,
+		);
 };
 
 const tagURLPrefix = {
-    bsc: "https://bugzilla.suse.com/show_bug.cgi?id=",
-    boo: "https://bugzilla.opensuse.org/show_bug.cgi?id=",
+	bsc: "https://bugzilla.suse.com/show_bug.cgi?id=",
+	boo: "https://bugzilla.opensuse.org/show_bug.cgi?id=",
 };
 // convert tagged items found in text to clickable links
-export const linkify = (s) => {
-    const parts = s.split(/((?:bsc|boo)#\d+)/);
-    return parts.map((p) => {
-        const m = p.match(/(bsc|boo)#(\d+)/);
-        if (m === null) return p;
-        return (
-            <a
-                key={m}
-                href={tagURLPrefix[m[1]] + m[2]}
-                target="_blank"
-                rel="noreferrer"
-            >
-                {m[0]}
-            </a>
-        );
-    });
+export const linkify = (s: string) => {
+	const parts = s.split(/((?:bsc|boo)#\d+)/);
+	return parts.map((p) => {
+		const m = p.match(/(bsc|boo)#(\d+)/);
+		if (m === null) return p;
+		return (
+			<a
+				key={m as unknown as Key}
+				href={tagURLPrefix[m[1] as keyof typeof tagURLPrefix] + m[2]}
+				target="_blank"
+				rel="noreferrer"
+			>
+				{m[0]}
+			</a>
+		);
+	});
 };

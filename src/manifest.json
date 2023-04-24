@@ -1,18 +1,18 @@
 {
-    "name": "updates",
-    "requires": {
-        "cockpit": "251"
-    },
-    "tools": {
-        "index": {
-            "label": "Software Updates",
-            "docs": [
-                {
-                    "label": "Transactional Update",
-                    "url": "https://documentation.suse.com/sle-micro/html/SLE-Micro-all/article-administration-slemicro.html#sec-transactional-udate"
-                }
-            ]
-        }
-    },
-    "preload": ["index"]
+	"name": "updates",
+	"requires": {
+		"cockpit": "251"
+	},
+	"tools": {
+		"index": {
+			"label": "Software Updates",
+			"docs": [
+				{
+					"label": "Transactional Update",
+					"url": "https://documentation.suse.com/sle-micro/html/SLE-Micro-all/article-administration-slemicro.html#sec-transactional-udate"
+				}
+			]
+		}
+	},
+	"preload": ["index"]
 }
