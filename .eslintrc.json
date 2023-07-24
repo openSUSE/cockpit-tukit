@@ -10,12 +10,8 @@
         "standard-jsx",
         "standard-react"
     ],
-    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": 7,
-        "ecmaFeatures": {
-            "jsx": true
-        },
+        "ecmaVersion": "2022",
         "sourceType": "module"
     },
     "plugins": ["flowtype", "react", "react-hooks"],
