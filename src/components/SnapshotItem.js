@@ -33,11 +33,10 @@ import {
     DataListContent,
     Dropdown,
     DropdownItem,
-    DropdownPosition,
-    KebabToggle,
     Label,
     Tooltip,
 } from "@patternfly/react-core";
+import { DropdownPosition, KebabToggle } from "@patternfly/react-core/deprecated";
 import { CheckCircleIcon } from "@patternfly/react-icons";
 
 const _ = cockpit.gettext;
@@ -156,7 +155,7 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
                                     onClick={() => {
                                         activateAndReboot(item);
                                     }}
-                                    isSmall
+                                    size="sm"
                                 >
                                     {_("Activate and Reboot")}
                                 </Button>
@@ -168,7 +167,7 @@ const SnapshotItem = ({ item, setDirty, setWaiting, waiting }) => {
                                     onClick={() => {
                                         rollbackAndReboot(item);
                                     }}
-                                    isSmall
+                                    size="sm"
                                 >
                                     {_("Rollback and Reboot")}
                                 </Button>

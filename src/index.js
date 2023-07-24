@@ -15,10 +15,10 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-import "./lib/patternfly/patternfly-4-cockpit.scss";
+import "../pkg/lib/patternfly/patternfly-5-cockpit.scss";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import Application from "./app.jsx";
 /*
  * PF4 overrides need to come after the JSX components imports because
@@ -27,12 +27,11 @@ import Application from "./app.jsx";
  * out of the dist/index.js and since it will maintain the order of the imported CSS,
  * the overrides will be correctly in the end of our stylesheet.
  */
-import "./lib/patternfly/patternfly-4-overrides.scss";
+import "../pkg/lib/patternfly/patternfly-5-overrides.scss";
 import "./app.scss";
 
 document.addEventListener("DOMContentLoaded", function () {
-    ReactDOM.render(
-        React.createElement(Application, {}),
-        document.getElementById("app")
-    );
+    const container = document.getElementById("app");
+    const root = createRoot(container);
+    root.render(React.createElement(Application, {}));
 });

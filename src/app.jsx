@@ -205,7 +205,7 @@ const Application = () => {
                             {_("Snapshots & Updates")}
                             <Button
                                 isDisabled={snapshotsWaiting || updatesWaiting}
-                                isSmall
+                                size="sm"
                                 variant="plain"
                                 onClick={() => { setDirty(true) }}
                             >

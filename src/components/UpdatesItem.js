@@ -32,13 +32,12 @@ import {
     DataListContent,
     Dropdown,
     DropdownItem,
-    DropdownPosition,
-    KebabToggle,
     Label,
     Modal,
     ModalVariant,
     Tooltip,
 } from "@patternfly/react-core";
+import { DropdownPosition, KebabToggle } from "@patternfly/react-core/deprecated";
 import {
     BugIcon,
     ExclamationTriangleIcon,
@@ -280,7 +279,7 @@ const UpdatesItem = ({ updates, setError, setDirty, setWaiting, waiting }) => {
                                 onClick={() => {
                                     updateAndReboot();
                                 }}
-                                isSmall
+                                size="sm"
                             >
                                 {_("Update and Reboot")}
                             </Button>
