@@ -19,6 +19,7 @@
  */
 
 import cockpit from "cockpit";
+import "cockpit-dark-theme";
 import { page_status } from "notifications";
 import React, { useState, useEffect } from "react";
 import {
