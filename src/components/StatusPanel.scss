@@ -2,15 +2,19 @@
     .tukit-status-warning {
         color: var(--pf-global--warning-color--100);
     }
+
     .tukit-status-error {
         color: var(--pf-global--danger-color--100);
     }
+
     .tukit-status-check {
         color: var(--pf-global--success-color--100);
     }
+
     .tukit-status-info {
         color: var(--pf-global--info-color--100);
     }
+
     .tukit-status-text {
         max-width: 30rem;
         overflow: hidden;
