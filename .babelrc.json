@@ -1,18 +1,19 @@
 {
-    "presets": [
-        [
-            "@babel/env",
-            {
-                "targets": {
-                    "chrome": "57",
-                    "firefox": "52",
-                    "safari": "10.3",
-                    "edge": "16",
-                    "opera": "44"
-                }
-            }
-        ],
-        "@babel/preset-react"
-    ],
-    "plugins": ["@babel/plugin-transform-runtime"]
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"targets": {
+					"chrome": "57",
+					"firefox": "52",
+					"safari": "10.3",
+					"edge": "16",
+					"opera": "44"
+				}
+			}
+		],
+		"@babel/preset-react",
+		"@babel/preset-typescript"
+	],
+	"plugins": ["@babel/plugin-transform-runtime"]
 }

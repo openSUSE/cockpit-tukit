@@ -18,30 +18,27 @@
  * find current contact information at www.suse.com.
  */
 
-import React from "react";
-import {
-    ExclamationCircleIcon,
-    ExclamationTriangleIcon,
-    InfoCircleIcon,
-} from "@patternfly/react-icons";
+const statusSeverity = {
+	"": -1,
+	info: 0,
+	warning: 1,
+	error: 2,
+} as const;
 
-export const kindPrio = { patch: 0, package: 1 };
-export const categoryPrio = { security: 0, recommended: 1, feature: 2 };
-export const severityPrio = { critical: 0, important: 1, moderate: 2 };
-const prioLabelColor = { 0: "red", 1: "blue", 2: "auto" };
-const prioIcon = {
-    0: <ExclamationCircleIcon />,
-    1: <ExclamationTriangleIcon />,
-    2: <InfoCircleIcon />,
+type StatusSeverity = keyof typeof statusSeverity;
+
+export type Status = {
+	key: "wait" | "updates" | "updates-error" | "new-snapshot" | "system-ok";
+	title: string | null | boolean;
+	type: StatusSeverity;
+	details?: { icon: string };
 };
 
-// remove _disabled to enable props
-const prioProps = (p) => {
-    return {
-        color: prioLabelColor[p],
-        icon_disabled: prioIcon[p],
-        variant: "outline",
-    };
+export const mostSevereStatus = (statuses: Status[]): Status | null => {
+	if (statuses.length === 0) return null;
+	let ret = statuses[0];
+	statuses.forEach((s) => {
+		if (statusSeverity[s.type] > statusSeverity[ret.type]) ret = s;
+	});
+	return ret;
 };
-export const categoryProps = (u) => prioProps(categoryPrio[u.category]);
-export const severityProps = (u) => prioProps(severityPrio[u.severity]);
