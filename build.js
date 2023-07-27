@@ -2,7 +2,6 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import os from "node:os";
 
 import copy from "esbuild-plugin-copy";
 
@@ -13,7 +12,7 @@ import { cockpitRsyncEsbuildPlugin } from "./pkg/lib/cockpit-rsync-plugin.js";
 import { esbuildStylesPlugins } from "./pkg/lib/esbuild-common.js";
 
 const useWasm = os.arch() !== "x64";
-const esbuild = (await import(useWasm ? "esbuild-wasm" : "esbuild")).default;
+const esbuild = (await import("esbuild")).default;
 
 const production = process.env.NODE_ENV === "production";
 const watchMode = process.env.ESBUILD_WATCH === "true";
