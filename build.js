@@ -11,7 +11,6 @@ import { cockpitPoEsbuildPlugin } from "./pkg/lib/cockpit-po-plugin.js";
 import { cockpitRsyncEsbuildPlugin } from "./pkg/lib/cockpit-rsync-plugin.js";
 import { esbuildStylesPlugins } from "./pkg/lib/esbuild-common.js";
 
-const useWasm = os.arch() !== "x64";
 const esbuild = (await import("esbuild")).default;
 
 const production = process.env.NODE_ENV === "production";
