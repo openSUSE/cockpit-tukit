@@ -48,14 +48,16 @@ Cockpit module for Transactional Update
 %setup -q -n %{name}-%{version}
 %patch0 -p1
 rm -f package-lock.json
+rm -rf node_modules
 local-npm-registry %{_sourcedir} install --with=dev || ( find ~/.npm/_logs -name '*-debug.log' -print0 | xargs -0 cat; false)
 
 %build
-cp -r %{_datadir}/cockpit/devel/lib src/lib
+mkdir -p pkg
+cp -r %{_datadir}/cockpit/devel/lib pkg/lib
 NODE_ENV=production npm run build
 
 %install
-%make_install
+PREFIX=/usr DESTDIR=%{buildroot} make install
 appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # drop source maps, they are large and just for debugging
