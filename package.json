@@ -39,10 +39,6 @@
     "deep-equal": "^2.2.2"
   },
   "dependencies": {
-    "@esbuild/linux-arm": "^0.18.17",
-    "@esbuild/linux-arm64": "^0.18.17",
-    "@esbuild/linux-ia32": "^0.18.17",
-    "@esbuild/linux-x64": "^0.18.17",
     "@patternfly/patternfly": "5.0.0-alpha.64",
     "@patternfly/react-core": "5.0.0-alpha.115",
     "@patternfly/react-icons": "5.0.0-alpha.19",
