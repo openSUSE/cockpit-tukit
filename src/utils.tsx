@@ -26,7 +26,10 @@ export const stringToBool = (s: string) => {
 // decode selected named html entities found in zypper's xml output and generic
 // numeric ones.
 // see: https://github.com/openSUSE/libzypp/blob/master/zypp-core/parser/xml/XmlEscape.cc
-export const decodeHTMLEntities = (s: string) => {
+export const decodeHTMLEntities = (s: string | null): string | null => {
+	if (!s)
+		return null;
+
 	const entities = { lt: "<", gt: ">", amp: "&", apos: "'", quot: '"' };
 	return s
 		.replaceAll(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
