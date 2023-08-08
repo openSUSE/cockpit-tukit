@@ -98,7 +98,7 @@ const UpdateDetails = ({ u }: { u: Update }) => {
 											</DataListCell>,
 											<DataListCell key="value" width={4}>
 												<span className="tukit-update-details-text">
-													{linkify(v)}
+													{v ? linkify(v) : ""}
 												</span>
 											</DataListCell>,
 										]}

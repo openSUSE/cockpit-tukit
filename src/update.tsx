@@ -46,7 +46,7 @@ export type Update = {
 	category: CategoryKeys;
 	severity: SeverityKeys;
 	name: string;
-	description: string;
+	description: string | null;
 	edition: string;
 	"edition-old": string;
 	summary: string;
