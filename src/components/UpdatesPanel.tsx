@@ -61,6 +61,7 @@ const flattenXMLData = (data: XMLElement, prefix = ""): Update => {
 
 type UpdatesPanelProps = {
 	dirty: boolean;
+	adminAccess: boolean;
 	waiting: string | null;
 	setUpdates: (updates: Update[]) => void;
 	setError: (error: string | null) => void;
@@ -69,6 +70,7 @@ type UpdatesPanelProps = {
 };
 
 const UpdatesPanel = ({
+	adminAccess,
 	setUpdates,
 	setError,
 	dirty,
@@ -173,7 +175,7 @@ const UpdatesPanel = ({
 						<Button
 							variant="primary"
 							isLoading={!!waiting}
-							isDisabled={!!waiting}
+							isDisabled={!adminAccess || !!waiting}
 							onClick={() => {
 								setDirty(true);
 							}}

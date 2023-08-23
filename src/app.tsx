@@ -19,6 +19,8 @@
  */
 
 import cockpit from "cockpit";
+import { superuser } from "superuser";
+import { useEvent } from "hooks";
 import "cockpit-dark-theme";
 import { page_status } from "notifications";
 import React, { useState, useEffect } from "react";
@@ -64,16 +66,19 @@ const Application = () => {
 
 	const [serviceReady, setServiceReady] = useState(false);
 
+	useEvent(superuser, "changed");
+
 	const setDirty = (v: boolean) => {
 		setSnapshotsDirty(v);
 		setUpdatesDirty(v);
 	};
 
 	useEffect(() => {
-		getSnapshots();
+		if (superuser.allowed)
+			getSnapshots();
 		// TODO: FIX!
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [snapshotsDirty]);
+	}, [snapshotsDirty, superuser.allowed]);
 
 	// forward status to Cockpit
 	useEffect(() => {
@@ -142,6 +147,19 @@ const Application = () => {
 				</EmptyState>
 			);
 		}
+		if (!superuser.allowed) {
+			return (
+				<EmptyState>
+					<EmptyStateIcon
+						className="serviceError"
+						icon={ExclamationCircleIcon}
+					/>
+					<Title headingLevel="h1" size="xl">
+						{_("Administrative access is required to access updates and snapshots.")}
+					</Title>
+				</EmptyState>
+			);
+		}
 		return false;
 	};
 
@@ -186,11 +204,12 @@ const Application = () => {
 						waiting={snapshotsWaiting || updatesWaiting}
 						status={status}
 						setStatus={setStatus}
-						updates={updates}
+						updates={!superuser.allowed ? [] : updates}
 						updatesError={updatesError}
-						snapshots={snapshots}
+						snapshots={!superuser.allowed ? [] : snapshots}
 					/>
 					<UpdatesPanel
+						adminAccess={!!superuser.allowed}
 						setUpdates={setUpdates}
 						setError={setUpdatesError}
 						dirty={updatesDirty}
