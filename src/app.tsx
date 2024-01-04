@@ -52,6 +52,8 @@ import { Update } from "./update";
 
 const _ = cockpit.gettext;
 
+superuser.reload_page_on_change();
+
 const Application = () => {
 	const [status, setStatus] = useState<Status[]>([]);
 
@@ -82,7 +84,6 @@ const Application = () => {
 
 	// forward status to Cockpit
 	useEffect(() => {
-		console.log("Forwarding page status");
 		if (status.length > 0) {
 			// page_status can show only one status
 			// use most important one
