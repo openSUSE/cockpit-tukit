@@ -62,7 +62,6 @@ const StatusPanel = ({
 }: StatusPanelProps) => {
 	// update page status
 	useEffect(() => {
-		console.log("Updating page status");
 		if (waiting) {
 			setStatus([
 				{
