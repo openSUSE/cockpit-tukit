@@ -20,9 +20,9 @@
 
 import React from "react";
 import {
-	ExclamationCircleIcon,
-	ExclamationTriangleIcon,
-	InfoCircleIcon,
+    ExclamationCircleIcon,
+    ExclamationTriangleIcon,
+    InfoCircleIcon,
 } from "@patternfly/react-icons";
 
 type ConstValues<T> = T[keyof T];
@@ -31,9 +31,9 @@ export const kindPrio = { patch: 0, package: 1 } as const;
 export type KindKeys = keyof typeof kindPrio;
 export type KindValues = ConstValues<typeof kindPrio>;
 export const categoryPrio = {
-	security: 0,
-	recommended: 1,
-	feature: 2,
+    security: 0,
+    recommended: 1,
+    feature: 2,
 } as const;
 export type CategoryKeys = keyof typeof categoryPrio;
 export type CategoryValues = ConstValues<typeof categoryPrio>;
@@ -42,14 +42,14 @@ export type SeverityKeys = keyof typeof severityPrio;
 export type SeverityValues = ConstValues<typeof severityPrio>;
 
 export type Update = {
-	kind: KindKeys;
-	category: CategoryKeys;
-	severity: SeverityKeys;
-	name: string;
-	description: string | null;
-	edition: string;
-	"edition-old": string;
-	summary: string;
+  kind: KindKeys;
+  category: CategoryKeys;
+  severity: SeverityKeys;
+  name: string;
+  description: string | null;
+  edition: string;
+  "edition-old": string;
+  summary: string;
 };
 
 const prioLabelColor = { 0: "red", 1: "blue", 2: "auto" } as const;
@@ -61,23 +61,23 @@ type Undefined<T, E> = T extends E ? undefined : T;
 type FAKE_LABEL_TYPE2<T> = Undefined<T[keyof T], "auto">;
 
 const prioIcon = {
-	0: <ExclamationCircleIcon />,
-	1: <ExclamationTriangleIcon />,
-	2: <InfoCircleIcon />,
+    0: <ExclamationCircleIcon />,
+    1: <ExclamationTriangleIcon />,
+    2: <InfoCircleIcon />,
 } as const;
 
 // remove _disabled to enable props
 const prioProps = (p: keyof typeof prioLabelColor) => {
-	return {
-		color: prioLabelColor[p] as unknown as FAKE_LABEL_TYPE2<
-			typeof prioLabelColor
-		>,
-		icon_disabled: prioIcon[p],
-		variant: "outline" as "outline",
-	};
+    return {
+        color: prioLabelColor[p] as unknown as FAKE_LABEL_TYPE2<
+      typeof prioLabelColor
+    >,
+        icon_disabled: prioIcon[p],
+        variant: "outline",
+    };
 };
 
 export const categoryProps = (u: { category: CategoryKeys }) =>
-	prioProps(categoryPrio[u.category]);
+    prioProps(categoryPrio[u.category]);
 export const severityProps = (u: { severity: SeverityKeys }) =>
-	prioProps(severityPrio[u.severity]);
+    prioProps(severityPrio[u.severity]);
