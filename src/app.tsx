@@ -40,6 +40,7 @@ import {
 	Title,
 } from "@patternfly/react-core";
 import { ExclamationCircleIcon, RedoIcon } from "@patternfly/react-icons";
+import { is_supported } from "./utils";
 
 import SnapshotItem from "./components/SnapshotItem";
 import UpdatesItem from "./components/UpdatesItem";
@@ -56,7 +57,7 @@ superuser.reload_page_on_change();
 
 const Application = () => {
 	const [status, setStatus] = useState<Status[]>([]);
-
+	const [supported, setSupported] = useState(true);
 	const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
 	const [snapshotsWaiting, setSnapshotsWaiting] = useState<string | null>(null);
 	const [snapshotsDirty, setSnapshotsDirty] = useState(true);
@@ -76,11 +77,16 @@ const Application = () => {
 	};
 
 	useEffect(() => {
-		if (superuser.allowed)
-			getSnapshots();
+		is_supported().then((status) => {
+			setSupported(status);
+		});
+	});
+
+	useEffect(() => {
+		if (superuser.allowed && supported) getSnapshots();
 		// TODO: FIX!
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [snapshotsDirty, superuser.allowed]);
+	}, [supported, snapshotsDirty, superuser.allowed]);
 
 	// forward status to Cockpit
 	useEffect(() => {
@@ -156,7 +162,9 @@ const Application = () => {
 						icon={ExclamationCircleIcon}
 					/>
 					<Title headingLevel="h1" size="xl">
-						{_("Administrative access is required to access updates and snapshots.")}
+						{_(
+							"Administrative access is required to access updates and snapshots.",
+						)}
 					</Title>
 				</EmptyState>
 			);
@@ -196,7 +204,19 @@ const Application = () => {
 			setSnapshotsWaiting(null);
 		});
 	};
-
+	if (!supported) {
+		return (
+			<EmptyState>
+				<EmptyStateIcon className="serviceError" icon={ExclamationCircleIcon} />
+				<Title headingLevel="h2" size="md">
+					{_("Current system is not transactional")}
+				</Title>
+				<EmptyStateBody>
+					{_("Only systems managed by transactional-update are supported, please use cockpit-packagekit instead")}
+				</EmptyStateBody>
+			</EmptyState>
+		);
+	}
 	return (
 		<Page>
 			<PageSection>
@@ -262,5 +282,4 @@ const Application = () => {
 		</Page>
 	);
 };
-
 export default Application;
