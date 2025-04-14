@@ -4,7 +4,6 @@
     "module": "es6",
     "strict": true,
     "importHelpers": true,
-    "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -13,11 +12,14 @@
     "baseUrl": ".",
     "jsx": "react",
     "allowJs": true,
+    "checkJs": true,
+    "exactOptionalPropertyTypes": true,
+    "moduleResolution": "node",
     "paths": {
       "@/*": [
         "src/*"
       ],
-      "*": ["types/*"]
+      "*": ["./pkg/lib/*"]
     },
     "lib": [
       "dom",
@@ -27,13 +29,6 @@
     ]
   },
   "include": [
-    "src/*.ts",
-    "src/*.tsx",
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "types"
+    "src/**/*"
   ]
 }
