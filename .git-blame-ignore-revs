@@ -1,0 +1,5 @@
+# If a commit modifies a ton of files and doesn't really contribute to the
+# output of git-blame, please add it here
+#
+# 2025 - switch from rome to eslint required reformating files
+4d002ce086f7edc3bdb40eba547a7c902a7a1135
