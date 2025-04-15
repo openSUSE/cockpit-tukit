@@ -1,0 +1,27 @@
+name: Pull Request
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.opensuse.org/opensuse/bci/nodejs:latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: install deps
+        run: npm ci && zypper install -y cockpit-devel make
+      - name: add cockpit-tukit as a safe safe directory
+        run: git config --global --add safe.directory /__w/cockpit-tukit/cockpit-tukit
+      - name: build
+        run: make && npm run build
+      - name: lint & format check
+        run: npm run ci

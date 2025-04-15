@@ -8,11 +8,12 @@
   "license": "LGPL-2.1",
   "scripts": {
     "watch": "ESBUILD_WATCH='true' ./build.js",
-    "build": "tsc -noEmit && ./build.js",
+    "build": "./build.js",
     "eslint": "eslint src/",
-    "eslint:fix": "eslint --fix  --ext .js --ext .jsx --ext .ts --ext .tsx src/",
+    "eslint:fix": "eslint --fix src/",
     "stylelint": "stylelint src/*{.css,scss}",
-    "stylelint:fix": "stylelint --fix src/*{.css,scss}"
+    "stylelint:fix": "stylelint --fix src/*{.css,scss}",
+    "ci": "npm run eslint && npm run stylelint"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.4",
