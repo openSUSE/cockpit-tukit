@@ -18,7 +18,7 @@ jobs:
           node-version: 20
           cache: npm
       - name: install deps
-        run: npm ci && zypper install -y cockpit-devel make
+        run: npm ci --package-lock-only --legacy-peer-deps --ignore-scripts && zypper install -y cockpit-devel make
       - name: add cockpit-tukit as a safe safe directory
         run: git config --global --add safe.directory /__w/cockpit-tukit/cockpit-tukit
       - name: build
