@@ -28,7 +28,7 @@ import {
     CardTitle,
     Flex,
     FlexItem,
-    Text,
+    Content,
 } from "@patternfly/react-core";
 import {
     kindPrio,
@@ -164,12 +164,12 @@ const UpdatesPanel = ({
                 <Flex>
                     <FlexItem>
                         {lastCheck && (
-                            <Text component="small">
+                            <Content component="small">
                                 {cockpit.format(
                                     _("Last Checked: $0"),
                                     timeformat.dateTime(lastCheck)
                                 )}
-                            </Text>
+                            </Content>
                         )}
                     </FlexItem>
                     <FlexItem align={{ default: "alignRight" }}>

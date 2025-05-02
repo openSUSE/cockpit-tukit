@@ -40,7 +40,6 @@ import {
     MenuToggleElement,
     MenuToggle,
 } from "@patternfly/react-core";
-import { DropdownPosition } from "@patternfly/react-core/deprecated";
 import {
     BugIcon,
     ExclamationTriangleIcon,
@@ -338,7 +337,7 @@ const UpdatesItem = ({
                 </MenuToggle>
             )}
             popperProps={{
-                position: DropdownPosition.right,
+                position: 'right',
             }}
                     >
                         <DropdownList>
