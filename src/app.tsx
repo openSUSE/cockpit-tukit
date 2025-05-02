@@ -31,9 +31,9 @@ import {
     DataList,
     EmptyState,
     EmptyStateBody,
-    EmptyStateIcon,
     Gallery,
     Page,
+    PageSidebar,
     PageSection,
     Spinner,
     Title,
@@ -51,6 +51,7 @@ import { Status, mostSevereStatus } from "./status";
 import { Update } from "./update";
 
 const _ = cockpit.gettext;
+const emptySidebar = <PageSidebar isSidebarOpen={false} />;
 
 const Application = () => {
     const [status, setStatus] = useState<Status[]>([]);
@@ -105,13 +106,12 @@ const Application = () => {
 
     const loading = () => {
         return (
-            <EmptyState>
-                <EmptyStateIcon icon={Spinner} />
+            <EmptyState icon={Spinner}>
                 <Title headingLevel="h2">{_("Loading...")}</Title>
             </EmptyState>
         );
     };
-
+    const icon = <ExclamationCircleIcon className="serviceError" />;
     const serviceProblem = () => {
     // service proxy not ready yet?
         if (!serviceReady) {
@@ -122,11 +122,7 @@ const Application = () => {
         }
         if (!tukitdProxy().exists) {
             return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
+                <EmptyState icon={icon}>
                     <Title headingLevel="h2" size="md">
                         {_("Transactional update service not installed")}
                     </Title>
@@ -138,11 +134,7 @@ const Application = () => {
         }
         if (tukitdProxy().state !== "running") {
             return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
+                <EmptyState icon={ExclamationCircleIcon}>
                     <Title headingLevel="h2" size="md">
                         {_("Transactional update service not running")}
                     </Title>
@@ -156,11 +148,7 @@ const Application = () => {
         }
         if (!authenticated) {
             return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
+                <EmptyState icon={ExclamationCircleIcon}>
                     <Title headingLevel="h1" size="xl">
                         {_(
                             "Administrative access is required to access updates and snapshots."
@@ -206,8 +194,7 @@ const Application = () => {
     };
     if (!supported) {
         return (
-            <EmptyState>
-                <EmptyStateIcon className="serviceError" icon={ExclamationCircleIcon} />
+            <EmptyState icon={ExclamationCircleIcon}>
                 <Title headingLevel="h2" size="md">
                     {_("Current system is not transactional")}
                 </Title>
@@ -220,7 +207,7 @@ const Application = () => {
         );
     }
     return (
-        <Page>
+        <Page sidebar={emptySidebar}>
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
                     <StatusPanel
