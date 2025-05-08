@@ -15,7 +15,7 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-import "../pkg/lib/patternfly/patternfly-5-cockpit.scss";
+import "../pkg/lib/patternfly/patternfly-6-cockpit.scss";
 
 import React from "react";
 import { createRoot } from "react-dom/client";
@@ -28,7 +28,7 @@ import Application from "./app";
  * out of the dist/index.js and since it will maintain the order of the imported CSS,
  * the overrides will be correctly in the end of our stylesheet.
  */
-import "../pkg/lib/patternfly/patternfly-5-overrides.scss";
+import "../pkg/lib/patternfly/patternfly-6-overrides.scss";
 import "./app.scss";
 /*
 console.log(foo("foo"))

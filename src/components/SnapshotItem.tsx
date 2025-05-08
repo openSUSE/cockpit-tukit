@@ -39,7 +39,6 @@ import {
     MenuToggle,
     DropdownList,
 } from "@patternfly/react-core";
-import { DropdownPosition } from "@patternfly/react-core/deprecated";
 import { CheckCircleIcon, EllipsisVIcon } from "@patternfly/react-icons";
 import { Snapshot } from "@/tukit";
 
@@ -205,7 +204,7 @@ const SnapshotItem = ({
                   </MenuToggle>
               )}
               popperProps={{
-                  position: DropdownPosition.right,
+                  position: 'right',
               }}
                         >
                             <DropdownList>{actions(item)}</DropdownList>

@@ -32,9 +32,9 @@ import {
     DataList,
     EmptyState,
     EmptyStateBody,
-    EmptyStateIcon,
     Gallery,
     Page,
+    PageSidebar,
     PageSection,
     Spinner,
     Title,
@@ -52,12 +52,13 @@ import { Status, mostSevereStatus } from "./status";
 import { Update } from "./update";
 
 const _ = cockpit.gettext;
+const emptySidebar = <PageSidebar isSidebarOpen={false} />;
 
 superuser.reload_page_on_change();
 
 const Application = () => {
     const [status, setStatus] = useState<Status[]>([]);
-    const [supported, setSupported] = useState(true);
+    const [supported, setSupported] = useState(false);
     const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
     const [snapshotsWaiting, setSnapshotsWaiting] = useState<string | null>(null);
     const [snapshotsDirty, setSnapshotsDirty] = useState(true);
@@ -77,9 +78,11 @@ const Application = () => {
     };
 
     useEffect(() => {
-        is_supported().then((status) => {
-            setSupported(status);
-        });
+        if (superuser.allowed) {
+            is_supported().then((status) => {
+                setSupported(status);
+            });
+        }
     });
 
     useEffect(() => {
@@ -105,8 +108,7 @@ const Application = () => {
 
     const loading = () => {
         return (
-            <EmptyState>
-                <EmptyStateIcon icon={Spinner} />
+            <EmptyState icon={Spinner}>
                 <Title headingLevel="h2">{_("Loading...")}</Title>
             </EmptyState>
         );
@@ -122,11 +124,7 @@ const Application = () => {
         }
         if (!tukitdProxy().exists) {
             return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
+                <EmptyState icon={ExclamationCircleIcon}>
                     <Title headingLevel="h2" size="md">
                         {_("Transactional update service not installed")}
                     </Title>
@@ -138,11 +136,7 @@ const Application = () => {
         }
         if (tukitdProxy().state !== "running") {
             return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
+                <EmptyState icon={ExclamationCircleIcon}>
                     <Title headingLevel="h2" size="md">
                         {_("Transactional update service not running")}
                     </Title>
@@ -151,21 +145,6 @@ const Application = () => {
                             {_("more details")}
                         </Button>
                     </EmptyStateBody>
-                </EmptyState>
-            );
-        }
-        if (!superuser.allowed) {
-            return (
-                <EmptyState>
-                    <EmptyStateIcon
-            className="serviceError"
-            icon={ExclamationCircleIcon}
-                    />
-                    <Title headingLevel="h1" size="xl">
-                        {_(
-                            "Administrative access is required to access updates and snapshots."
-                        )}
-                    </Title>
                 </EmptyState>
             );
         }
@@ -204,10 +183,20 @@ const Application = () => {
             setSnapshotsWaiting(null);
         });
     };
+    if (!superuser.allowed) {
+        return (
+            <EmptyState icon={ExclamationCircleIcon}>
+                <Title headingLevel="h1" size="xl">
+                    {_(
+                        "Administrative access is required to access updates and snapshots."
+                    )}
+                </Title>
+            </EmptyState>
+        );
+    }
     if (!supported) {
         return (
-            <EmptyState>
-                <EmptyStateIcon className="serviceError" icon={ExclamationCircleIcon} />
+            <EmptyState icon={ExclamationCircleIcon}>
                 <Title headingLevel="h2" size="md">
                     {_("Current system is not transactional")}
                 </Title>
@@ -220,7 +209,7 @@ const Application = () => {
         );
     }
     return (
-        <Page>
+        <Page sidebar={emptySidebar}>
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
                     <StatusPanel
