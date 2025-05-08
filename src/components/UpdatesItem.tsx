@@ -39,6 +39,9 @@ import {
     DropdownList,
     MenuToggleElement,
     MenuToggle,
+    ModalBody,
+    ModalHeader,
+    ModalFooter,
 } from "@patternfly/react-core";
 import {
     BugIcon,
@@ -74,38 +77,31 @@ const UpdateDetails = ({ u }: { u: Update }) => {
           variant={ModalVariant.medium}
           title={_("Update Details")}
           onClose={() => setDialogVisible(false)}
-          actions={[
-              <Button
-              key="close"
-              variant="primary"
-              onClick={() => {
-                  setDialogVisible(false);
-              }}
-              >
-                  {_("Close")}
-              </Button>,
-          ]}
                 >
-                    <DataList isCompact aria-label="TODO_TYPE">
-                        {Object.entries(u).map(([k, v]) => (
-                            <DataListItem key={k}>
-                                <DataListItemRow>
-                                    <DataListItemCells
-                    dataListCells={[
-                        <DataListCell key="name" width={1}>
-                            <strong>{k}</strong>
-                        </DataListCell>,
-                        <DataListCell key="value" width={4}>
-                            <span className="tukit-update-details-text">
-                                {v ? linkify(v) : ""}
-                            </span>
-                        </DataListCell>,
-                    ]}
-                                    />
-                                </DataListItemRow>
-                            </DataListItem>
-                        ))}
-                    </DataList>
+                    <ModalHeader title={_("Update Details")} />
+                    <ModalBody>
+                        <DataList isCompact aria-label="TODO_TYPE">
+                            {Object.entries(u).map(([k, v]) => (
+                                <DataListItem key={k}>
+                                    <DataListItemRow>
+                                        <DataListItemCells
+                      dataListCells={[
+                          <DataListCell key="name" width={1}>
+                              <strong>{k}</strong>
+                          </DataListCell>,
+                          <DataListCell key="value" width={4}>
+                              <span className="tukit-update-details-text">
+                                  {v ? linkify(v) : ""}
+                              </span>
+                          </DataListCell>,
+                      ]}
+                                        />
+                                    </DataListItemRow>
+                                </DataListItem>
+                            ))}
+                        </DataList>
+                    </ModalBody>
+                    <ModalFooter />
                 </Modal>
             )}
         </>
@@ -337,7 +333,7 @@ const UpdatesItem = ({
                 </MenuToggle>
             )}
             popperProps={{
-                position: 'right',
+                position: "right",
             }}
                     >
                         <DropdownList>
