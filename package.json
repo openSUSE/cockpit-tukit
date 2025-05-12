@@ -43,9 +43,9 @@
     "sizzle": "^2.3.3",
     "ts-loader": "^9.5.2",
     "stylelint": "16.19.1",
-    "stylelint-config-recommended-scss": "14.1.0",
+    "stylelint-config-recommended-scss": "15.0.0",
     "stylelint-config-standard": "38.0.0",
-    "stylelint-config-standard-scss": "14.0.0",
+    "stylelint-config-standard-scss": "15.0.0",
     "stylelint-formatter-pretty": "4.0.1",
     "typescript": "^5.8.3"
   },
