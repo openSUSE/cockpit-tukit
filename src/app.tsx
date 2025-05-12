@@ -58,7 +58,7 @@ superuser.reload_page_on_change();
 
 const Application = () => {
     const [status, setStatus] = useState<Status[]>([]);
-    const [supported, setSupported] = useState(true);
+    const [supported, setSupported] = useState(false);
     const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
     const [snapshotsWaiting, setSnapshotsWaiting] = useState<string | null>(null);
     const [snapshotsDirty, setSnapshotsDirty] = useState(true);
@@ -78,9 +78,11 @@ const Application = () => {
     };
 
     useEffect(() => {
-        is_supported().then((status) => {
-            setSupported(status);
-        });
+        if (superuser.allowed) {
+            is_supported().then((status) => {
+                setSupported(status);
+            });
+        }
     });
 
     useEffect(() => {
@@ -146,17 +148,6 @@ const Application = () => {
                 </EmptyState>
             );
         }
-        if (!superuser.allowed) {
-            return (
-                <EmptyState icon={ExclamationCircleIcon}>
-                    <Title headingLevel="h1" size="xl">
-                        {_(
-                            "Administrative access is required to access updates and snapshots."
-                        )}
-                    </Title>
-                </EmptyState>
-            );
-        }
         return false;
     };
 
@@ -192,15 +183,17 @@ const Application = () => {
             setSnapshotsWaiting(null);
         });
     };
-    return (
-        <EmptyState icon={ExclamationCircleIcon}>
-            <Title headingLevel="h1" size="xl">
-                {_(
-                    "Administrative access is required to access updates and snapshots."
-                )}
-            </Title>
-        </EmptyState>
-    );
+    if (!superuser.allowed) {
+        return (
+            <EmptyState icon={ExclamationCircleIcon}>
+                <Title headingLevel="h1" size="xl">
+                    {_(
+                        "Administrative access is required to access updates and snapshots."
+                    )}
+                </Title>
+            </EmptyState>
+        );
+    }
     if (!supported) {
         return (
             <EmptyState icon={ExclamationCircleIcon}>
