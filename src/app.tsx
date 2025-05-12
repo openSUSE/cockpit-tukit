@@ -111,7 +111,7 @@ const Application = () => {
             </EmptyState>
         );
     };
-    const icon = <ExclamationCircleIcon className="serviceError" />;
+
     const serviceProblem = () => {
     // service proxy not ready yet?
         if (!serviceReady) {
@@ -122,7 +122,7 @@ const Application = () => {
         }
         if (!tukitdProxy().exists) {
             return (
-                <EmptyState icon={icon}>
+                <EmptyState icon={ExclamationCircleIcon}>
                     <Title headingLevel="h2" size="md">
                         {_("Transactional update service not installed")}
                     </Title>
@@ -192,6 +192,15 @@ const Application = () => {
             setSnapshotsWaiting(null);
         });
     };
+    return (
+        <EmptyState icon={ExclamationCircleIcon}>
+            <Title headingLevel="h1" size="xl">
+                {_(
+                    "Administrative access is required to access updates and snapshots."
+                )}
+            </Title>
+        </EmptyState>
+    );
     if (!supported) {
         return (
             <EmptyState icon={ExclamationCircleIcon}>
