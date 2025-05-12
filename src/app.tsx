@@ -20,7 +20,6 @@
 
 import cockpit from "cockpit";
 import { superuser } from "superuser";
-import { useEvent } from "hooks";
 import "cockpit-dark-theme";
 import { page_status } from "notifications";
 import React, { useState, useEffect } from "react";
@@ -53,8 +52,6 @@ import { Update } from "./update";
 
 const _ = cockpit.gettext;
 
-superuser.reload_page_on_change();
-
 const Application = () => {
     const [status, setStatus] = useState<Status[]>([]);
     const [supported, setSupported] = useState(true);
@@ -68,8 +65,7 @@ const Application = () => {
     const [updatesDirty, setUpdatesDirty] = useState(true);
 
     const [serviceReady, setServiceReady] = useState(false);
-
-    useEvent(superuser, "changed");
+    const [authenticated, setAuthenticated] = useState(superuser.allowed);
 
     const setDirty = (v: boolean) => {
         setSnapshotsDirty(v);
@@ -77,16 +73,20 @@ const Application = () => {
     };
 
     useEffect(() => {
+        // cockpit doesn't provide type for addEventListener so it needs to be ignored
+        // @ts-expect-error addEventListener method is not added to type definitions yet
+        superuser.addEventListener("changed", () => { setAuthenticated(superuser.allowed) });
         is_supported().then((status) => {
             setSupported(status);
         });
-    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
-        if (superuser.allowed && supported) getSnapshots();
+        if (authenticated && supported) getSnapshots();
     // TODO: FIX!
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [supported, snapshotsDirty, superuser.allowed]);
+    }, [supported, snapshotsDirty, authenticated]);
 
     // forward status to Cockpit
     useEffect(() => {
@@ -154,7 +154,7 @@ const Application = () => {
                 </EmptyState>
             );
         }
-        if (!superuser.allowed) {
+        if (!authenticated) {
             return (
                 <EmptyState>
                     <EmptyStateIcon
@@ -227,12 +227,12 @@ const Application = () => {
             waiting={snapshotsWaiting || updatesWaiting}
             status={status}
             setStatus={setStatus}
-            updates={!superuser.allowed ? [] : updates}
+            updates={!authenticated ? [] : updates}
             updatesError={updatesError}
-            snapshots={!superuser.allowed ? [] : snapshots}
+            snapshots={!authenticated ? [] : snapshots}
                     />
                     <UpdatesPanel
-            adminAccess={!!superuser.allowed}
+            adminAccess={!!authenticated}
             setUpdates={setUpdates}
             setError={setUpdatesError}
             dirty={updatesDirty}
