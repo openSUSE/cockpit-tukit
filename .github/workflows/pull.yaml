@@ -25,3 +25,5 @@ jobs:
         run: make && npm run build
       - name: lint & format check
         run: npm run ci
+      - name: typecheck
+        run: npm run typecheck
