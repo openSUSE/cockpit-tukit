@@ -206,6 +206,17 @@ const Application = () => {
             </EmptyState>
         );
     }
+    if (!authenticated) {
+        return (
+            <EmptyState icon={ExclamationCircleIcon}>
+                <Title headingLevel="h1" size="xl">
+                    {_(
+                        "Administrative access is required to access updates and snapshots."
+                    )}
+                </Title>
+            </EmptyState>
+        );
+    }
     return (
         <Page sidebar={emptySidebar}>
             <PageSection>
