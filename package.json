@@ -11,6 +11,7 @@
     "build": "./build.js",
     "eslint": "eslint src/",
     "eslint:fix": "eslint --fix src/",
+    "typecheck": "./ts-check.js",
     "stylelint": "stylelint src/*{.css,scss}",
     "stylelint:fix": "stylelint --fix src/*{.css,scss}",
     "ci": "npm run eslint && npm run stylelint"
