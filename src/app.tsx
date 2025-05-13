@@ -222,7 +222,7 @@ const Application = () => {
             <PageSection>
                 <Gallery className="ct-cards-grid" hasGutter>
                     <StatusPanel
-            waiting={snapshotsWaiting || updatesWaiting}
+            waiting={snapshotsWaiting || updatesWaiting || ""}
             status={status}
             setStatus={setStatus}
             updates={!authenticated ? [] : updates}

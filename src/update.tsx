@@ -52,7 +52,7 @@ export type Update = {
   summary: string;
 };
 
-const prioLabelColor = { 0: "red", 1: "blue", 2: "auto" } as const;
+const prioLabelColor = { 0: "red", 1: "blue", 2: "grey" } as const;
 
 // prioLavbelColor is used in
 // export const Label: React.FunctionComponent<LabelProps>
@@ -73,7 +73,7 @@ const prioProps = (p: keyof typeof prioLabelColor) => {
       typeof prioLabelColor
     >,
         icon_disabled: prioIcon[p],
-        variant: "outline",
+        variant: "outline" as const,
     };
 };
 

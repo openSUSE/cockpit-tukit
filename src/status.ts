@@ -29,7 +29,7 @@ type StatusSeverity = keyof typeof statusSeverity;
 
 export type Status = {
     key: "wait" | "updates" | "updates-error" | "new-snapshot" | "system-ok";
-    title: string | null | boolean;
+    title: string;
     type: StatusSeverity;
     details?: { icon: string };
 };

@@ -45,7 +45,7 @@ const _ = cockpit.gettext;
 
 type StatusPanelProps = {
   updates: Update[];
-  waiting: string | null | boolean;
+  waiting: string;
   status: Status[];
   setStatus: (status: Status[]) => void;
   updatesError: string | null;
