@@ -136,14 +136,14 @@ const SnapshotItem = ({
                 <DataListItemCells
           dataListCells={[
               <DataListCell isIcon key="number">
-                  <Badge isRead={item.old}>#{item.number}</Badge>
+                  <Badge isRead={!!item.old}>#{item.number}</Badge>
               </DataListCell>,
               <DataListCell key="description">
                   <b>{item.description}</b>
               </DataListCell>,
               <DataListCell key="date">
                   <Tooltip content={timeformat.dateTimeSeconds(item.date)}>
-                      <span>{timeformat.distanceToNow(item.date, false)}</span>
+                      <span>{timeformat.distanceToNow(item.date)}</span>
                   </Tooltip>
               </DataListCell>,
               <DataListCell key="labels">

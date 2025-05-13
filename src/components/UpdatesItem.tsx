@@ -176,7 +176,6 @@ const UpdateItem = ({ u }: { u: Update }) => {
           ]}
                 />
                 <DataListAction
-          isPlainButtonAction
           aria-label="TODO_TYPE"
           aria-labelledby="TODO_TYPE"
           id="TODO_TYPE"
