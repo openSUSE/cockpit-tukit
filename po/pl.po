@@ -18,137 +18,180 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11.1\n"
 
-#: src/components/SnapshotItem.js:161
+#: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
 msgstr "Aktywuj i uruchom ponownie"
 
-#: src/components/SnapshotItem.js:104
+#: src/components/SnapshotItem.tsx:119
 msgid "Activate without Reboot"
 msgstr "Aktywuj bez ponownego uruchomienia"
 
-#: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
+#: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
 msgid "Activating..."
 msgstr "Aktywowanie..."
 
-#: src/components/SnapshotItem.js:144
+#: src/components/SnapshotItem.tsx:153
 msgid "Active"
 msgstr "Aktywna"
 
-#: src/components/UpdatesItem.js:271
+#: src/components/UpdatesItem.tsx:303
 msgid "Available updates ($0)"
 msgstr "Dostępne aktualizacje ($0)"
 
-#: src/components/UpdatesPanel.js:163
+#: src/components/UpdatesPanel.tsx:183
 msgid "Check for Updates"
 msgstr "Wyszukaj aktualizacje"
 
-#: src/components/UpdatesPanel.js:111
+#: src/components/UpdatesPanel.tsx:133
 msgid "Checking for updates..."
 msgstr "Wyszukiwanie aktualizacji..."
 
-#: src/components/UpdatesItem.js:83
+#: src/components/UpdatesItem.tsx:86
 msgid "Close"
 msgstr "Zamknij"
 
-#: src/components/SnapshotItem.js:148
+#: org.cockpit-project.tukit.metainfo.xml:6
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Cockpit module for Transactional Update"
+msgstr "Aktualizacje transakcyjne"
+
+#: org.cockpit-project.tukit.metainfo.xml:8
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Cockpit module for Transactional Update."
+msgstr "Aktualizacje transakcyjne"
+
+#: src/app.tsx:212
+msgid "Current system is not transactional"
+msgstr ""
+
+#: src/components/SnapshotItem.tsx:156
 msgid "Default"
 msgstr "Domyślna"
 
-#: src/components/UpdatesPanel.js:125
+#: src/components/UpdatesPanel.tsx:147
 msgid "Error checking for updates: $0"
 msgstr "Błąd podczas wyszukiwania aktualizacji: $0"
 
-#: src/components/UpdatesItem.js:211
+#: src/components/UpdatesItem.tsx:243
 msgid "Error installing updates: command exited with code $0"
 msgstr "Bład podczas instalacji aktualizacji: polecenie zwróciło kod błędu $0"
 
-#: src/app.jsx:89
+#: src/app.tsx:181
 msgid "Fetching snapshots..."
 msgstr "Pobieranie migawek..."
 
-#: src/components/UpdatesItem.js:193
+#: src/components/UpdatesItem.tsx:215
 msgid "Installing updates..."
 msgstr "Instalowanie aktualizacji..."
 
-#: src/components/UpdatesPanel.js:148
+#: src/components/UpdatesPanel.tsx:168
 msgid "Last Checked: $0"
 msgstr "Ostatnio sprawdzone: $0"
 
-#: src/app.jsx:143
+#: src/app.tsx:110
 msgid "Loading..."
 msgstr "Wczytywanie..."
 
-#: src/components/UpdatesItem.js:134
+#: src/components/UpdatesItem.tsx:137
 msgid "New Version"
 msgstr "Nowa wersja"
 
-#: src/components/StatusPanel.js:77
+#: src/components/StatusPanel.tsx:89
 msgid "New snapshot #$1 available: $0"
 msgstr "Nowa migawka #$1 dostępna: $0"
 
-#: src/components/UpdatesItem.js:139
+#: src/components/UpdatesItem.tsx:142
 msgid "Old Version"
 msgstr "Stara wersja"
 
-#: src/components/SnapshotItem.js:173
+#: src/app.tsx:215
+msgid ""
+"Only systems managed by transactional-update are supported, please use "
+"cockpit-packagekit instead"
+msgstr ""
+
+#: src/app.tsx:134
+msgid "Please ensure package tukitd is installed."
+msgstr ""
+
+#: src/components/SnapshotItem.tsx:180
 msgid "Rollback and Reboot"
 msgstr "Przywróć i uruchom ponownie"
 
-#: src/components/SnapshotItem.js:91
+#: src/components/SnapshotItem.tsx:106
 msgid "Rollback without Reboot"
 msgstr "Przywróć bez ponownego uruchomienia"
 
-#: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
+#: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
 msgid "Rolling back..."
 msgstr "Przywracanie..."
 
-#: src/components/StatusPanel.js:89
+#: src/components/StatusPanel.tsx:99
 msgid "Security updates available"
 msgstr "Dostępne aktualizacje bezpieczeństwa"
 
-#: src/app.jsx:134
+#: src/app.tsx:243
 msgid "Snapshots & Updates"
 msgstr "Migawki i aktualizacje"
 
-#: src/index.html:20
+#: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
 msgstr "Aktualizacje oprogramowania"
 
-#: src/components/StatusPanel.js:120
+#: src/components/StatusPanel.tsx:130
 msgid "Status"
 msgstr "Status"
 
-#: src/components/StatusPanel.js:101
+#: src/components/StatusPanel.tsx:112
 msgid "System is up to date"
 msgstr "System jest aktualny"
 
-#: src/manifest.json:0
+#: src/manifest.json:0 org.cockpit-project.tukit.metainfo.xml:5
 msgid "Transactional Update"
 msgstr "Aktualizacje transakcyjne"
 
-#: src/components/UpdatesItem.js:73
+#: src/app.tsx:131
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Transactional update service not installed"
+msgstr "Aktualizacje transakcyjne"
+
+#: src/app.tsx:147
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Transactional update service not running"
+msgstr "Aktualizacje transakcyjne"
+
+#: src/components/UpdatesItem.tsx:76
 msgid "Update Details"
 msgstr "Szczegóły aktualizacji"
 
-#: src/components/UpdatesItem.js:285
+#: src/components/UpdatesItem.tsx:315
 msgid "Update and Reboot"
 msgstr "Zaktualizuj i uruchom ponownie"
 
-#: src/components/UpdatesItem.js:310
+#: src/components/UpdatesItem.tsx:352
 msgid "Update without Reboot"
 msgstr "Zaktualizuj bez ponownego uruchomienia"
 
-#: src/components/UpdatesPanel.js:141
+#: src/components/UpdatesPanel.tsx:161
 msgid "Updates"
 msgstr "Aktualizacje"
 
-#: src/components/StatusPanel.js:90
+#: src/components/StatusPanel.tsx:100
 msgid "Updates available"
 msgstr "Aktualizacje dostępne"
 
-#: src/components/SnapshotItem.js:136
-msgid "ago"
-msgstr "temu"
+#: src/app.tsx:151
+#, fuzzy
+#| msgid "Update Details"
+msgid "more details"
+msgstr "Szczegóły aktualizacji"
+
+#~ msgid "ago"
+#~ msgstr "temu"
 
 #~ msgid "Unknown"
 #~ msgstr "Nieznane"

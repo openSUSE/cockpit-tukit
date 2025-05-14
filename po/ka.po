@@ -19,134 +19,177 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11.1\n"
 
-#: src/components/SnapshotItem.js:161
+#: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
 msgstr "აქტვიაცია და გადატვირთვა"
 
-#: src/components/SnapshotItem.js:104
+#: src/components/SnapshotItem.tsx:119
 msgid "Activate without Reboot"
 msgstr "აქტივაცია გადატვირთვის გარეშე"
 
-#: src/components/SnapshotItem.js:76 src/components/SnapshotItem.js:79
+#: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
 msgid "Activating..."
 msgstr "გააქტიურება..."
 
-#: src/components/SnapshotItem.js:144
+#: src/components/SnapshotItem.tsx:153
 msgid "Active"
 msgstr "აქტიური"
 
-#: src/components/UpdatesItem.js:271
+#: src/components/UpdatesItem.tsx:303
 msgid "Available updates ($0)"
 msgstr "ხელმისაწვდომი განახლებები ($0)"
 
-#: src/components/UpdatesPanel.js:163
+#: src/components/UpdatesPanel.tsx:183
 msgid "Check for Updates"
 msgstr "განახლებების &შემოწმება"
 
-#: src/components/UpdatesPanel.js:111
+#: src/components/UpdatesPanel.tsx:133
 msgid "Checking for updates..."
 msgstr "განახლებების შემოწმება..."
 
-#: src/components/UpdatesItem.js:83
+#: src/components/UpdatesItem.tsx:86
 msgid "Close"
 msgstr "დახურვა"
 
-#: src/components/SnapshotItem.js:148
+#: org.cockpit-project.tukit.metainfo.xml:6
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Cockpit module for Transactional Update"
+msgstr "ტრანზაქციული განახლებები"
+
+#: org.cockpit-project.tukit.metainfo.xml:8
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Cockpit module for Transactional Update."
+msgstr "ტრანზაქციული განახლებები"
+
+#: src/app.tsx:212
+msgid "Current system is not transactional"
+msgstr ""
+
+#: src/components/SnapshotItem.tsx:156
 msgid "Default"
 msgstr "ნაგულისხმები"
 
-#: src/components/UpdatesPanel.js:125
+#: src/components/UpdatesPanel.tsx:147
 msgid "Error checking for updates: $0"
 msgstr "განახლებების შემოწმების შეცდომა: $0"
 
-#: src/components/UpdatesItem.js:211
+#: src/components/UpdatesItem.tsx:243
 msgid "Error installing updates: command exited with code $0"
 msgstr "განახლებების დაყენების შეცდომა: ბრძანება დასრულდა კოდით $0"
 
-#: src/app.jsx:89
+#: src/app.tsx:181
 msgid "Fetching snapshots..."
 msgstr "სწრაფი ასლების გამოთხოვა..."
 
-#: src/components/UpdatesItem.js:193
+#: src/components/UpdatesItem.tsx:215
 msgid "Installing updates..."
 msgstr "განახლებების დაყენება..."
 
-#: src/components/UpdatesPanel.js:148
+#: src/components/UpdatesPanel.tsx:168
 msgid "Last Checked: $0"
 msgstr "ბოლოს შემოწმდა: $0"
 
-#: src/app.jsx:143
+#: src/app.tsx:110
 msgid "Loading..."
 msgstr "იტვირთება..."
 
-#: src/components/UpdatesItem.js:134
+#: src/components/UpdatesItem.tsx:137
 msgid "New Version"
 msgstr "ახალი ვერსია"
 
-#: src/components/StatusPanel.js:77
+#: src/components/StatusPanel.tsx:89
 msgid "New snapshot #$1 available: $0"
 msgstr "ახალი სწრაფი ასლი #$1 ხელმისაწვდომია: $0"
 
-#: src/components/UpdatesItem.js:139
+#: src/components/UpdatesItem.tsx:142
 msgid "Old Version"
 msgstr "ძველი ვერსია"
 
-#: src/components/SnapshotItem.js:173
+#: src/app.tsx:215
+msgid ""
+"Only systems managed by transactional-update are supported, please use "
+"cockpit-packagekit instead"
+msgstr ""
+
+#: src/app.tsx:134
+msgid "Please ensure package tukitd is installed."
+msgstr ""
+
+#: src/components/SnapshotItem.tsx:180
 msgid "Rollback and Reboot"
 msgstr "დაბრუნება და გადატვირთვა"
 
-#: src/components/SnapshotItem.js:91
+#: src/components/SnapshotItem.tsx:106
 msgid "Rollback without Reboot"
 msgstr "დაბრუნება გადატვირთვის გარეშე"
 
-#: src/components/SnapshotItem.js:70 src/components/SnapshotItem.js:73
+#: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
 msgid "Rolling back..."
 msgstr "დაბრუნება..."
 
-#: src/components/StatusPanel.js:89
+#: src/components/StatusPanel.tsx:99
 msgid "Security updates available"
 msgstr "ხელმისაწვდომია უსაფრთოხების განახლებები"
 
-#: src/app.jsx:134
+#: src/app.tsx:243
 msgid "Snapshots & Updates"
 msgstr "სწრაფი ასლები და განახლებები"
 
-#: src/index.html:20
+#: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
 msgstr "პროგრამული განახლებები"
 
-#: src/components/StatusPanel.js:120
+#: src/components/StatusPanel.tsx:130
 msgid "Status"
 msgstr "სტატუსი"
 
-#: src/components/StatusPanel.js:101
+#: src/components/StatusPanel.tsx:112
 msgid "System is up to date"
 msgstr "სისტემა განახლებულია"
 
-#: src/manifest.json:0
+#: src/manifest.json:0 org.cockpit-project.tukit.metainfo.xml:5
 msgid "Transactional Update"
 msgstr "ტრანზაქციული განახლებები"
 
-#: src/components/UpdatesItem.js:73
+#: src/app.tsx:131
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Transactional update service not installed"
+msgstr "ტრანზაქციული განახლებები"
+
+#: src/app.tsx:147
+#, fuzzy
+#| msgid "Transactional Update"
+msgid "Transactional update service not running"
+msgstr "ტრანზაქციული განახლებები"
+
+#: src/components/UpdatesItem.tsx:76
 msgid "Update Details"
 msgstr "კონტაქტის დეტალები"
 
-#: src/components/UpdatesItem.js:285
+#: src/components/UpdatesItem.tsx:315
 msgid "Update and Reboot"
 msgstr "განახლება და გადატვირთვა"
 
-#: src/components/UpdatesItem.js:310
+#: src/components/UpdatesItem.tsx:352
 msgid "Update without Reboot"
 msgstr "განახლება გადატვირთვის გარეშე"
 
-#: src/components/UpdatesPanel.js:141
+#: src/components/UpdatesPanel.tsx:161
 msgid "Updates"
 msgstr "განახლებები"
 
-#: src/components/StatusPanel.js:90
+#: src/components/StatusPanel.tsx:100
 msgid "Updates available"
 msgstr "ხელმისაწვდომია განახლება"
 
-#: src/components/SnapshotItem.js:136
-msgid "ago"
-msgstr "წინ"
+#: src/app.tsx:151
+#, fuzzy
+#| msgid "Update Details"
+msgid "more details"
+msgstr "კონტაქტის დეტალები"
+
+#~ msgid "ago"
+#~ msgstr "წინ"
