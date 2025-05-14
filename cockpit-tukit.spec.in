@@ -25,9 +25,8 @@ URL:            https://github.com/openSUSE/cockpit-tukit
 Source:         %{name}-%{version}.tar.xz
 Source10:       package-lock.json
 Source11:       node_modules.spec.inc
-Source12:       node_modules.sums
 %include %_sourcedir/node_modules.spec.inc
-Patch0:         load-css-overrides.patch
+Patch2:         load-css-overrides.patch
 BuildArch:      noarch
 BuildRequires:  appstream-glib
 BuildRequires:  cockpit-devel >= 293
@@ -45,11 +44,11 @@ Requires:       tukitd
 Cockpit module for Transactional Update
 
 %prep
-%setup -q -n %{name}-%{version}
-%patch0 -p1
+%autosetup -p1 -n %{name}-%{version}
+
 rm -f package-lock.json
 rm -rf node_modules
-local-npm-registry %{_sourcedir} install --with=dev || ( find ~/.npm/_logs -name '*-debug.log' -print0 | xargs -0 cat; false)
+local-npm-registry %{_sourcedir} install --include=dev --ignore-scripts|| ( find ~/.npm/_logs -name '*-debug.log' -print0 | xargs -0 cat; false)
 
 %build
 mkdir -p pkg
@@ -65,7 +64,7 @@ find %{buildroot}%{_datadir}/cockpit/ -name '*.map' | xargs --no-run-if-empty rm
 
 %files
 %doc README.md
-%license LICENSE dist/index.js.LEGAL.txt dist/index.css.LEGAL.txt
+%license LICENSE dist/index.js.LEGAL.txt
 %{_datadir}/cockpit
 %{_datadir}/metainfo/*
 
