@@ -2,6 +2,8 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
+import os from 'node:os';
 
 import copy from 'esbuild-plugin-copy';
 
@@ -11,10 +13,19 @@ import { cockpitPoEsbuildPlugin } from './pkg/lib/cockpit-po-plugin.js';
 import { cockpitRsyncEsbuildPlugin } from './pkg/lib/cockpit-rsync-plugin.js';
 import { esbuildStylesPlugins } from './pkg/lib/esbuild-common.js';
 
-const esbuild = (await import('esbuild')).default;
-
 const production = process.env.NODE_ENV === 'production';
-const watchMode = process.env.ESBUILD_WATCH === 'true';
+const useWasm = os.arch() !== 'x64';
+const esbuild = (await import(useWasm ? 'esbuild-wasm' : 'esbuild')).default;
+
+const parser = (await import('argparse')).default.ArgumentParser();
+parser.add_argument('-r', '--rsync', { help: "rsync bundles to ssh target after build", metavar: "HOST" });
+parser.add_argument('-w', '--watch', { action: 'store_true', help: "Enable watch mode", default: process.env.ESBUILD_WATCH === "true" });
+parser.add_argument('-m', '--metafile', { help: "Enable bundle size information file", metavar: "FILE" });
+const args = parser.parse_args();
+
+if (args.rsync)
+    process.env.RSYNC = args.rsync;
+
 // List of directories to use when using import statements
 const nodePaths = ['pkg/lib'];
 const outdir = 'dist';
@@ -41,15 +52,12 @@ function notifyEndPlugin() {
     };
 }
 
-const cwd = process.cwd();
-
 // similar to fs.watch(), but recursively watches all subdirectories
 function watch_dirs(dir, on_change) {
     const callback = (ev, dir, fname) => {
         // only listen for "change" events, as renames are noisy
         // ignore hidden files
-        const isHidden = /^\./.test(fname);
-        if (ev !== 'change' || isHidden) {
+        if (ev !== "change" || fname.startsWith('.')) {
             return;
         }
         on_change(path.join(dir, fname));
@@ -75,6 +83,7 @@ const context = await esbuild.context({
     external: ['*.woff', '*.woff2', '*.jpg', '*.svg', '../../assets*'], // Allow external font files which live in ../../static/fonts
     legalComments: 'external', // Move all legal comments to a .LEGAL.txt file
     loader: { ".js": "jsx" },
+    metafile: !!args.metafile,
     minify: production,
     nodePaths,
     outdir,
@@ -98,16 +107,19 @@ const context = await esbuild.context({
 });
 
 try {
-    await context.rebuild();
+    const result = await context.rebuild();
+    if (args.metafile) {
+        fs.writeFileSync(args.metafile, JSON.stringify(result.metafile));
+    }
 } catch (e) {
     if (!args.watch)
         process.exit(1);
     // ignore errors in watch mode
 }
 
-if (watchMode) {
-    const on_change = async (path) => {
-        console.log('change detected:', path);
+if (args.watch) {
+    const on_change = async path => {
+        console.log("change detected:", path);
         await context.cancel();
 
         try {
