@@ -3,3 +3,6 @@
 #
 # 2025 - switch from rome to eslint required reformating files
 4d002ce086f7edc3bdb40eba547a7c902a7a1135
+
+# 2025 - update build.js formatting to be inline with starter-kit
+0932c9aca9a9e3173d3334b951bc6d1ebbe6ec29
