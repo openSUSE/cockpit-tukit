@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: 2025-04-30 13:10+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2025-05-16 09:59+0000\n"
+"Last-Translator: Luna  Jernberg <bittin@opensuse.org>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/cockpit-tukit/"
 "master/sv/>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
@@ -52,20 +52,16 @@ msgid "Close"
 msgstr "Stäng"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update"
-msgstr "Transaktionsuppdatering"
+msgstr "Cockpit modul för transaktionsuppdatering"
 
 #: org.cockpit-project.tukit.metainfo.xml:8
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update."
-msgstr "Transaktionsuppdatering"
+msgstr "Cockpit modul för transaktionsuppdatering."
 
 #: src/app.tsx:212
 msgid "Current system is not transactional"
-msgstr ""
+msgstr "Nuvarande system är inte transaktionellt"
 
 #: src/components/SnapshotItem.tsx:156
 msgid "Default"
@@ -113,10 +109,12 @@ msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
 msgstr ""
+"Endast system som hanteras av transactional-update stöds, vänligen använd "
+"cockpit-packagekit istället"
 
 #: src/app.tsx:134
 msgid "Please ensure package tukitd is installed."
-msgstr ""
+msgstr "Vänligen se till att paketet tukitd är installerat."
 
 #: src/components/SnapshotItem.tsx:180
 msgid "Rollback and Reboot"
@@ -155,16 +153,12 @@ msgid "Transactional Update"
 msgstr "Transaktionsuppdatering"
 
 #: src/app.tsx:131
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not installed"
-msgstr "Transaktionsuppdatering"
+msgstr "Transaktionsuppdateringstjänsten är inte installerad"
 
 #: src/app.tsx:147
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not running"
-msgstr "Transaktionsuppdatering"
+msgstr "Transaktionsuppdateringstjänsten körs inte"
 
 #: src/components/UpdatesItem.tsx:76
 msgid "Update Details"
@@ -187,10 +181,8 @@ msgid "Updates available"
 msgstr "Uppdateringar tillgängliga"
 
 #: src/app.tsx:151
-#, fuzzy
-#| msgid "Update Details"
 msgid "more details"
-msgstr "Uppdateringsdetaljer"
+msgstr "mer detaljer"
 
 #~ msgid "ago"
 #~ msgstr "sen"
