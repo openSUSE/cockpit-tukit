@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: 2025-04-30 13:11+0000\n"
+"PO-Revision-Date: 2025-05-27 07:24+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Spanish <https://l10n.opensuse.org/projects/cockpit-tukit/"
-"master/es/>\n"
+"Language-Team: Spanish <https://l10n.opensuse.org/projects/cockpit/"
+"cockpit-tukit/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: src/components/StatusPanel.tsx:130
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: src/components/StatusPanel.tsx:112
 msgid "System is up to date"
