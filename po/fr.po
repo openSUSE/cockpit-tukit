@@ -8,175 +8,180 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: 2025-04-30 13:10+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: French <https://l10n.opensuse.org/projects/cockpit-tukit/"
-"master/fr/>\n"
+"PO-Revision-Date: 2025-06-05 17:59+0000\n"
+"Last-Translator: Sophie Leroy <sophie@stoquart.com>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/cockpit/"
+"cockpit-tukit/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.11.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
-msgstr ""
+msgstr "Activer et redémarrer"
 
 #: src/components/SnapshotItem.tsx:119
 msgid "Activate without Reboot"
-msgstr ""
+msgstr "Activer sans redémarrer"
 
 #: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
 msgid "Activating..."
-msgstr ""
+msgstr "Activation en cours..."
 
 #: src/components/SnapshotItem.tsx:153
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #: src/components/UpdatesItem.tsx:303
 msgid "Available updates ($0)"
-msgstr ""
+msgstr "Mises à jour disponible ($0)"
 
 #: src/components/UpdatesPanel.tsx:183
 msgid "Check for Updates"
-msgstr ""
+msgstr "Rechercher les mises à jour"
 
 #: src/components/UpdatesPanel.tsx:133
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Recherche des mises à jour..."
 
 #: src/components/UpdatesItem.tsx:86
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
 msgid "Cockpit module for Transactional Update"
-msgstr ""
+msgstr "Module Cockpit pour la mise à jour transactionnelle"
 
 #: org.cockpit-project.tukit.metainfo.xml:8
 msgid "Cockpit module for Transactional Update."
-msgstr ""
+msgstr "Module Cockpit pour la mise à jour transactionnelle."
 
 #: src/app.tsx:212
 msgid "Current system is not transactional"
-msgstr ""
+msgstr "Le système actuel n'est pas transactionnel"
 
 #: src/components/SnapshotItem.tsx:156
 msgid "Default"
-msgstr ""
+msgstr "Par défaut"
 
 #: src/components/UpdatesPanel.tsx:147
 msgid "Error checking for updates: $0"
-msgstr ""
+msgstr "Erreur lors de la recherche des mises à jour : $0"
 
 #: src/components/UpdatesItem.tsx:243
 msgid "Error installing updates: command exited with code $0"
 msgstr ""
+"Erreur lors de l'installation des mises à jour : la commande s'est terminée "
+"avec le code $0"
 
 #: src/app.tsx:181
 msgid "Fetching snapshots..."
-msgstr ""
+msgstr "Récupération des instantanés..."
 
 #: src/components/UpdatesItem.tsx:215
 msgid "Installing updates..."
-msgstr ""
+msgstr "Installation des mises à jour..."
 
 #: src/components/UpdatesPanel.tsx:168
 msgid "Last Checked: $0"
-msgstr ""
+msgstr "Dernière vérification : $0"
 
 #: src/app.tsx:110
 msgid "Loading..."
-msgstr ""
+msgstr "Chargement en cours..."
 
 #: src/components/UpdatesItem.tsx:137
 msgid "New Version"
-msgstr ""
+msgstr "Nouvelle version"
 
 #: src/components/StatusPanel.tsx:89
 msgid "New snapshot #$1 available: $0"
-msgstr ""
+msgstr "Nouvel instantané #$1 disponible : $0"
 
 #: src/components/UpdatesItem.tsx:142
 msgid "Old Version"
-msgstr ""
+msgstr "Ancienne version"
 
 #: src/app.tsx:215
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
 msgstr ""
+"Seuls les systèmes gérés par la commande transactional-update sont pris en "
+"charge. Veuillez utiliser cockpit-packagekit à la place"
 
 #: src/app.tsx:134
 msgid "Please ensure package tukitd is installed."
-msgstr ""
+msgstr "Vérifiez que le paquet tukitd est installé."
 
 #: src/components/SnapshotItem.tsx:180
 msgid "Rollback and Reboot"
-msgstr ""
+msgstr "Revenir à l'état initial et redémarrer"
 
 #: src/components/SnapshotItem.tsx:106
 msgid "Rollback without Reboot"
-msgstr ""
+msgstr "Revenir à l'état initial sans redémarrer"
 
 #: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
 msgid "Rolling back..."
-msgstr ""
+msgstr "Retour à l'état initial..."
 
 #: src/components/StatusPanel.tsx:99
 msgid "Security updates available"
-msgstr ""
+msgstr "Mises à jour de sécurité disponibles"
 
 #: src/app.tsx:243
 msgid "Snapshots & Updates"
-msgstr ""
+msgstr "Instantanés et mises à jour"
 
 #: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
-msgstr ""
+msgstr "Mises à jour logicielles"
 
 #: src/components/StatusPanel.tsx:130
 msgid "Status"
-msgstr ""
+msgstr "État"
 
 #: src/components/StatusPanel.tsx:112
 msgid "System is up to date"
-msgstr ""
+msgstr "Le système est à jour"
 
 #: src/manifest.json:0 org.cockpit-project.tukit.metainfo.xml:5
 msgid "Transactional Update"
-msgstr ""
+msgstr "Mise à jour transactionnelle"
 
 #: src/app.tsx:131
 msgid "Transactional update service not installed"
-msgstr ""
+msgstr "Le service de mise à jour transactionnelle n'est pas installé"
 
 #: src/app.tsx:147
 msgid "Transactional update service not running"
 msgstr ""
+"Le service de mise à jour transactionnelle n'est pas en cours d'exécution"
 
 #: src/components/UpdatesItem.tsx:76
 msgid "Update Details"
-msgstr ""
+msgstr "Détails de la mise à jour"
 
 #: src/components/UpdatesItem.tsx:315
 msgid "Update and Reboot"
-msgstr ""
+msgstr "Mettre à jour et redémarrer"
 
 #: src/components/UpdatesItem.tsx:352
 msgid "Update without Reboot"
-msgstr ""
+msgstr "Mettre à jour sans redémarrer"
 
 #: src/components/UpdatesPanel.tsx:161
 msgid "Updates"
-msgstr ""
+msgstr "Mises à jour"
 
 #: src/components/StatusPanel.tsx:100
 msgid "Updates available"
-msgstr ""
+msgstr "Mises à jour disponibles"
 
 #: src/app.tsx:151
 msgid "more details"
-msgstr ""
+msgstr "plus de détails"
