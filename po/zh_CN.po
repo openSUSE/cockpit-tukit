@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
 "POT-Creation-Date: 2022-08-09 14:15+0200\n"
-"PO-Revision-Date: 2025-04-30 13:10+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/cockpit-"
-"tukit/master/zh_CN/>\n"
+"PO-Revision-Date: 2025-06-05 05:59+0000\n"
+"Last-Translator: Grace Yu <grace.yu@excel-gits.com>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/cockpit/"
+"cockpit-tukit/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/components/SnapshotItem.tsx:168
 msgid "Activate and Reboot"
@@ -52,20 +52,16 @@ msgid "Close"
 msgstr "关闭"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update"
-msgstr "事务性更新"
+msgstr "用于执行事务性更新的 Cockpit 模块"
 
 #: org.cockpit-project.tukit.metainfo.xml:8
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update."
-msgstr "事务性更新"
+msgstr "用于执行事务性更新的 Cockpit 模块。"
 
 #: src/app.tsx:212
 msgid "Current system is not transactional"
-msgstr ""
+msgstr "当前系统不是事务性的"
 
 #: src/components/SnapshotItem.tsx:156
 msgid "Default"
@@ -77,7 +73,7 @@ msgstr "检查更新时出错：$0"
 
 #: src/components/UpdatesItem.tsx:243
 msgid "Error installing updates: command exited with code $0"
-msgstr "安装更新时出错：命令已退出，代码为 $0"
+msgstr "安装更新时出错：命令已退出，返回代码 $0"
 
 #: src/app.tsx:181
 msgid "Fetching snapshots..."
@@ -93,7 +89,7 @@ msgstr "上次检查时间：$0"
 
 #: src/app.tsx:110
 msgid "Loading..."
-msgstr "正在装载..."
+msgstr "正在加载..."
 
 #: src/components/UpdatesItem.tsx:137
 msgid "New Version"
@@ -111,11 +107,11 @@ msgstr "旧版本"
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
-msgstr ""
+msgstr "仅支持通过 transactional-update 管理的系统，请改用 cockpit-packagekit"
 
 #: src/app.tsx:134
 msgid "Please ensure package tukitd is installed."
-msgstr ""
+msgstr "请确保安装了软件包 tukitd。"
 
 #: src/components/SnapshotItem.tsx:180
 msgid "Rollback and Reboot"
@@ -154,16 +150,12 @@ msgid "Transactional Update"
 msgstr "事务性更新"
 
 #: src/app.tsx:131
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not installed"
-msgstr "事务性更新"
+msgstr "未安装事务性更新服务"
 
 #: src/app.tsx:147
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not running"
-msgstr "事务性更新"
+msgstr "事务性更新服务未运行"
 
 #: src/components/UpdatesItem.tsx:76
 msgid "Update Details"
@@ -186,10 +178,8 @@ msgid "Updates available"
 msgstr "有可用的更新"
 
 #: src/app.tsx:151
-#, fuzzy
-#| msgid "Update Details"
 msgid "more details"
-msgstr "更新细节"
+msgstr "更多细节"
 
 #~ msgid "ago"
 #~ msgstr "以前"
