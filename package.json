@@ -56,8 +56,8 @@
   "dependencies": {
     "@patternfly/patternfly": "6.3.0",
     "@patternfly/react-core": "6.3.0",
-    "@patternfly/react-icons": "6.2.2",
-    "@patternfly/react-styles": "6.2.2",
+    "@patternfly/react-icons": "6.3.0",
+    "@patternfly/react-styles": "6.3.0",
     "dequal": "^2.0.3",
     "glob": "^11.0.3",
     "react": "18.3.1",
