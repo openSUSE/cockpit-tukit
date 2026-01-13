@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tukit\n"
-"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
-"POT-Creation-Date: 2022-08-09 14:15+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 07:10+0100\n"
 "PO-Revision-Date: 2025-10-09 18:59+0000\n"
 "Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/cockpit/"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.13.3\n"
 
-#: src/components/SnapshotItem.tsx:168
+#: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
 msgstr "Aktifkan dan Mulai Ulang"
 
-#: src/components/SnapshotItem.tsx:119
+#: src/components/SnapshotItem.tsx:118
 msgid "Activate without Reboot"
 msgstr "Aktifkan tanpa Mulai Ulang"
 
-#: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
+#: src/components/SnapshotItem.tsx:90 src/components/SnapshotItem.tsx:93
 msgid "Activating..."
 msgstr "Mengaktifkan..."
 
-#: src/components/SnapshotItem.tsx:153
+#: src/components/SnapshotItem.tsx:152
 msgid "Active"
 msgstr "Aktif"
 
-#: src/components/UpdatesItem.tsx:303
+#: src/app.tsx:153 src/app.tsx:213
+msgid "Administrative access is required to access updates and snapshots."
+msgstr ""
+
+#: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
 msgstr "Pembaruan yang tersedia ($0)"
 
-#: src/components/UpdatesPanel.tsx:183
+#: src/components/UpdatesPanel.tsx:184
 msgid "Check for Updates"
 msgstr "Periksa Pembaruan"
 
-#: src/components/UpdatesPanel.tsx:133
+#: src/components/UpdatesPanel.tsx:134
 msgid "Checking for updates..."
 msgstr "Memeriksa pembaruan..."
-
-#: src/components/UpdatesItem.tsx:86
-msgid "Close"
-msgstr "Tutup"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
 msgid "Cockpit module for Transactional Update"
@@ -59,39 +59,39 @@ msgstr "Modul Cockpit untuk Pembaruan Transaksional"
 msgid "Cockpit module for Transactional Update."
 msgstr "Modul Cockpit untuk Pembaruan Transaksional."
 
-#: src/app.tsx:212
+#: src/app.tsx:198
 msgid "Current system is not transactional"
 msgstr "Sistem saat ini tidak bersifat transaksional"
 
-#: src/components/SnapshotItem.tsx:156
+#: src/components/SnapshotItem.tsx:155
 msgid "Default"
 msgstr "Default"
 
-#: src/components/UpdatesPanel.tsx:147
+#: src/components/UpdatesPanel.tsx:148
 msgid "Error checking for updates: $0"
 msgstr "Kesalahan memeriksa pembaruan: $0"
 
-#: src/components/UpdatesItem.tsx:243
+#: src/components/UpdatesItem.tsx:237
 msgid "Error installing updates: command exited with code $0"
 msgstr "Kesalahan menginstal pembaruan: perintah keluar dengan kode $0"
 
-#: src/app.tsx:181
+#: src/app.tsx:168
 msgid "Fetching snapshots..."
 msgstr "Mengambil snapshots..."
 
-#: src/components/UpdatesItem.tsx:215
+#: src/components/UpdatesItem.tsx:209
 msgid "Installing updates..."
 msgstr "Menginstal pembaruan..."
 
-#: src/components/UpdatesPanel.tsx:168
+#: src/components/UpdatesPanel.tsx:169
 msgid "Last Checked: $0"
 msgstr "Terakhir Diperiksa: $ 0"
 
-#: src/app.tsx:110
+#: src/app.tsx:109
 msgid "Loading..."
 msgstr "Memuat..."
 
-#: src/components/UpdatesItem.tsx:137
+#: src/components/UpdatesItem.tsx:132
 msgid "New Version"
 msgstr "Versi Baru"
 
@@ -99,11 +99,11 @@ msgstr "Versi Baru"
 msgid "New snapshot #$1 available: $0"
 msgstr "Tersedia snapshot baru #$1: $0"
 
-#: src/components/UpdatesItem.tsx:142
+#: src/components/UpdatesItem.tsx:137
 msgid "Old Version"
 msgstr "Versi Lama"
 
-#: src/app.tsx:215
+#: src/app.tsx:202
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
@@ -111,19 +111,19 @@ msgstr ""
 "Hanya sistem yang dikelola oleh pembaruan transaksional yang didukung, "
 "silakan gunakan paket kokpit sebagai gantinya"
 
-#: src/app.tsx:134
+#: src/app.tsx:129
 msgid "Please ensure package tukitd is installed."
 msgstr "Pastikan paket tukitd sudah terinstal."
 
-#: src/components/SnapshotItem.tsx:180
+#: src/components/SnapshotItem.tsx:179
 msgid "Rollback and Reboot"
 msgstr "Kembalikan dan Mulai Ulang"
 
-#: src/components/SnapshotItem.tsx:106
+#: src/components/SnapshotItem.tsx:105
 msgid "Rollback without Reboot"
 msgstr "Kembalikan tanpa Mulai Ulang"
 
-#: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
+#: src/components/SnapshotItem.tsx:84 src/components/SnapshotItem.tsx:87
 msgid "Rolling back..."
 msgstr "Mengembalikan..."
 
@@ -131,7 +131,7 @@ msgstr "Mengembalikan..."
 msgid "Security updates available"
 msgstr "Tersedia pembaruan keamanan"
 
-#: src/app.tsx:243
+#: src/app.tsx:242
 msgid "Snapshots & Updates"
 msgstr "Snapshots & Pembaruan"
 
@@ -151,27 +151,27 @@ msgstr "Sistem sudah diperbarui"
 msgid "Transactional Update"
 msgstr "Pembaruan Transaksional"
 
-#: src/app.tsx:131
+#: src/app.tsx:126
 msgid "Transactional update service not installed"
 msgstr "Layanan pembaruan transaksional tidak diinstal"
 
-#: src/app.tsx:147
+#: src/app.tsx:138
 msgid "Transactional update service not running"
 msgstr "Layanan pembaruan transaksional tidak berjalan"
 
-#: src/components/UpdatesItem.tsx:76
+#: src/components/UpdatesItem.tsx:78 src/components/UpdatesItem.tsx:81
 msgid "Update Details"
 msgstr "Detail Pembaruan"
 
-#: src/components/UpdatesItem.tsx:315
+#: src/components/UpdatesItem.tsx:309
 msgid "Update and Reboot"
 msgstr "Perbarui dan Mulai Ulang"
 
-#: src/components/UpdatesItem.tsx:352
+#: src/components/UpdatesItem.tsx:346
 msgid "Update without Reboot"
 msgstr "Perbarui tanpa Mulai Ulang"
 
-#: src/components/UpdatesPanel.tsx:161
+#: src/components/UpdatesPanel.tsx:162
 msgid "Updates"
 msgstr "Pembaruan"
 
@@ -179,6 +179,9 @@ msgstr "Pembaruan"
 msgid "Updates available"
 msgstr "Pembaruan tersedia"
 
-#: src/app.tsx:151
+#: src/app.tsx:142
 msgid "more details"
 msgstr "detail lebih lanjut"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tukit\n"
-"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
-"POT-Creation-Date: 2022-08-09 14:15+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 07:10+0100\n"
 "PO-Revision-Date: 2025-06-05 00:59+0000\n"
 "Last-Translator: Samanta Magalhaes <samanta_texttrans@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.11.4\n"
 
-#: src/components/SnapshotItem.tsx:168
+#: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
 msgstr "Ativar e Reinicializar"
 
-#: src/components/SnapshotItem.tsx:119
+#: src/components/SnapshotItem.tsx:118
 msgid "Activate without Reboot"
 msgstr "Ativar sem Reinicializar"
 
-#: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
+#: src/components/SnapshotItem.tsx:90 src/components/SnapshotItem.tsx:93
 msgid "Activating..."
 msgstr "Ativando..."
 
-#: src/components/SnapshotItem.tsx:153
+#: src/components/SnapshotItem.tsx:152
 msgid "Active"
 msgstr "Ativo"
 
-#: src/components/UpdatesItem.tsx:303
+#: src/app.tsx:153 src/app.tsx:213
+msgid "Administrative access is required to access updates and snapshots."
+msgstr ""
+
+#: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
 msgstr "Atualizações disponíveis ($0)"
 
-#: src/components/UpdatesPanel.tsx:183
+#: src/components/UpdatesPanel.tsx:184
 msgid "Check for Updates"
 msgstr "Verificar se há Atualizações"
 
-#: src/components/UpdatesPanel.tsx:133
+#: src/components/UpdatesPanel.tsx:134
 msgid "Checking for updates..."
 msgstr "Verificando se há atualizações..."
-
-#: src/components/UpdatesItem.tsx:86
-msgid "Close"
-msgstr "Fechar"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
 msgid "Cockpit module for Transactional Update"
@@ -59,39 +59,39 @@ msgstr "Módulo do Cockpit para Atualização Transacional"
 msgid "Cockpit module for Transactional Update."
 msgstr "Módulo do Cockpit para Atualização Transacional."
 
-#: src/app.tsx:212
+#: src/app.tsx:198
 msgid "Current system is not transactional"
 msgstr "O sistema atual não é transacional"
 
-#: src/components/SnapshotItem.tsx:156
+#: src/components/SnapshotItem.tsx:155
 msgid "Default"
 msgstr "Padrão"
 
-#: src/components/UpdatesPanel.tsx:147
+#: src/components/UpdatesPanel.tsx:148
 msgid "Error checking for updates: $0"
 msgstr "Erro ao verificar se há atualizações: $0"
 
-#: src/components/UpdatesItem.tsx:243
+#: src/components/UpdatesItem.tsx:237
 msgid "Error installing updates: command exited with code $0"
 msgstr "Erro ao instalar atualizações: comando encerrado com o código $0"
 
-#: src/app.tsx:181
+#: src/app.tsx:168
 msgid "Fetching snapshots..."
 msgstr "Buscando instantâneos..."
 
-#: src/components/UpdatesItem.tsx:215
+#: src/components/UpdatesItem.tsx:209
 msgid "Installing updates..."
 msgstr "Instalando atualizações..."
 
-#: src/components/UpdatesPanel.tsx:168
+#: src/components/UpdatesPanel.tsx:169
 msgid "Last Checked: $0"
 msgstr "Última Verificação: $0"
 
-#: src/app.tsx:110
+#: src/app.tsx:109
 msgid "Loading..."
 msgstr "Carregando..."
 
-#: src/components/UpdatesItem.tsx:137
+#: src/components/UpdatesItem.tsx:132
 msgid "New Version"
 msgstr "Nova Versão"
 
@@ -99,11 +99,11 @@ msgstr "Nova Versão"
 msgid "New snapshot #$1 available: $0"
 msgstr "Novo instantâneo #$1 disponível: $0"
 
-#: src/components/UpdatesItem.tsx:142
+#: src/components/UpdatesItem.tsx:137
 msgid "Old Version"
 msgstr "Versão Antiga"
 
-#: src/app.tsx:215
+#: src/app.tsx:202
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
@@ -111,19 +111,19 @@ msgstr ""
 "Apenas sistemas gerenciados por transactional-update são suportados. Em vez "
 "disso, use o cockpit-packagekit"
 
-#: src/app.tsx:134
+#: src/app.tsx:129
 msgid "Please ensure package tukitd is installed."
 msgstr "Verifique se o pacote tukitd está instalado."
 
-#: src/components/SnapshotItem.tsx:180
+#: src/components/SnapshotItem.tsx:179
 msgid "Rollback and Reboot"
 msgstr "Reverter e Reinicializar"
 
-#: src/components/SnapshotItem.tsx:106
+#: src/components/SnapshotItem.tsx:105
 msgid "Rollback without Reboot"
 msgstr "Reverter sem Reinicializar"
 
-#: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
+#: src/components/SnapshotItem.tsx:84 src/components/SnapshotItem.tsx:87
 msgid "Rolling back..."
 msgstr "Revertendo..."
 
@@ -131,7 +131,7 @@ msgstr "Revertendo..."
 msgid "Security updates available"
 msgstr "Atualizações de segurança disponíveis"
 
-#: src/app.tsx:243
+#: src/app.tsx:242
 msgid "Snapshots & Updates"
 msgstr "Instantâneos e Atualizações"
 
@@ -151,27 +151,27 @@ msgstr "O sistema está atualizado"
 msgid "Transactional Update"
 msgstr "Atualização Transacional"
 
-#: src/app.tsx:131
+#: src/app.tsx:126
 msgid "Transactional update service not installed"
 msgstr "O serviço de atualização transacional não está instalado"
 
-#: src/app.tsx:147
+#: src/app.tsx:138
 msgid "Transactional update service not running"
 msgstr "O serviço de atualização transacional não está em execução"
 
-#: src/components/UpdatesItem.tsx:76
+#: src/components/UpdatesItem.tsx:78 src/components/UpdatesItem.tsx:81
 msgid "Update Details"
 msgstr "Detalhes da Atualização"
 
-#: src/components/UpdatesItem.tsx:315
+#: src/components/UpdatesItem.tsx:309
 msgid "Update and Reboot"
 msgstr "Atualizar e Reinicializar"
 
-#: src/components/UpdatesItem.tsx:352
+#: src/components/UpdatesItem.tsx:346
 msgid "Update without Reboot"
 msgstr "Atualizar sem Reinicializar"
 
-#: src/components/UpdatesPanel.tsx:161
+#: src/components/UpdatesPanel.tsx:162
 msgid "Updates"
 msgstr "Atualizações"
 
@@ -179,6 +179,9 @@ msgstr "Atualizações"
 msgid "Updates available"
 msgstr "Atualizações disponíveis"
 
-#: src/app.tsx:151
+#: src/app.tsx:142
 msgid "more details"
 msgstr "mais detalhes"
+
+#~ msgid "Close"
+#~ msgstr "Fechar"

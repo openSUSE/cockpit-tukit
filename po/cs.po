@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tukit 0.1\n"
-"Report-Msgid-Bugs-To: translation@lists.opensuse.org\n"
-"POT-Creation-Date: 2022-08-09 14:15+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 07:10+0100\n"
 "PO-Revision-Date: 2025-04-30 13:11+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/cockpit-tukit/"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 5.11.1\n"
 
-#: src/components/SnapshotItem.tsx:168
+#: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
 msgstr "Aktivovat s restartem"
 
-#: src/components/SnapshotItem.tsx:119
+#: src/components/SnapshotItem.tsx:118
 msgid "Activate without Reboot"
 msgstr "Aktivovat bez restartu"
 
-#: src/components/SnapshotItem.tsx:91 src/components/SnapshotItem.tsx:94
+#: src/components/SnapshotItem.tsx:90 src/components/SnapshotItem.tsx:93
 msgid "Activating..."
 msgstr "Aktivuji..."
 
-#: src/components/SnapshotItem.tsx:153
+#: src/components/SnapshotItem.tsx:152
 msgid "Active"
 msgstr "Aktivní"
 
-#: src/components/UpdatesItem.tsx:303
+#: src/app.tsx:153 src/app.tsx:213
+msgid "Administrative access is required to access updates and snapshots."
+msgstr ""
+
+#: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
 msgstr "Dostupné aktualizace ($0)"
 
-#: src/components/UpdatesPanel.tsx:183
+#: src/components/UpdatesPanel.tsx:184
 msgid "Check for Updates"
 msgstr "Zkontrolovat dostupné aktualizace"
 
-#: src/components/UpdatesPanel.tsx:133
+#: src/components/UpdatesPanel.tsx:134
 msgid "Checking for updates..."
 msgstr "Kontroluji se dostupné aktualizace..."
-
-#: src/components/UpdatesItem.tsx:86
-msgid "Close"
-msgstr "Zavřít"
 
 #: org.cockpit-project.tukit.metainfo.xml:6
 #, fuzzy
@@ -63,40 +63,40 @@ msgstr "Transakční aktualizace"
 msgid "Cockpit module for Transactional Update."
 msgstr "Transakční aktualizace"
 
-#: src/app.tsx:212
+#: src/app.tsx:198
 msgid "Current system is not transactional"
 msgstr ""
 
-#: src/components/SnapshotItem.tsx:156
+#: src/components/SnapshotItem.tsx:155
 msgid "Default"
 msgstr "Přednastavená hodnota"
 
-#: src/components/UpdatesPanel.tsx:147
+#: src/components/UpdatesPanel.tsx:148
 msgid "Error checking for updates: $0"
 msgstr "Chyba při hledání dostupných aktualizací: $0"
 
-#: src/components/UpdatesItem.tsx:243
+#: src/components/UpdatesItem.tsx:237
 msgid "Error installing updates: command exited with code $0"
 msgstr ""
 "Chyba při instalování aktualizací: příkaz skončil s návratovým kódem $0"
 
-#: src/app.tsx:181
+#: src/app.tsx:168
 msgid "Fetching snapshots..."
 msgstr "Načítám snapshoty..."
 
-#: src/components/UpdatesItem.tsx:215
+#: src/components/UpdatesItem.tsx:209
 msgid "Installing updates..."
 msgstr "Instalují se aktualizace..."
 
-#: src/components/UpdatesPanel.tsx:168
+#: src/components/UpdatesPanel.tsx:169
 msgid "Last Checked: $0"
 msgstr "Naposledy zkontrolováno: $0"
 
-#: src/app.tsx:110
+#: src/app.tsx:109
 msgid "Loading..."
 msgstr "Načítání..."
 
-#: src/components/UpdatesItem.tsx:137
+#: src/components/UpdatesItem.tsx:132
 msgid "New Version"
 msgstr "Nová verze"
 
@@ -104,29 +104,29 @@ msgstr "Nová verze"
 msgid "New snapshot #$1 available: $0"
 msgstr "Nový snapshot #$1 je dostupný: $0"
 
-#: src/components/UpdatesItem.tsx:142
+#: src/components/UpdatesItem.tsx:137
 msgid "Old Version"
 msgstr "Stará verze"
 
-#: src/app.tsx:215
+#: src/app.tsx:202
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
 msgstr ""
 
-#: src/app.tsx:134
+#: src/app.tsx:129
 msgid "Please ensure package tukitd is installed."
 msgstr ""
 
-#: src/components/SnapshotItem.tsx:180
+#: src/components/SnapshotItem.tsx:179
 msgid "Rollback and Reboot"
 msgstr "Návrat k předchozímu a restart"
 
-#: src/components/SnapshotItem.tsx:106
+#: src/components/SnapshotItem.tsx:105
 msgid "Rollback without Reboot"
 msgstr "Návrat k předchozímu bez restartu"
 
-#: src/components/SnapshotItem.tsx:85 src/components/SnapshotItem.tsx:88
+#: src/components/SnapshotItem.tsx:84 src/components/SnapshotItem.tsx:87
 msgid "Rolling back..."
 msgstr "Vracím se k předchozímu..."
 
@@ -134,7 +134,7 @@ msgstr "Vracím se k předchozímu..."
 msgid "Security updates available"
 msgstr "Jsou dostupné bezpečnostní aktualizace"
 
-#: src/app.tsx:243
+#: src/app.tsx:242
 msgid "Snapshots & Updates"
 msgstr "Snapshoty a aktualizace"
 
@@ -154,31 +154,31 @@ msgstr "Systém je aktualizovaný"
 msgid "Transactional Update"
 msgstr "Transakční aktualizace"
 
-#: src/app.tsx:131
+#: src/app.tsx:126
 #, fuzzy
 #| msgid "Transactional Update"
 msgid "Transactional update service not installed"
 msgstr "Transakční aktualizace"
 
-#: src/app.tsx:147
+#: src/app.tsx:138
 #, fuzzy
 #| msgid "Transactional Update"
 msgid "Transactional update service not running"
 msgstr "Transakční aktualizace"
 
-#: src/components/UpdatesItem.tsx:76
+#: src/components/UpdatesItem.tsx:78 src/components/UpdatesItem.tsx:81
 msgid "Update Details"
 msgstr "Aktualizovat podrobnosti"
 
-#: src/components/UpdatesItem.tsx:315
+#: src/components/UpdatesItem.tsx:309
 msgid "Update and Reboot"
 msgstr "Aktualizovat a restartovat"
 
-#: src/components/UpdatesItem.tsx:352
+#: src/components/UpdatesItem.tsx:346
 msgid "Update without Reboot"
 msgstr "Aktualizovat bez restartu"
 
-#: src/components/UpdatesPanel.tsx:161
+#: src/components/UpdatesPanel.tsx:162
 msgid "Updates"
 msgstr "Aktualizace"
 
@@ -186,11 +186,14 @@ msgstr "Aktualizace"
 msgid "Updates available"
 msgstr "Dostupné aktualizace"
 
-#: src/app.tsx:151
+#: src/app.tsx:142
 #, fuzzy
 #| msgid "Update Details"
 msgid "more details"
 msgstr "Aktualizovat podrobnosti"
+
+#~ msgid "Close"
+#~ msgstr "Zavřít"
 
 #~ msgid "ago"
 #~ msgstr "před"
