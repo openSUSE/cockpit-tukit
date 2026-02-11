@@ -22,7 +22,7 @@
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "8.55.0",
     "argparse": "^2.0.1",
-    "chrome-remote-interface": "^0.33.3",
+    "chrome-remote-interface": "^0.34.0",
     "esbuild": "0.27.3",
     "esbuild-plugin-copy": "2.1.1",
     "esbuild-plugin-replace": "1.4.0",
