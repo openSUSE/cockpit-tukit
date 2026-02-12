@@ -6,6 +6,9 @@
   "repository": "https://github.com/openSUSE/cockpit-tukit",
   "author": "",
   "license": "LGPL-2.1",
+  "engines": {
+    "node": ">= 16"
+  },
   "scripts": {
     "watch": "ESBUILD_WATCH='true' ./build.js",
     "build": "./build.js",
@@ -17,16 +20,10 @@
     "ci": "npm run eslint && npm run stylelint"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.28.5",
-    "@types/react": "^18.3.13",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "18.3.13",
+    "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "8.55.0",
-    "argparse": "^2.0.1",
-    "chrome-remote-interface": "^0.34.0",
-    "esbuild": "0.27.3",
-    "esbuild-plugin-copy": "2.1.1",
-    "esbuild-plugin-replace": "1.4.0",
-    "esbuild-sass-plugin": "3.6.0",
+    "esbuild-wasm": "0.27.3",
     "eslint": "8.57.1",
     "eslint-config-standard": "17.1.0",
     "eslint-config-standard-jsx": "11.0.0",
@@ -36,22 +33,13 @@
     "eslint-plugin-promise": "6.6.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "4.6.2",
-    "gettext-parser": "9.0.1",
-    "htmlparser": "^1.7.7",
-    "jed": "^1.1.1",
-    "qunit": "^2.25.0",
-    "sass": "^1.61.0",
-    "sizzle": "^2.3.3",
-    "stylelint": "17.2.0",
+    "qunit": "2.25.0",
+    "stylelint": "17.1.1",
     "stylelint-config-recommended-scss": "17.0.0",
     "stylelint-config-standard": "40.0.0",
     "stylelint-config-standard-scss": "17.0.0",
     "stylelint-formatter-pretty": "4.0.1",
-    "ts-loader": "^9.5.4",
-    "typescript": "^5.9.3"
-  },
-  "peerDependencies": {
-    "date-fns": "^4.1.0"
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "@patternfly/patternfly": "6.4.0",
@@ -59,10 +47,12 @@
     "@patternfly/react-icons": "6.4.0",
     "@patternfly/react-styles": "6.4.0",
     "dequal": "^2.0.3",
-    "esbuild-wasm": "^0.27.3",
-    "glob": "^13.0.1",
+    "argparse": "2.0.1",
+    "esbuild": "0.27.3",
+    "esbuild-sass-plugin": "3.6.0",
+    "gettext-parser": "9.0.1",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-xml-parser": "^1.1.8"
+    "react-xml-parser": "^1.1.8",
+    "react-dom": "18.3.1"
   }
 }
