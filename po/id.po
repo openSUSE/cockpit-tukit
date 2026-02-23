@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-27 07:10+0100\n"
-"PO-Revision-Date: 2025-10-09 18:59+0000\n"
+"PO-Revision-Date: 2026-02-23 13:04+0000\n"
 "Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/cockpit/"
 "cockpit-tukit/id/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 5.16\n"
 
 #: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
@@ -37,7 +37,7 @@ msgstr "Aktif"
 
 #: src/app.tsx:153 src/app.tsx:213
 msgid "Administrative access is required to access updates and snapshots."
-msgstr ""
+msgstr "Akses administratif diperlukan untuk mengakses pembaruan dan snapshot."
 
 #: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
