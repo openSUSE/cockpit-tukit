@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: tukit 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-27 07:10+0100\n"
-"PO-Revision-Date: 2025-04-30 13:11+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Czech <https://l10n.opensuse.org/projects/cockpit-tukit/"
-"master/cs/>\n"
+"PO-Revision-Date: 2026-03-12 19:04+0000\n"
+"Last-Translator: Ondřej  Sedlák <sedlak.o@tutanota.com>\n"
+"Language-Team: Czech <https://l10n.opensuse.org/projects/cockpit/cockpit-"
+"tukit/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11.1\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
@@ -37,7 +37,7 @@ msgstr "Aktivní"
 
 #: src/app.tsx:153 src/app.tsx:213
 msgid "Administrative access is required to access updates and snapshots."
-msgstr ""
+msgstr "K přístupu k aktualizacím a snapshotům je vyžadováno oprávnění správce."
 
 #: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
@@ -52,20 +52,16 @@ msgid "Checking for updates..."
 msgstr "Kontroluji se dostupné aktualizace..."
 
 #: org.cockpit-project.tukit.metainfo.xml:6
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update"
-msgstr "Transakční aktualizace"
+msgstr "Modul Cockpit pro transakční aktualizace"
 
 #: org.cockpit-project.tukit.metainfo.xml:8
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Cockpit module for Transactional Update."
-msgstr "Transakční aktualizace"
+msgstr "Modul Cockpit pro transakční aktualizace."
 
 #: src/app.tsx:198
 msgid "Current system is not transactional"
-msgstr ""
+msgstr "Současný systém není transakční"
 
 #: src/components/SnapshotItem.tsx:155
 msgid "Default"
@@ -113,10 +109,12 @@ msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
 msgstr ""
+"Podporovány jsou pouze systémy spravované pomocí transactional-update, "
+"použijte prosím cockpit-packagekit"
 
 #: src/app.tsx:129
 msgid "Please ensure package tukitd is installed."
-msgstr ""
+msgstr "Ujistěte se prosím, že je nainstalován balíček tukitd."
 
 #: src/components/SnapshotItem.tsx:179
 msgid "Rollback and Reboot"
@@ -155,16 +153,12 @@ msgid "Transactional Update"
 msgstr "Transakční aktualizace"
 
 #: src/app.tsx:126
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not installed"
-msgstr "Transakční aktualizace"
+msgstr "Služba transakčních aktualizací není nainstalována"
 
 #: src/app.tsx:138
-#, fuzzy
-#| msgid "Transactional Update"
 msgid "Transactional update service not running"
-msgstr "Transakční aktualizace"
+msgstr "Služba transakčních aktualizací neběží"
 
 #: src/components/UpdatesItem.tsx:78 src/components/UpdatesItem.tsx:81
 msgid "Update Details"
@@ -187,10 +181,8 @@ msgid "Updates available"
 msgstr "Dostupné aktualizace"
 
 #: src/app.tsx:142
-#, fuzzy
-#| msgid "Update Details"
 msgid "more details"
-msgstr "Aktualizovat podrobnosti"
+msgstr "Více podrobností"
 
 #~ msgid "Close"
 #~ msgstr "Zavřít"
