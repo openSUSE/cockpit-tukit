@@ -46,6 +46,10 @@ updates:
       - dependency-name: "eslint"
         update-types: ["version-update:semver-major"]
 
+      # eslint 8 doesn't support typescript 6 or higher
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     open-pull-requests-limit: 3
