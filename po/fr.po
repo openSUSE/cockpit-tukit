@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: tukit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-27 07:10+0100\n"
-"PO-Revision-Date: 2025-06-05 17:59+0000\n"
-"Last-Translator: Sophie Leroy <sophie@stoquart.com>\n"
+"PO-Revision-Date: 2026-05-24 11:12+0000\n"
+"Last-Translator: David D <dadu042@mailo.com>\n"
 "Language-Team: French <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 
 #: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
@@ -38,6 +38,8 @@ msgstr "Actif"
 #: src/app.tsx:153 src/app.tsx:213
 msgid "Administrative access is required to access updates and snapshots."
 msgstr ""
+"Un accès administratif est requis pour accéder aux mises à jour et aux "
+"instantanés."
 
 #: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
