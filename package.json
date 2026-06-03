@@ -42,10 +42,10 @@
     "typescript": "5.9.3"
   },
   "dependencies": {
-    "@patternfly/patternfly": "6.4.0",
-    "@patternfly/react-core": "6.4.3",
-    "@patternfly/react-icons": "6.4.0",
-    "@patternfly/react-styles": "6.4.0",
+    "@patternfly/patternfly": "6.5.2",
+    "@patternfly/react-core": "6.5.1",
+    "@patternfly/react-icons": "6.5.1",
+    "@patternfly/react-styles": "6.5.1",
     "dequal": "^2.0.3",
     "argparse": "2.0.1",
     "esbuild": "0.28.0",
