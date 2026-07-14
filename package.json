@@ -47,7 +47,7 @@
     "@patternfly/react-icons": "6.6.0",
     "@patternfly/react-styles": "6.6.0",
     "dequal": "^2.0.3",
-    "argparse": "2.0.1",
+    "argparse": "3.0.0",
     "esbuild": "0.28.1",
     "esbuild-sass-plugin": "3.7.0",
     "gettext-parser": "9.1.1",
