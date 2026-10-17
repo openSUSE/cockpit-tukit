@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-30 13:20+0100\n"
-"PO-Revision-Date: 2026-08-05 21:13+0000\n"
+"PO-Revision-Date: 2026-10-17 17:13+0000\n"
 "Last-Translator: Eugene Krater <lachend@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/uk/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2026.8\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: src/app.tsx:109
 msgid "Loading..."
-msgstr ""
+msgstr "Вантажимо..."
 
 #: src/components/UpdatesItem.tsx:132
 msgid "New Version"
