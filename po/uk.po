@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-30 13:20+0100\n"
-"PO-Revision-Date: 2026-10-17 17:13+0000\n"
+"PO-Revision-Date: 2026-10-19 22:13+0000\n"
 "Last-Translator: Eugene Krater <lachend@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/uk/>\n"
@@ -29,47 +29,47 @@ msgstr ""
 
 #: src/components/SnapshotItem.tsx:167
 msgid "Activate and Reboot"
-msgstr ""
+msgstr "Активувати і перезавантажити"
 
 #: src/components/SnapshotItem.tsx:118
 msgid "Activate without Reboot"
-msgstr ""
+msgstr "Активувати без перезавантаження"
 
 #: src/components/SnapshotItem.tsx:90 src/components/SnapshotItem.tsx:93
 msgid "Activating..."
-msgstr ""
+msgstr "Активуємо..."
 
 #: src/components/SnapshotItem.tsx:152
 msgid "Active"
-msgstr ""
+msgstr "Активне"
 
 #: src/app.tsx:153 src/app.tsx:213
 msgid "Administrative access is required to access updates and snapshots."
-msgstr ""
+msgstr "Для доступу до оновлень та знятків необхідні адміністративні права."
 
 #: src/components/UpdatesItem.tsx:297
 msgid "Available updates ($0)"
-msgstr ""
+msgstr "Доступні оновлення ($0)"
 
 #: src/components/UpdatesPanel.tsx:184
 msgid "Check for Updates"
-msgstr ""
+msgstr "Перевірити оновлення"
 
 #: src/components/UpdatesPanel.tsx:134
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Перевірка оновлень..."
 
 #: org.cockpit-project.tukit.metainfo.xml:6
 msgid "Cockpit module for Transactional Update"
-msgstr ""
+msgstr "Модуль Cockpit для транзакційного оновлення"
 
 #: org.cockpit-project.tukit.metainfo.xml:8
 msgid "Cockpit module for Transactional Update."
-msgstr ""
+msgstr "Модуль Cockpit для транзакційного оновлення."
 
 #: src/app.tsx:198
 msgid "Current system is not transactional"
-msgstr ""
+msgstr "Поточна система не є транзакційною"
 
 #: src/components/SnapshotItem.tsx:155
 msgid "Default"
@@ -77,7 +77,7 @@ msgstr "Типово"
 
 #: src/components/UpdatesPanel.tsx:148
 msgid "Error checking for updates: $0"
-msgstr ""
+msgstr "Помилка під час перевірки наявності оновлень: $0"
 
 #: src/components/UpdatesItem.tsx:237
 msgid "Error installing updates: command exited with code $0"
