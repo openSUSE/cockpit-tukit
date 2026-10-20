@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-30 13:20+0100\n"
-"PO-Revision-Date: 2026-10-19 22:13+0000\n"
+"PO-Revision-Date: 2026-10-20 21:13+0000\n"
 "Last-Translator: Eugene Krater <lachend@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/uk/>\n"
@@ -147,44 +147,44 @@ msgstr ""
 
 #: src/components/StatusPanel.tsx:130
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: src/components/StatusPanel.tsx:112
 msgid "System is up to date"
-msgstr ""
+msgstr "Система оновлена"
 
 #: src/manifest.json:0 org.cockpit-project.tukit.metainfo.xml:5
 msgid "Transactional Update"
-msgstr ""
+msgstr "Оновлення даних транзакції"
 
 #: src/app.tsx:126
 msgid "Transactional update service not installed"
-msgstr ""
+msgstr "Служба транзакційного оновлення не встановлена"
 
 #: src/app.tsx:138
 msgid "Transactional update service not running"
-msgstr ""
+msgstr "Служба транзакційного оновлення не запущена"
 
 #: src/components/UpdatesItem.tsx:78 src/components/UpdatesItem.tsx:81
 msgid "Update Details"
-msgstr ""
+msgstr "Деталі оновлення"
 
 #: src/components/UpdatesItem.tsx:309
 msgid "Update and Reboot"
-msgstr ""
+msgstr "Оновити і перезавантажити"
 
 #: src/components/UpdatesItem.tsx:346
 msgid "Update without Reboot"
-msgstr ""
+msgstr "Оновити без перезавантаження"
 
 #: src/components/UpdatesPanel.tsx:162
 msgid "Updates"
-msgstr ""
+msgstr "Оновлення"
 
 #: src/components/StatusPanel.tsx:100
 msgid "Updates available"
-msgstr ""
+msgstr "Оновлення доступні"
 
 #: src/app.tsx:142
 msgid "more details"
-msgstr ""
+msgstr "більше подробиць"
