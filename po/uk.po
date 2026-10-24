@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-30 13:20+0100\n"
-"PO-Revision-Date: 2026-10-20 21:13+0000\n"
+"PO-Revision-Date: 2026-10-24 22:13+0000\n"
 "Last-Translator: Eugene Krater <lachend@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/uk/>\n"
@@ -81,19 +81,19 @@ msgstr "Помилка під час перевірки наявності он�
 
 #: src/components/UpdatesItem.tsx:237
 msgid "Error installing updates: command exited with code $0"
-msgstr ""
+msgstr "Помилка під час встановлення оновлень: команда завершилася з кодом $0"
 
 #: src/app.tsx:168
 msgid "Fetching snapshots..."
-msgstr ""
+msgstr "Завантаження знятків..."
 
 #: src/components/UpdatesItem.tsx:209
 msgid "Installing updates..."
-msgstr ""
+msgstr "Встановлення оновлень..."
 
 #: src/components/UpdatesPanel.tsx:169
 msgid "Last Checked: $0"
-msgstr ""
+msgstr "Востаннє перевірено: $0"
 
 #: src/app.tsx:109
 msgid "Loading..."
@@ -101,45 +101,47 @@ msgstr "Вантажимо..."
 
 #: src/components/UpdatesItem.tsx:132
 msgid "New Version"
-msgstr ""
+msgstr "Нова версія"
 
 #: src/components/StatusPanel.tsx:89
 msgid "New snapshot #$1 available: $0"
-msgstr ""
+msgstr "Доступний новий зняток #$1: $0"
 
 #: src/components/UpdatesItem.tsx:137
 msgid "Old Version"
-msgstr ""
+msgstr "Стара версія"
 
 #: src/app.tsx:202
 msgid ""
 "Only systems managed by transactional-update are supported, please use "
 "cockpit-packagekit instead"
 msgstr ""
+"Підтримуються лише системи, що керуються за допомогою трансзакційного "
+"оновлення; будь ласка, скористайтеся замість цього cockpit-packagekit"
 
 #: src/app.tsx:129
 msgid "Please ensure package tukitd is installed."
-msgstr ""
+msgstr "Переконайтеся, що пакет tukitd встановлено."
 
 #: src/components/SnapshotItem.tsx:179
 msgid "Rollback and Reboot"
-msgstr ""
+msgstr "Відкат і перезавантаження"
 
 #: src/components/SnapshotItem.tsx:105
 msgid "Rollback without Reboot"
-msgstr ""
+msgstr "Відкат без перезавантаження"
 
 #: src/components/SnapshotItem.tsx:84 src/components/SnapshotItem.tsx:87
 msgid "Rolling back..."
-msgstr ""
+msgstr "Відкат..."
 
 #: src/components/StatusPanel.tsx:99
 msgid "Security updates available"
-msgstr ""
+msgstr "Доступні оновлення безпеки"
 
 #: src/app.tsx:242
 msgid "Snapshots & Updates"
-msgstr ""
+msgstr "Знятки та оновлення"
 
 #: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
