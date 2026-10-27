@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-30 13:20+0100\n"
-"PO-Revision-Date: 2026-10-24 22:13+0000\n"
+"PO-Revision-Date: 2026-10-27 19:13+0000\n"
 "Last-Translator: Eugene Krater <lachend@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.opensuse.org/projects/cockpit/cockpit-"
 "tukit/uk/>\n"
@@ -145,7 +145,7 @@ msgstr "Знятки та оновлення"
 
 #: src/index.html:20 src/manifest.json:0
 msgid "Software Updates"
-msgstr ""
+msgstr "Оновлення програм"
 
 #: src/components/StatusPanel.tsx:130
 msgid "Status"
