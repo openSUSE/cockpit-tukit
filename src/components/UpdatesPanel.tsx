@@ -44,10 +44,11 @@ import { decodeHTMLEntities } from "../utils";
 const _ = cockpit.gettext;
 
 // simplify structure of XMLParser return values
-const flattenXMLData = (data: XMLElement, prefix = ""): Update => {
-    // TODO: safer parsing to make sure we actually have a valid Update object
-    // eslint-disable-next-line
-  const values: any = {};
+const flattenXMLData = (
+    data: XMLElement,
+    prefix = "",
+): Record<string, string> => {
+    const values: Record<string, string> = {};
     // NOTE: this will make {"": value} for root item
     if (data.value) values[prefix] = data.value;
     if (prefix !== "") prefix = `${prefix}_`;
@@ -57,7 +58,30 @@ const flattenXMLData = (data: XMLElement, prefix = ""): Update => {
     data.children.forEach((c) => {
         Object.assign(values, flattenXMLData(c, `${prefix}${c.name}`));
     });
-    return values as Update;
+    return values;
+};
+const isUpdate = (value: unknown): value is Update => {
+    if (typeof value !== "object" || value === null) {
+        return false;
+    }
+
+    const candidate = value as Record<string, unknown>;
+
+    return (
+        (candidate.kind === "patch" || candidate.kind === "package") &&
+        (candidate.category === "security" ||
+            candidate.category === "recommended" ||
+            candidate.category === "feature") &&
+        (candidate.severity === "critical" ||
+            candidate.severity === "important" ||
+            candidate.severity === "moderate") &&
+        typeof candidate.name === "string" &&
+        (candidate.description === null ||
+            typeof candidate.description === "string") &&
+        typeof candidate.edition === "string" &&
+        typeof candidate["edition-old"] === "string" &&
+        typeof candidate.summary === "string"
+    );
 };
 
 type UpdatesPanelProps = {
@@ -99,13 +123,19 @@ const UpdatesPanel = ({
         const xml = new XMLParser().parseFromString(out);
         return xml
                 .getElementsByTagName("update")
-                .map((e) => flattenXMLData(e))
-                .map((u) => {
-                    return {
-                        ...u,
-                        description: decodeHTMLEntities(u.description),
-                    };
-                });
+                .map((e) => {
+                    const update = flattenXMLData(e);
+
+                    if (!isUpdate(update)) {
+                        throw new Error("Invalid update data");
+                    }
+
+                    return update;
+                })
+                .map((u) => ({
+                    ...u,
+                    description: decodeHTMLEntities(u.description),
+                }));
     };
     const updateKey = (
         u: Update
